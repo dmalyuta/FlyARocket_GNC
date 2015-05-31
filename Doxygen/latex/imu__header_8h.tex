@@ -1,0 +1,213 @@
+\hypertarget{imu__header_8h}{\section{imu\-\_\-header.\-h File Reference}
+\label{imu__header_8h}\index{imu\-\_\-header.\-h@{imu\-\_\-header.\-h}}
+}
+
+
+I\-M\-U header file.  
+
+
+{\ttfamily \#include $<$termios.\-h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{imu__header_8h_a1d5dab30b404fab91608086105afc78c}{\#define \hyperlink{imu__header_8h_a1d5dab30b404fab91608086105afc78c}{M\-A\-X\-\_\-\-B\-U\-F\-F\-E\-R}~24}\label{imu__header_8h_a1d5dab30b404fab91608086105afc78c}
+
+\begin{DoxyCompactList}\small\item\em The max buffer size for receving data from I\-M\-U. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{imu__header_8h_a2895cbc2038329e796341d55445548da}{unsigned char \hyperlink{imu__header_8h_a2895cbc2038329e796341d55445548da}{I\-M\-U\-\_\-\-R\-X} \mbox{[}\hyperlink{imu__header_8h_a1d5dab30b404fab91608086105afc78c}{M\-A\-X\-\_\-\-B\-U\-F\-F\-E\-R}\mbox{]}}\label{imu__header_8h_a2895cbc2038329e796341d55445548da}
+
+\begin{DoxyCompactList}\small\item\em Buffer holding received values via U\-A\-R\-T from Razor I\-M\-U. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_afac0e6e6b89425f5757ea390ace2dc45}{char \hyperlink{imu__header_8h_afac0e6e6b89425f5757ea390ace2dc45}{I\-M\-U\-\_\-\-S\-Y\-N\-C\-H\-\_\-\-R\-E\-C\-E\-I\-V\-E} \mbox{[}1\mbox{]}}\label{imu__header_8h_afac0e6e6b89425f5757ea390ace2dc45}
+
+\begin{DoxyCompactList}\small\item\em Buffer used for receving the 2-\/character (2-\/byte) synch token from the I\-M\-U during sychronization. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a26f3dd4d2fa4736feb9aac7f5c68aa9a}{unsigned char \hyperlink{imu__header_8h_a26f3dd4d2fa4736feb9aac7f5c68aa9a}{I\-M\-U\-\_\-\-T\-X} \mbox{[}2\mbox{]}}\label{imu__header_8h_a26f3dd4d2fa4736feb9aac7f5c68aa9a}
+
+\begin{DoxyCompactList}\small\item\em Buffer holding transmit message to I\-M\-U (call to send Euler angles N\-O\-W) \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a3b6c98021203a4256e19ba1011e8d81a}{int \hyperlink{imu__header_8h_a3b6c98021203a4256e19ba1011e8d81a}{R\-A\-Z\-O\-R\-\_\-\-U\-A\-R\-T}}\label{imu__header_8h_a3b6c98021203a4256e19ba1011e8d81a}
+
+\begin{DoxyCompactList}\small\item\em Holds Razor I\-M\-U connection file. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_aa3e6767cf45ddbfec6df978d6c25b5fb}{struct termios \hyperlink{imu__header_8h_aa3e6767cf45ddbfec6df978d6c25b5fb}{new\-\_\-razor\-\_\-uart\-\_\-options}}\label{imu__header_8h_aa3e6767cf45ddbfec6df978d6c25b5fb}
+
+\begin{DoxyCompactList}\small\item\em New I\-M\-U U\-A\-R\-T connection options. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a2eb75463dec46981ad5e4001ea2c5aa8}{struct termios \hyperlink{imu__header_8h_a2eb75463dec46981ad5e4001ea2c5aa8}{old\-\_\-razor\-\_\-uart\-\_\-options}}\label{imu__header_8h_a2eb75463dec46981ad5e4001ea2c5aa8}
+
+\begin{DoxyCompactList}\small\item\em Old I\-M\-U U\-A\-R\-T connection options (those that were initially present when program started) \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a0d2de52d42f8a27829b87641927ff93f}{unsigned long int \hyperlink{imu__header_8h_a0d2de52d42f8a27829b87641927ff93f}{C\-A\-L\-I\-B\-\_\-\-\_\-\-T\-I\-M\-E}}\label{imu__header_8h_a0d2de52d42f8a27829b87641927ff93f}
+
+\begin{DoxyCompactList}\small\item\em Calibration time \mbox{[}us\mbox{]}, i.\-e. microseconds. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a3aae9efa0336fe13c6269a2f5d7902dd}{int \hyperlink{imu__header_8h_a3aae9efa0336fe13c6269a2f5d7902dd}{num\-\_\-av\-\_\-vars}}\label{imu__header_8h_a3aae9efa0336fe13c6269a2f5d7902dd}
+
+\begin{DoxyCompactList}\small\item\em How many angles have we collected to average? \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a4f16722a4fa9229da0e7faa7a9409377}{char \hyperlink{imu__header_8h_a4f16722a4fa9229da0e7faa7a9409377}{reply} \mbox{[}30\mbox{]}}\label{imu__header_8h_a4f16722a4fa9229da0e7faa7a9409377}
+
+\begin{DoxyCompactList}\small\item\em User input string. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a5e005e112ca8edcc1d9b59fdfaefb7fd}{float \hyperlink{imu__header_8h_a5e005e112ca8edcc1d9b59fdfaefb7fd}{temp1}}\label{imu__header_8h_a5e005e112ca8edcc1d9b59fdfaefb7fd}
+
+\begin{DoxyCompactList}\small\item\em Temp variable used in \hyperlink{imu__funcs_8c_a284639531ae985a2c56847c4b4d3c941}{min\-\_\-of\-\_\-set()} \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_aa6339584cd97a77de4947d82c2bb4239}{float \hyperlink{imu__header_8h_aa6339584cd97a77de4947d82c2bb4239}{temp2}}\label{imu__header_8h_aa6339584cd97a77de4947d82c2bb4239}
+
+\begin{DoxyCompactList}\small\item\em Temp variable used in \hyperlink{imu__funcs_8c_a284639531ae985a2c56847c4b4d3c941}{min\-\_\-of\-\_\-set()} \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a6c4ba62d6549fb28af43aa7f4778de4b}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{imu__header_8h_a6c4ba62d6549fb28af43aa7f4778de4b}{R\-\_\-\-M\-A\-T\-R\-I\-X}}\label{imu__header_8h_a6c4ba62d6549fb28af43aa7f4778de4b}
+
+\begin{DoxyCompactList}\small\item\em Matrix which zeroes the Euler angles for the calibrated orientation. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a35bd99561dc4ca035119409241e2b5e0}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{imu__header_8h_a35bd99561dc4ca035119409241e2b5e0}{D\-C\-M\-\_\-\-M\-A\-T\-R\-I\-X}}\label{imu__header_8h_a35bd99561dc4ca035119409241e2b5e0}
+
+\begin{DoxyCompactList}\small\item\em Direct Cosine Matrix. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a778e38aa889751afffa2dea6b803e67a}{float \hyperlink{imu__header_8h_a778e38aa889751afffa2dea6b803e67a}{dt}}\label{imu__header_8h_a778e38aa889751afffa2dea6b803e67a}
+
+\begin{DoxyCompactList}\small\item\em The timestep for derivatives (time passed in \mbox{[}s\mbox{]} between current and last iteration) \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a1a2c9eddf9882d1a6a6e51804765d276}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{imu__header_8h_a1a2c9eddf9882d1a6a6e51804765d276}{E\-Y\-E2}}\label{imu__header_8h_a1a2c9eddf9882d1a6a6e51804765d276}
+
+\begin{DoxyCompactList}\small\item\em \mbox{[}2x2\mbox{]} identity matrix, used in \hyperlink{imu__funcs_8c_a0d3dd751864c0bf8eb525ba4d16b02da}{Kalman\-\_\-filter()} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}{\bf I\-M\-U reception group}\par
+{\em variables holdin the raw values received from I\-M\-U }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{imu__header_8h_aace8e2df2e07a1def1b869e5511bc602}{float \hyperlink{imu__header_8h_aace8e2df2e07a1def1b869e5511bc602}{psi}}\label{imu__header_8h_aace8e2df2e07a1def1b869e5511bc602}
+
+\begin{DoxyCompactList}\small\item\em Yaw angle. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a8eec6ec2b20a3e41d20120befec590cb}{unsigned char \hyperlink{imu__header_8h_a8eec6ec2b20a3e41d20120befec590cb}{yaw\-\_\-bytes} \mbox{[}4\mbox{]}}\label{imu__header_8h_a8eec6ec2b20a3e41d20120befec590cb}
+
+\begin{DoxyCompactList}\small\item\em Yaw angle bytes used for conversion to float. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_aadfc5c227ca658a29a59a0ce6fc15792}{float \hyperlink{imu__header_8h_aadfc5c227ca658a29a59a0ce6fc15792}{theta}}\label{imu__header_8h_aadfc5c227ca658a29a59a0ce6fc15792}
+
+\begin{DoxyCompactList}\small\item\em Pitch angle. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a60b65daee842f2d62725caff34581016}{unsigned char \hyperlink{imu__header_8h_a60b65daee842f2d62725caff34581016}{pitch\-\_\-bytes} \mbox{[}4\mbox{]}}\label{imu__header_8h_a60b65daee842f2d62725caff34581016}
+
+\begin{DoxyCompactList}\small\item\em Pitch angle bytes used for conversion to float. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_ab30c622a174639ec92b375db9b2ee56d}{float \hyperlink{imu__header_8h_ab30c622a174639ec92b375db9b2ee56d}{phi}}\label{imu__header_8h_ab30c622a174639ec92b375db9b2ee56d}
+
+\begin{DoxyCompactList}\small\item\em Roll angle. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a433c42950d2a73c24233f53f2e1865fd}{unsigned char \hyperlink{imu__header_8h_a433c42950d2a73c24233f53f2e1865fd}{roll\-\_\-bytes} \mbox{[}4\mbox{]}}\label{imu__header_8h_a433c42950d2a73c24233f53f2e1865fd}
+
+\begin{DoxyCompactList}\small\item\em Roll angle bytes used for conversion to float. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a4a49b14edaec65c91af2f2b8dd7f9d04}{float \hyperlink{imu__header_8h_a4a49b14edaec65c91af2f2b8dd7f9d04}{accel\-X}}\label{imu__header_8h_a4a49b14edaec65c91af2f2b8dd7f9d04}
+
+\begin{DoxyCompactList}\small\item\em X-\/acceleration. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a79d46db4d707ecec4751575aaef70e4d}{unsigned char \hyperlink{imu__header_8h_a79d46db4d707ecec4751575aaef70e4d}{accel\-X\-\_\-bytes} \mbox{[}4\mbox{]}}\label{imu__header_8h_a79d46db4d707ecec4751575aaef70e4d}
+
+\begin{DoxyCompactList}\small\item\em X-\/acceleration angle bytes used for conversion to float. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a3f0af2c57d247ac83559105150229763}{float \hyperlink{imu__header_8h_a3f0af2c57d247ac83559105150229763}{accel\-Y}}\label{imu__header_8h_a3f0af2c57d247ac83559105150229763}
+
+\begin{DoxyCompactList}\small\item\em Y-\/acceleration. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a84d37036e8aec3942aebbce27eb5eae4}{unsigned char \hyperlink{imu__header_8h_a84d37036e8aec3942aebbce27eb5eae4}{accel\-Y\-\_\-bytes} \mbox{[}4\mbox{]}}\label{imu__header_8h_a84d37036e8aec3942aebbce27eb5eae4}
+
+\begin{DoxyCompactList}\small\item\em Y-\/acceleration angle bytes used for conversion to float. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a40fe36c79bef2b788894c4b9730842d2}{float \hyperlink{imu__header_8h_a40fe36c79bef2b788894c4b9730842d2}{accel\-Z}}\label{imu__header_8h_a40fe36c79bef2b788894c4b9730842d2}
+
+\begin{DoxyCompactList}\small\item\em Z-\/acceleration. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a39be9519070cc41b5f92b4fe4a4ea1fa}{unsigned char \hyperlink{imu__header_8h_a39be9519070cc41b5f92b4fe4a4ea1fa}{accel\-Z\-\_\-bytes} \mbox{[}4\mbox{]}}\label{imu__header_8h_a39be9519070cc41b5f92b4fe4a4ea1fa}
+
+\begin{DoxyCompactList}\small\item\em Z-\/acceleration angle bytes used for conversion to float. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Current accelerations}\par
+{\em These are the accelerations saved into the filtering thread \hyperlink{imu__funcs_8c_a819d365851c5396da5453c27c37af71b}{get\-\_\-filtered\-\_\-attitude\-\_\-parallel()} when it does an iteration, hence they are equal to the most recent \hyperlink{imu__header_8h_a4a49b14edaec65c91af2f2b8dd7f9d04}{accel\-X}, \hyperlink{imu__header_8h_a3f0af2c57d247ac83559105150229763}{accel\-Y} and \hyperlink{imu__header_8h_a40fe36c79bef2b788894c4b9730842d2}{accel\-Z} that have been read from the I\-M\-U. The filtering thread simply logs them into the \hyperlink{master__header_8h_acfbcaf4efce8ebd037ba912955853c0c}{imu\-\_\-log} file. }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{imu__header_8h_a625162b483840e4f16b2a581380ce29b}{float \hyperlink{imu__header_8h_a625162b483840e4f16b2a581380ce29b}{accel\-X\-\_\-save}}\label{imu__header_8h_a625162b483840e4f16b2a581380ce29b}
+
+\begin{DoxyCompactList}\small\item\em Saved X-\/acceleration. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_add67e6211c525792ab7e53f233b5c289}{float \hyperlink{imu__header_8h_add67e6211c525792ab7e53f233b5c289}{accel\-Y\-\_\-save}}\label{imu__header_8h_add67e6211c525792ab7e53f233b5c289}
+
+\begin{DoxyCompactList}\small\item\em Saved Y-\/acceleration. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_ab8cd1436e58aa680a9e74b9470b8460e}{float \hyperlink{imu__header_8h_ab8cd1436e58aa680a9e74b9470b8460e}{accel\-Z\-\_\-save}}\label{imu__header_8h_ab8cd1436e58aa680a9e74b9470b8460e}
+
+\begin{DoxyCompactList}\small\item\em Saved Z-\/acceleration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Current Euler angles group}\par
+{\em These angles are the ones saved into the filtering thread \hyperlink{imu__funcs_8c_a819d365851c5396da5453c27c37af71b}{get\-\_\-filtered\-\_\-attitude\-\_\-parallel()} when it does an iteration, hence they are equal to the most recent \hyperlink{imu__header_8h_aace8e2df2e07a1def1b869e5511bc602}{psi}, \hyperlink{imu__header_8h_aadfc5c227ca658a29a59a0ce6fc15792}{theta} and \hyperlink{imu__header_8h_ab30c622a174639ec92b375db9b2ee56d}{phi} that have been read from the I\-M\-U. }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{imu__header_8h_ac18323455f0a84b6a2a7822c39f4a329}{float \hyperlink{imu__header_8h_ac18323455f0a84b6a2a7822c39f4a329}{psi\-\_\-save}}\label{imu__header_8h_ac18323455f0a84b6a2a7822c39f4a329}
+
+\begin{DoxyCompactList}\small\item\em Saved yaw angle. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_afdb68c1b2d93d741c076cef5cd1acd24}{float \hyperlink{imu__header_8h_afdb68c1b2d93d741c076cef5cd1acd24}{theta\-\_\-save}}\label{imu__header_8h_afdb68c1b2d93d741c076cef5cd1acd24}
+
+\begin{DoxyCompactList}\small\item\em Saved pitch angle. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_aafc080a9ef08ffb1e347e306b1bf51cc}{float \hyperlink{imu__header_8h_aafc080a9ef08ffb1e347e306b1bf51cc}{phi\-\_\-save}}\label{imu__header_8h_aafc080a9ef08ffb1e347e306b1bf51cc}
+
+\begin{DoxyCompactList}\small\item\em Saved roll angle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Last read Euler angles group}\par
+{\em These are the last set of Euler angles that were read in from I\-M\-U during the previous iteration (1 time step ago). }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{imu__header_8h_a5c765a5f789b1c5e270d700ab2c5e547}{float \hyperlink{imu__header_8h_a5c765a5f789b1c5e270d700ab2c5e547}{psi\-\_\-save\-\_\-last}}\label{imu__header_8h_a5c765a5f789b1c5e270d700ab2c5e547}
+
+\begin{DoxyCompactList}\small\item\em Last read value of psi. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a388244ea471e5baf0e7250cdb4fea585}{float \hyperlink{imu__header_8h_a388244ea471e5baf0e7250cdb4fea585}{theta\-\_\-save\-\_\-last}}\label{imu__header_8h_a388244ea471e5baf0e7250cdb4fea585}
+
+\begin{DoxyCompactList}\small\item\em Last read value of theta. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_adcc2ff4b007d895c1393650a38dab549}{float \hyperlink{imu__header_8h_adcc2ff4b007d895c1393650a38dab549}{phi\-\_\-save\-\_\-last}}\label{imu__header_8h_adcc2ff4b007d895c1393650a38dab549}
+
+\begin{DoxyCompactList}\small\item\em Last read value of phi. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Filtered Euler angles and angular rates}\par
+{\em These are the filtered versions of the \hyperlink{imu__header_8h_ac18323455f0a84b6a2a7822c39f4a329}{psi\-\_\-save}, \hyperlink{imu__header_8h_afdb68c1b2d93d741c076cef5cd1acd24}{theta\-\_\-save} and \hyperlink{imu__header_8h_aafc080a9ef08ffb1e347e306b1bf51cc}{phi\-\_\-save} signals and their numerical derivatives (see \hyperlink{imu__funcs_8c_a0f46701132540ff5241c276a19f7b38d}{Find\-\_\-raw\-\_\-\-Euler\-\_\-angular\-\_\-velocities()}). }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{imu__header_8h_a667979b6fd335e2c4dc4e796a3ed56be}{float \hyperlink{imu__header_8h_a667979b6fd335e2c4dc4e796a3ed56be}{psi\-\_\-filt}}\label{imu__header_8h_a667979b6fd335e2c4dc4e796a3ed56be}
+
+\begin{DoxyCompactList}\small\item\em Filtered yaw. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a644260d93f9b48151fff727e69f75143}{float \hyperlink{imu__header_8h_a644260d93f9b48151fff727e69f75143}{psi\-\_\-dot\-\_\-filt}}\label{imu__header_8h_a644260d93f9b48151fff727e69f75143}
+
+\begin{DoxyCompactList}\small\item\em Filtered yaw rate. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_abbc13db7b16483062094dfad47e30d7f}{float \hyperlink{imu__header_8h_abbc13db7b16483062094dfad47e30d7f}{theta\-\_\-filt}}\label{imu__header_8h_abbc13db7b16483062094dfad47e30d7f}
+
+\begin{DoxyCompactList}\small\item\em Filtered pitch. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a61999694fc798a809e7547d39f6a369c}{float \hyperlink{imu__header_8h_a61999694fc798a809e7547d39f6a369c}{theta\-\_\-dot\-\_\-filt}}\label{imu__header_8h_a61999694fc798a809e7547d39f6a369c}
+
+\begin{DoxyCompactList}\small\item\em Filtered pitch rate. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a1d9d158571bd246e7287375ad1e6b9ad}{float \hyperlink{imu__header_8h_a1d9d158571bd246e7287375ad1e6b9ad}{phi\-\_\-filt}}\label{imu__header_8h_a1d9d158571bd246e7287375ad1e6b9ad}
+
+\begin{DoxyCompactList}\small\item\em Filtered roll. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_af987fceaf6a55676ae7d2b2334dfae21}{float \hyperlink{imu__header_8h_af987fceaf6a55676ae7d2b2334dfae21}{phi\-\_\-dot\-\_\-filt}}\label{imu__header_8h_af987fceaf6a55676ae7d2b2334dfae21}
+
+\begin{DoxyCompactList}\small\item\em Filtered roll rate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Average Euler angles group}\par
+{\em Average Euler angle values obtained during calibration (zeroing) period }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{imu__header_8h_a06b5bf03d3d0ceacfc3bc12979344f27}{float \hyperlink{imu__header_8h_a06b5bf03d3d0ceacfc3bc12979344f27}{psi\-\_\-av}}\label{imu__header_8h_a06b5bf03d3d0ceacfc3bc12979344f27}
+
+\begin{DoxyCompactList}\small\item\em Average value of psi (yaw) during calibration period. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_aa0743fc7960260ea5ff67757b31cf391}{float \hyperlink{imu__header_8h_aa0743fc7960260ea5ff67757b31cf391}{theta\-\_\-av}}\label{imu__header_8h_aa0743fc7960260ea5ff67757b31cf391}
+
+\begin{DoxyCompactList}\small\item\em Average value of theta (pitch) during calibration period. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_ab5874846896eb41a62940225ad3de4e4}{float \hyperlink{imu__header_8h_ab5874846896eb41a62940225ad3de4e4}{phi\-\_\-av}}\label{imu__header_8h_ab5874846896eb41a62940225ad3de4e4}
+
+\begin{DoxyCompactList}\small\item\em Average value of phi (roll) during calibration period. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Euler angular rates group}\par
+{\em The unfiltered, noisy numerical time derivatives of the Euler angles read in from the I\-M\-U }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{imu__header_8h_af02373e94c758eed8531e75b96ff7bff}{float \hyperlink{imu__header_8h_af02373e94c758eed8531e75b96ff7bff}{psi\-\_\-dot}}\label{imu__header_8h_af02373e94c758eed8531e75b96ff7bff}
+
+\begin{DoxyCompactList}\small\item\em Time derivative of psi. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a51e2c6c20a8f3b56806383e174e348e5}{float \hyperlink{imu__header_8h_a51e2c6c20a8f3b56806383e174e348e5}{theta\-\_\-dot}}\label{imu__header_8h_a51e2c6c20a8f3b56806383e174e348e5}
+
+\begin{DoxyCompactList}\small\item\em Time derivative of theta. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a3978de6cb595ccbcc206e2744ba5db3e}{float \hyperlink{imu__header_8h_a3978de6cb595ccbcc206e2744ba5db3e}{phi\-\_\-dot}}\label{imu__header_8h_a3978de6cb595ccbcc206e2744ba5db3e}
+
+\begin{DoxyCompactList}\small\item\em Time derivative of phi. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Body rates group}\par
+{\em These are the B\-O\-D\-Y rates (angular velocity about X Y and Z body axes of rocket) }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{imu__header_8h_a40083d5d71ff675499a8d392ff75f401}{float \hyperlink{imu__header_8h_a40083d5d71ff675499a8d392ff75f401}{wx}}\label{imu__header_8h_a40083d5d71ff675499a8d392ff75f401}
+
+\begin{DoxyCompactList}\small\item\em X-\/body rate. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_ae05e525eb10e278f769ff1bc049eec10}{float \hyperlink{imu__header_8h_ae05e525eb10e278f769ff1bc049eec10}{wy}}\label{imu__header_8h_ae05e525eb10e278f769ff1bc049eec10}
+
+\begin{DoxyCompactList}\small\item\em Y-\/body rate. \end{DoxyCompactList}\item 
+\hypertarget{imu__header_8h_a3cc50c2a8b1ca44e2cd5c4ed748c610a}{float \hyperlink{imu__header_8h_a3cc50c2a8b1ca44e2cd5c4ed748c610a}{wz}}\label{imu__header_8h_a3cc50c2a8b1ca44e2cd5c4ed748c610a}
+
+\begin{DoxyCompactList}\small\item\em Z-\/body rate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+I\-M\-U header file. \begin{DoxyAuthor}{Author}
+Danylo Malyuta \href{mailto:danylo.malyuta@gmail.com}{\tt danylo.\-malyuta@gmail.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0
+\end{DoxyVersion}
+This is the header to \hyperlink{imu__funcs_8c}{imu\-\_\-funcs.\-c} containing necessary definitions and initializations. 

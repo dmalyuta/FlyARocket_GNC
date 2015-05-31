@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['a',['A',['../simplex__header_8h.html#ace63b68fea4070104433c81319d246a6',1,'simplex_header.h']]],
+  ['a_5fkalman',['A_kalman',['../master__header_8h.html#abcca7bf825357b5d007fa1b74f0c87c6',1,'master_header.h']]],
+  ['accelx',['accelX',['../imu__header_8h.html#a4a49b14edaec65c91af2f2b8dd7f9d04',1,'imu_header.h']]],
+  ['accelx_5fbytes',['accelX_bytes',['../imu__header_8h.html#a79d46db4d707ecec4751575aaef70e4d',1,'imu_header.h']]],
+  ['accelx_5fsave',['accelX_save',['../imu__header_8h.html#a625162b483840e4f16b2a581380ce29b',1,'imu_header.h']]],
+  ['accely',['accelY',['../imu__header_8h.html#a3f0af2c57d247ac83559105150229763',1,'imu_header.h']]],
+  ['accely_5fbytes',['accelY_bytes',['../imu__header_8h.html#a84d37036e8aec3942aebbce27eb5eae4',1,'imu_header.h']]],
+  ['accely_5fsave',['accelY_save',['../imu__header_8h.html#add67e6211c525792ab7e53f233b5c289',1,'imu_header.h']]],
+  ['accelz',['accelZ',['../imu__header_8h.html#a40fe36c79bef2b788894c4b9730842d2',1,'imu_header.h']]],
+  ['accelz_5fbytes',['accelZ_bytes',['../imu__header_8h.html#a39be9519070cc41b5f92b4fe4a4ea1fa',1,'imu_header.h']]],
+  ['accelz_5fsave',['accelZ_save',['../imu__header_8h.html#ab8cd1436e58aa680a9e74b9470b8460e',1,'imu_header.h']]],
+  ['active_5f_5fcontrol_5ftime',['ACTIVE__CONTROL_TIME',['../master_8c.html#a2ccecb3518df04beb7ad8510fc2eac6a',1,'master.c']]],
+  ['addr',['addr',['../structbcm2835__peripheral.html#ac33828b1b9863498b33058a4ca2985dc',1,'bcm2835_peripheral']]],
+  ['addr_5fp',['addr_p',['../structbcm2835__peripheral.html#a972e542acd3ccb0b9a5f73aa75251b57',1,'bcm2835_peripheral']]],
+  ['axial_5fpressure',['axial_pressure',['../pressure__header_8h.html#aa25e00923e361dffe516ff778c26ed6d',1,'pressure_header.h']]],
+  ['axial_5fsensor',['AXIAL_SENSOR',['../pressure__funcs_8c.html#a00c0bd0ea7784ee9add4bdfd7e33bb92',1,'AXIAL_SENSOR():&#160;pressure_funcs.c'],['../pressure__header_8h.html#a00c0bd0ea7784ee9add4bdfd7e33bb92',1,'AXIAL_SENSOR():&#160;pressure_funcs.c']]],
+  ['axial_5fsensor_5ffd',['axial_sensor_fd',['../structSPI__data.html#a071114b977c92258f04ee298aabb0297',1,'SPI_data']]],
+  ['axial_5fstatus',['axial_status',['../pressure__header_8h.html#a967759071a6092e727c6371c115e90a2',1,'pressure_header.h']]],
+  ['axial_5ftemperature',['axial_temperature',['../pressure__header_8h.html#ab07aa5a9125cebc7cc3fc96003a11b5a',1,'pressure_header.h']]]
+];

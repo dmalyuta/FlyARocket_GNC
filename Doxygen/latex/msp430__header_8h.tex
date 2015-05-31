@@ -1,0 +1,48 @@
+\hypertarget{msp430__header_8h}{\section{msp430\-\_\-header.\-h File Reference}
+\label{msp430__header_8h}\index{msp430\-\_\-header.\-h@{msp430\-\_\-header.\-h}}
+}
+
+
+M\-S\-P430 header file.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{msp430__header_8h_a5300b0b563af902d75ce92100e9fe1ab}{\#define \hyperlink{msp430__header_8h_a5300b0b563af902d75ce92100e9fe1ab}{M\-S\-P430\-\_\-\-M\-A\-X\-\_\-\-B\-U\-F\-F\-E\-R}~1}\label{msp430__header_8h_a5300b0b563af902d75ce92100e9fe1ab}
+
+\begin{DoxyCompactList}\small\item\em Buffer size for receving messages from M\-S\-P430 (just '!' so 1 byte buffer is used) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{msp430__header_8h_a274f232ce8ccc298f8111502afb9d894}{char \hyperlink{msp430__header_8h_a274f232ce8ccc298f8111502afb9d894}{M\-S\-P430\-\_\-\-R\-X} \mbox{[}\hyperlink{msp430__header_8h_a5300b0b563af902d75ce92100e9fe1ab}{M\-S\-P430\-\_\-\-M\-A\-X\-\_\-\-B\-U\-F\-F\-E\-R}\mbox{]}}\label{msp430__header_8h_a274f232ce8ccc298f8111502afb9d894}
+
+\begin{DoxyCompactList}\small\item\em Buffer holding received values via U\-A\-R\-T from Razor I\-M\-U. \end{DoxyCompactList}\item 
+\hypertarget{msp430__header_8h_a83f9f6fae14487dbe1bdb754919b91fa}{int \hyperlink{msp430__header_8h_a83f9f6fae14487dbe1bdb754919b91fa}{M\-S\-P430\-\_\-\-U\-A\-R\-T}}\label{msp430__header_8h_a83f9f6fae14487dbe1bdb754919b91fa}
+
+\begin{DoxyCompactList}\small\item\em Holds Razor I\-M\-U connection file. \end{DoxyCompactList}\item 
+\hypertarget{msp430__header_8h_a55d9f50393b8e5b054b4127c31571eae}{char \hyperlink{msp430__header_8h_a55d9f50393b8e5b054b4127c31571eae}{M\-S\-P430\-\_\-reply\-\_\-string}}\label{msp430__header_8h_a55d9f50393b8e5b054b4127c31571eae}
+
+\begin{DoxyCompactList}\small\item\em String holding the M\-S\-P430 reply. \end{DoxyCompactList}\item 
+\hypertarget{msp430__header_8h_a260e61212c8c714cbc71567a2edc70bb}{unsigned char \hyperlink{msp430__header_8h_a260e61212c8c714cbc71567a2edc70bb}{P\-W\-M\-\_\-\-T\-X\-\_\-packet} \mbox{[}4\mbox{]}}\label{msp430__header_8h_a260e61212c8c714cbc71567a2edc70bb}
+
+\begin{DoxyCompactList}\small\item\em Packet of 1 byte for \char`\"{}\#\char`\"{} and 5 bytes containing the 4 P\-W\-M values, to send to M\-S\-P430. \end{DoxyCompactList}\item 
+\hypertarget{msp430__header_8h_abee57369cf5644109c372348ca694783}{unsigned char \hyperlink{msp430__header_8h_abee57369cf5644109c372348ca694783}{which\-\_\-zero}}\label{msp430__header_8h_abee57369cf5644109c372348ca694783}
+
+\begin{DoxyCompactList}\small\item\em Cypher which indicates which of the P\-W\-M signals is zero. \end{DoxyCompactList}\item 
+\hypertarget{msp430__header_8h_ae39be3dc2442cc970ed2509c7497f6d4}{struct termios \hyperlink{msp430__header_8h_ae39be3dc2442cc970ed2509c7497f6d4}{new\-\_\-msp430\-\_\-uart\-\_\-options}}\label{msp430__header_8h_ae39be3dc2442cc970ed2509c7497f6d4}
+
+\begin{DoxyCompactList}\small\item\em The new options we set for communicating the the M\-S\-P430 U\-A\-R\-T after opening it. \end{DoxyCompactList}\item 
+\hypertarget{msp430__header_8h_a933965c1edf0c5b6f0e815debd4e2946}{struct termios \hyperlink{msp430__header_8h_a933965c1edf0c5b6f0e815debd4e2946}{old\-\_\-msp430\-\_\-uart\-\_\-options}}\label{msp430__header_8h_a933965c1edf0c5b6f0e815debd4e2946}
+
+\begin{DoxyCompactList}\small\item\em The old options we save after opening the M\-S\-P430 U\-A\-R\-T connection; we restitute them before closing the connection at the end of the program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+M\-S\-P430 header file. \begin{DoxyAuthor}{Author}
+Danylo Malyuta \href{mailto:danylo.malyuta@gmail.com}{\tt danylo.\-malyuta@gmail.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0
+\end{DoxyVersion}
+This is the header to \hyperlink{msp430__funcs_8c}{msp430\-\_\-funcs.\-c} containing necessary definitions and initializations. 

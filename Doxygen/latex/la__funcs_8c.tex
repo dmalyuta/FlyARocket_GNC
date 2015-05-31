@@ -1,0 +1,135 @@
+\hypertarget{la__funcs_8c}{\section{la\-\_\-funcs.\-c File Reference}
+\label{la__funcs_8c}\index{la\-\_\-funcs.\-c@{la\-\_\-funcs.\-c}}
+}
+
+
+Lienar Algebra functions source file.  
+
+
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}la\-\_\-header.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{la__funcs_8c_a3adcfc4926f7e83a7ab0df36709935cb}{init\-Matrix} (size\-\_\-t rows, size\-\_\-t cols)
+\item 
+struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{la__funcs_8c_aba2709cb4dca22f57d0aa98c6de62164}{mmultiply} (struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{simplex__header_8h_ace63b68fea4070104433c81319d246a6}{A}, struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} B)
+\item 
+struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{la__funcs_8c_a6c3e092b2445211a9ca544e4da90ccf8}{madd} (struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{simplex__header_8h_ace63b68fea4070104433c81319d246a6}{A}, struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} B)
+\item 
+struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{la__funcs_8c_acbf340d949fa4be6dd552e38eaceece3}{msubtract} (struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{simplex__header_8h_ace63b68fea4070104433c81319d246a6}{A}, struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} B)
+\item 
+struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{la__funcs_8c_a61401811bbbe522066985489991570f5}{minverse\-\_\-1x1} (struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{simplex__header_8h_ace63b68fea4070104433c81319d246a6}{A})
+\item 
+struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{la__funcs_8c_a10c538631864f825891da97cc8dc7d5d}{transpose} (struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{simplex__header_8h_ace63b68fea4070104433c81319d246a6}{A})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Lienar Algebra functions source file. \begin{DoxyAuthor}{Author}
+Danylo Malyuta \href{mailto:danylo.malyuta@gmail.com}{\tt danylo.\-malyuta@gmail.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0
+\end{DoxyVersion}
+This file contains necessary linear algebra functions such as matrix initialization, multiplication, addition, subtraction, etc. These functions are used primarily in the \hyperlink{imu__funcs_8c_a0d3dd751864c0bf8eb525ba4d16b02da}{Kalman\-\_\-filter()} function (found in \hyperlink{imu__funcs_8c}{imu\-\_\-funcs.\-c}) 
+
+\subsection{Function Documentation}
+\hypertarget{la__funcs_8c_a3adcfc4926f7e83a7ab0df36709935cb}{\index{la\-\_\-funcs.\-c@{la\-\_\-funcs.\-c}!init\-Matrix@{init\-Matrix}}
+\index{init\-Matrix@{init\-Matrix}!la_funcs.c@{la\-\_\-funcs.\-c}}
+\subsubsection[{init\-Matrix}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf M\-A\-T\-R\-I\-X} init\-Matrix (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{rows, }
+\item[{size\-\_\-t}]{cols}
+\end{DoxyParamCaption}
+)}}\label{la__funcs_8c_a3adcfc4926f7e83a7ab0df36709935cb}
+This function allocates space for a \mbox{[}rows x cols\mbox{]} size matrix. Attention \-: returned matrix A is just pointers that don't point to any default value!
+
+
+\begin{DoxyParams}{Parameters}
+{\em rows} & Number of matrix rows. \\
+\hline
+{\em cols} & Number of matrix columns. \\
+\hline
+\end{DoxyParams}
+\hypertarget{la__funcs_8c_a6c3e092b2445211a9ca544e4da90ccf8}{\index{la\-\_\-funcs.\-c@{la\-\_\-funcs.\-c}!madd@{madd}}
+\index{madd@{madd}!la_funcs.c@{la\-\_\-funcs.\-c}}
+\subsubsection[{madd}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf M\-A\-T\-R\-I\-X} madd (
+\begin{DoxyParamCaption}
+\item[{struct {\bf M\-A\-T\-R\-I\-X}}]{A, }
+\item[{struct {\bf M\-A\-T\-R\-I\-X}}]{B}
+\end{DoxyParamCaption}
+)}}\label{la__funcs_8c_a6c3e092b2445211a9ca544e4da90ccf8}
+This function return C=A+\-B (matrix addition).
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & The first matrix. \\
+\hline
+{\em B} & The second matrix. \\
+\hline
+\end{DoxyParams}
+\hypertarget{la__funcs_8c_a61401811bbbe522066985489991570f5}{\index{la\-\_\-funcs.\-c@{la\-\_\-funcs.\-c}!minverse\-\_\-1x1@{minverse\-\_\-1x1}}
+\index{minverse\-\_\-1x1@{minverse\-\_\-1x1}!la_funcs.c@{la\-\_\-funcs.\-c}}
+\subsubsection[{minverse\-\_\-1x1}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf M\-A\-T\-R\-I\-X} minverse\-\_\-1x1 (
+\begin{DoxyParamCaption}
+\item[{struct {\bf M\-A\-T\-R\-I\-X}}]{A}
+\end{DoxyParamCaption}
+)}}\label{la__funcs_8c_a61401811bbbe522066985489991570f5}
+This function inverses a 1 by 1 matrix -\/ i.\-e. a scalar, but in \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} format (as struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X}) that is usable in a matrix expression, i.\-e. doing (\mbox{[}1x2\mbox{]}$\ast$\mbox{[}2x1\mbox{]})+\mbox{[}1x1\mbox{]}$^\wedge$(-\/1).
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & \mbox{[}1x1\mbox{]} matrix. \\
+\hline
+\end{DoxyParams}
+\hypertarget{la__funcs_8c_aba2709cb4dca22f57d0aa98c6de62164}{\index{la\-\_\-funcs.\-c@{la\-\_\-funcs.\-c}!mmultiply@{mmultiply}}
+\index{mmultiply@{mmultiply}!la_funcs.c@{la\-\_\-funcs.\-c}}
+\subsubsection[{mmultiply}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf M\-A\-T\-R\-I\-X} mmultiply (
+\begin{DoxyParamCaption}
+\item[{struct {\bf M\-A\-T\-R\-I\-X}}]{A, }
+\item[{struct {\bf M\-A\-T\-R\-I\-X}}]{B}
+\end{DoxyParamCaption}
+)}}\label{la__funcs_8c_aba2709cb4dca22f57d0aa98c6de62164}
+This fuction returns C=A$\ast$\-B where C is returned from the function and A,B are previously defined matrices
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & The pre-\/multiplied matrix \\
+\hline
+{\em B} & The post-\/multiplied matrix \\
+\hline
+\end{DoxyParams}
+\hypertarget{la__funcs_8c_acbf340d949fa4be6dd552e38eaceece3}{\index{la\-\_\-funcs.\-c@{la\-\_\-funcs.\-c}!msubtract@{msubtract}}
+\index{msubtract@{msubtract}!la_funcs.c@{la\-\_\-funcs.\-c}}
+\subsubsection[{msubtract}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf M\-A\-T\-R\-I\-X} msubtract (
+\begin{DoxyParamCaption}
+\item[{struct {\bf M\-A\-T\-R\-I\-X}}]{A, }
+\item[{struct {\bf M\-A\-T\-R\-I\-X}}]{B}
+\end{DoxyParamCaption}
+)}}\label{la__funcs_8c_acbf340d949fa4be6dd552e38eaceece3}
+This function returns C=A-\/\-B (matrix subtraction)
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & The first matrix. \\
+\hline
+{\em B} & The second matrix. \\
+\hline
+\end{DoxyParams}
+\hypertarget{la__funcs_8c_a10c538631864f825891da97cc8dc7d5d}{\index{la\-\_\-funcs.\-c@{la\-\_\-funcs.\-c}!transpose@{transpose}}
+\index{transpose@{transpose}!la_funcs.c@{la\-\_\-funcs.\-c}}
+\subsubsection[{transpose}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf M\-A\-T\-R\-I\-X} transpose (
+\begin{DoxyParamCaption}
+\item[{struct {\bf M\-A\-T\-R\-I\-X}}]{A}
+\end{DoxyParamCaption}
+)}}\label{la__funcs_8c_a10c538631864f825891da97cc8dc7d5d}
+This function transposes a matrix, returning B=A' (real transpose of A).
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & A matrix. \\
+\hline
+\end{DoxyParams}

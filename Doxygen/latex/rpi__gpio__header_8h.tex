@@ -1,0 +1,61 @@
+\hypertarget{rpi__gpio__header_8h}{\section{rpi\-\_\-gpio\-\_\-header.\-h File Reference}
+\label{rpi__gpio__header_8h}\index{rpi\-\_\-gpio\-\_\-header.\-h@{rpi\-\_\-gpio\-\_\-header.\-h}}
+}
+
+
+M\-S\-P430 header file.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$sys/mman.\-h$>$}\\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structbcm2835__peripheral}{bcm2835\-\_\-peripheral}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{rpi__gpio__header_8h_a11b27df3f0aad9252ceeeb93e6262a83}{\#define \hyperlink{rpi__gpio__header_8h_a11b27df3f0aad9252ceeeb93e6262a83}{B\-C\-M2708\-\_\-\-P\-E\-R\-I\-\_\-\-B\-A\-S\-E}~0x20000000}\label{rpi__gpio__header_8h_a11b27df3f0aad9252ceeeb93e6262a83}
+
+\begin{DoxyCompactList}\small\item\em Physical address at which the peripheral registers start. \end{DoxyCompactList}\item 
+\hypertarget{rpi__gpio__header_8h_acce3b8a909ed8b957b4e411dfb7cbd91}{\#define \hyperlink{rpi__gpio__header_8h_acce3b8a909ed8b957b4e411dfb7cbd91}{G\-P\-I\-O\-\_\-\-B\-A\-S\-E}~(\hyperlink{rpi__gpio__header_8h_a11b27df3f0aad9252ceeeb93e6262a83}{B\-C\-M2708\-\_\-\-P\-E\-R\-I\-\_\-\-B\-A\-S\-E} + 0x200000)}\label{rpi__gpio__header_8h_acce3b8a909ed8b957b4e411dfb7cbd91}
+
+\begin{DoxyCompactList}\small\item\em Address of the G\-P\-I\-O controller (expresset as an offset with respect to \hyperlink{rpi__gpio__header_8h_a11b27df3f0aad9252ceeeb93e6262a83}{B\-C\-M2708\-\_\-\-P\-E\-R\-I\-\_\-\-B\-A\-S\-E}) \end{DoxyCompactList}\item 
+\hypertarget{rpi__gpio__header_8h_ad51ded0bbd705f02f73fc60c0b721ced}{\#define {\bfseries B\-L\-O\-C\-K\-\_\-\-S\-I\-Z\-E}~(4$\ast$1024)}\label{rpi__gpio__header_8h_ad51ded0bbd705f02f73fc60c0b721ced}
+
+\item 
+\hypertarget{rpi__gpio__header_8h_a03886f219aed83bfc164616c20270990}{\#define \hyperlink{rpi__gpio__header_8h_a03886f219aed83bfc164616c20270990}{I\-N\-P\-\_\-\-G\-P\-I\-O}(g)~$\ast$(gpio.\-addr + ((g)/10)) \&= $\sim$(7$<$$<$(((g)\%10)$\ast$3))}\label{rpi__gpio__header_8h_a03886f219aed83bfc164616c20270990}
+
+\begin{DoxyCompactList}\small\item\em Set pin as input. \end{DoxyCompactList}\item 
+\hypertarget{rpi__gpio__header_8h_a1b3cfde4a8e61549b9056e961d0c636f}{\#define \hyperlink{rpi__gpio__header_8h_a1b3cfde4a8e61549b9056e961d0c636f}{G\-P\-I\-O\-\_\-\-R\-E\-A\-D}(g)~$\ast$(gpio.\-addr + 13) \&= (1$<$$<$(g))}\label{rpi__gpio__header_8h_a1b3cfde4a8e61549b9056e961d0c636f}
+
+\begin{DoxyCompactList}\small\item\em Read an input pin's state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structbcm2835__peripheral}{bcm2835\-\_\-peripheral} \hyperlink{rpi__gpio__header_8h_a9181fa0a34f8c0ed9983a6088fa1de19}{gpio}
+\begin{DoxyCompactList}\small\item\em The G\-P\-I\-O port access variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+M\-S\-P430 header file. \begin{DoxyAuthor}{Author}
+Danylo Malyuta \href{mailto:danylo.malyuta@gmail.com}{\tt danylo.\-malyuta@gmail.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0
+\end{DoxyVersion}
+This is the header to \hyperlink{rpi__gpio__funcs_8c}{rpi\-\_\-gpio\-\_\-funcs.\-c} containing necessary definitions and initializations. This header is a slightly reduced version (to the bare bones that the G\-N\-C program needs) of the header provided by Pieter-\/\-Jan Van de Maele \href{http://www.pieter-jan.com/node/15}{\tt here}. 
+
+\subsection{Variable Documentation}
+\hypertarget{rpi__gpio__header_8h_a9181fa0a34f8c0ed9983a6088fa1de19}{\index{rpi\-\_\-gpio\-\_\-header.\-h@{rpi\-\_\-gpio\-\_\-header.\-h}!gpio@{gpio}}
+\index{gpio@{gpio}!rpi_gpio_header.h@{rpi\-\_\-gpio\-\_\-header.\-h}}
+\subsubsection[{gpio}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf bcm2835\-\_\-peripheral} gpio}}\label{rpi__gpio__header_8h_a9181fa0a34f8c0ed9983a6088fa1de19}
+
+
+The G\-P\-I\-O port access variable. 
+
+The G\-P\-I\-O port access variable. 

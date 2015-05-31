@@ -1,0 +1,106 @@
+\hypertarget{msp430__funcs_8c}{\section{msp430\-\_\-funcs.\-c File Reference}
+\label{msp430__funcs_8c}\index{msp430\-\_\-funcs.\-c@{msp430\-\_\-funcs.\-c}}
+}
+
+
+M\-S\-P430 functions file.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$fcntl.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$sys/termios.\-h$>$}\\*
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$sys/time.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}msp430\-\_\-header.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}master\-\_\-header.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{msp430__funcs_8c_a37c1f83aba04ac0ce28faf5ba3b537a5}{M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-receive} ()
+\item 
+void \hyperlink{msp430__funcs_8c_a33738ffa4af6e11695b247aee563b6f5}{M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write} (char M\-S\-P430\-\_\-\-T\-X\mbox{[}3\mbox{]})
+\item 
+void \hyperlink{msp430__funcs_8c_ae203ca5e5e2220a92f8153f05208664f}{M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write\-\_\-\-P\-W\-M} (unsigned char P\-W\-M\-A, unsigned char P\-W\-M\-B, unsigned char P\-W\-M\-C)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+M\-S\-P430 functions file. \begin{DoxyAuthor}{Author}
+Danylo Malyuta \href{mailto:danylo.malyuta@gmail.com}{\tt danylo.\-malyuta@gmail.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0
+\end{DoxyVersion}
+This file contains functions necessary for communicatin with the M\-S\-P430 salve microcontroller that is used to do hardware P\-W\-M (which the Raspberry Pi is not capable of doing by itself 4 independent times) to drive the 4 R\-C\-S valves. 
+
+\subsection{Function Documentation}
+\hypertarget{msp430__funcs_8c_a37c1f83aba04ac0ce28faf5ba3b537a5}{\index{msp430\-\_\-funcs.\-c@{msp430\-\_\-funcs.\-c}!M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-receive@{M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-receive}}
+\index{M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-receive@{M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-receive}!msp430_funcs.c@{msp430\-\_\-funcs.\-c}}
+\subsubsection[{M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-receive}]{\setlength{\rightskip}{0pt plus 5cm}void M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-receive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{msp430__funcs_8c_a37c1f83aba04ac0ce28faf5ba3b537a5}
+This function receives a single byte (over U\-A\-R\-T) from the M\-S\-P430. When this byte is received (it's a B\-L\-O\-C\-K\-I\-N\-G read), we know that the M\-S\-P430 has successfuly processed the byte we previously sent it and hence is ready to receive another byte.
+
+Note \-: M\-S\-P430 sends the byte '!', but note that we do not actually check that the byte equals '!' (0x21) because\-:
+\begin{DoxyItemize}
+\item The connections has been tested to never fail during numerous pre-\/tests
+\item Even if the byte is not '!' due to signal noise, what can we do? The communication speed is optimised for speed and not robustness with many failsafes -\/ thus we have no way of resending the M\-S\-P430 the previous byte in the case that we do not receive '!'
+\item As in the above point, we optimised the code for speed, so checking for equality to '!' is an additional time spent. 
+\end{DoxyItemize}\hypertarget{msp430__funcs_8c_a33738ffa4af6e11695b247aee563b6f5}{\index{msp430\-\_\-funcs.\-c@{msp430\-\_\-funcs.\-c}!M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write@{M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write}}
+\index{M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write@{M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write}!msp430_funcs.c@{msp430\-\_\-funcs.\-c}}
+\subsubsection[{M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}void M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write (
+\begin{DoxyParamCaption}
+\item[{char}]{M\-S\-P430\-\_\-\-T\-X\mbox{[}3\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{msp430__funcs_8c_a33738ffa4af6e11695b247aee563b6f5}
+This function sends the M\-S\-P430 a 3 character string which is\-:
+\begin{DoxyItemize}
+\item \char`\"{}@s!\char`\"{} \-: arm the M\-S\-P430 for P\-W\-M generation
+\item \char`\"{}@e!\char`\"{} \-: stop P\-W\-M transmission and do a software reset, which puts the M\-S\-P430 into a state where it again waits for \char`\"{}@s!\char`\"{}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em M\-S\-P430\-\_\-\-T\-X} & Contains the 3-\/byte (3-\/character) string to send to the M\-S\-P430 \\
+\hline
+\end{DoxyParams}
+\hypertarget{msp430__funcs_8c_ae203ca5e5e2220a92f8153f05208664f}{\index{msp430\-\_\-funcs.\-c@{msp430\-\_\-funcs.\-c}!M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write\-\_\-\-P\-W\-M@{M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write\-\_\-\-P\-W\-M}}
+\index{M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write\-\_\-\-P\-W\-M@{M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write\-\_\-\-P\-W\-M}!msp430_funcs.c@{msp430\-\_\-funcs.\-c}}
+\subsubsection[{M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write\-\_\-\-P\-W\-M}]{\setlength{\rightskip}{0pt plus 5cm}void M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write\-\_\-\-P\-W\-M (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{P\-W\-M\-A, }
+\item[{unsigned char}]{P\-W\-M\-B, }
+\item[{unsigned char}]{P\-W\-M\-C}
+\end{DoxyParamCaption}
+)}}\label{msp430__funcs_8c_ae203ca5e5e2220a92f8153f05208664f}
+This function sends P\-W\-M values to the M\-S\-P430. Bit field conversion below\-: // T\-O\-D\-O \-: in M\-S\-P430 program, add condition \char`\"{}not reading P\-W\-M\char`\"{} for \# and @ --$>$ avoids that new P\-W\-M sent if P\-W\-M of 35 is sent!
+
+
+\begin{DoxyImage}
+\includegraphics[width=15cm]{MSP430_comm.png}
+\caption{4 byte packet send by Raspberry Pi to M\-S\-P430 to update P\-W\-M values}
+\end{DoxyImage}
+
+
+4 bytes are hence sent to the M\-S\-P430 where\-:
+\begin{DoxyItemize}
+\item P\-W\-M\-\_\-\-T\-X\-\_\-packet\mbox{[}0\mbox{]} (byte 1) \-: send \char`\"{}\#\char`\"{} message which tells M\-S\-P430 that the following 3 bytes are P\-W\-M values
+\item P\-W\-M\-\_\-\-T\-X\-\_\-packet\mbox{[}1\mbox{]} (byte 2) \-: Y\-Y\-Y is a code which says\-:
+\begin{DoxyItemize}
+\item Y\-Y\-Y==001 \-: P\-W\-M1 is 0
+\item Y\-Y\-Y==010 \-: P\-W\-M2 is 0
+\item Y\-Y\-Y==011 \-: P\-W\-M3 is 0
+\item Y\-Y\-Y==100 \-: P\-W\-M4 is 0 This is because at every point in time only 3 valves are assigned thrusts -\/ this is the consequence of the R\-C\-S physics and optimal thrust assignment. It's useless to waste 7 bits sending a 0 value, so we use just 3 to identify which of the P\-W\-M values is 0
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+In the above image you can see how the P\-W\-M\-A, P\-W\-M\-B and P\-W\-M\-C signals are distributed amongst the three bytes P\-W\-M\-\_\-\-T\-X\-\_\-packet\mbox{[}1\mbox{]} to P\-W\-M\-\_\-\-T\-X\-\_\-packet\mbox{[}3\mbox{]}. In the figure, the M\-S\-B is on the left and L\-S\-B on the right for each series of A, B and C. We call them P\-W\-M\-A, P\-W\-M\-B and P\-W\-M\-C because these are, in rising order from 1 to 4 the other 3 non-\/zero P\-W\-Ms. For example\-:
+
+Y\-Y\-Y==001, therefore P\-W\-M1 is 0 so P\-W\-M\-A=P\-W\-M2, P\-W\-M\-B=P\-W\-M2, P\-W\-M\-C=P\-W\-M4 Y\-Y\-Y==011, therefore P\-W\-M3 is 0 so P\-W\-M\-A=P\-W\-M1, P\-W\-M\-B=P\-W\-M2, P\-W\-M\-C=P\-W\-M4
+
+You see that we simply so from P\-W\-M1 to P\-W\-M4, skipping the P\-W\-M that is 0. 

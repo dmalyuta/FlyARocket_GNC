@@ -1,0 +1,62 @@
+/**
+ * @mainpage Project description
+ *
+ * @author Danylo Malyuta <danylo.malyuta@gmail.com>
+ * @version 1.0
+ *
+ * @section Introduction
+ *
+ * This project presents the cumulative effort of an Undergraduate student team to design, build and fly
+ * the first ever recorded attempt to actively stabiilize a model rocket with an (R)eaction (C)ontrol (S)system.
+ * The end goal is to have 3 successful demonstration flights with the RCS control activated that show
+ * the rocket being maintained in the upright vertical orientation during the few seconds of low velocity around
+ * apogee. The testbed vehicle, the (F)light (A)ttitude (L)inearly (C)controlled (4)th iteration (FALCO-4) rocket,
+ * is the own design of the student team and has been made specifically to carry the RCS system and supporting avionics
+ * at a minimum size and cost.
+ *
+ * @section Contributors
+ *
+ * Contributors:
+ * 		- Danylo Malyuta (GNC and avionics)
+ * 		- Gautier Rouaze (RCS mechanical design)
+ * 		- Xavier Collaud (Rocket airframe design)
+ * 		- Nikolay Mullin (Rocket design and systems architecture supervisor)
+ * 		- Mikael Gaspar (Launch systems and ground support)
+ * 		- Raimondo Pictet (CFD analysis)
+ * 		- John Maslov (GPS tracking)
+ *
+ * Funding : eSpace Space Engineering Center EPFL.
+ *
+ * A special thanks goes to the following people and companies for their support:
+ * 		- Jürg Thüring from SpaceTec Rocketry, Tripoli and ARGOS (Advanced Rocket Group of Switzerland) for launch advice
+ * 		- eSpace Space Engineer Center for financial and avionics support
+ * 		- EPFL Swiss Institute of Technology in Lausanne
+ * 		- LMAF laboratory at EPFL for manufacturing facilities
+ * 		- Element AG for nose cone mold creation
+ * 		- Loxam for portable electrical generator lease
+ *
+ * @section License
+ *
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2015 Danylo Malyuta
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ */

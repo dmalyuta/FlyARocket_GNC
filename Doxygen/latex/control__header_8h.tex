@@ -1,0 +1,37 @@
+\hypertarget{control__header_8h}{\section{control\-\_\-header.\-h File Reference}
+\label{control__header_8h}\index{control\-\_\-header.\-h@{control\-\_\-header.\-h}}
+}
+
+
+Control header file.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structControl__loop}{Control\-\_\-loop}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{Indent}{\bf Control loop group}\par
+{\em These structures define fully the control of the rocket -\/ i.\-e. the control gains. }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{control__header_8h_a5f9d64e1376655f5e45ccdcd9693d485}{struct \hyperlink{structControl__loop}{Control\-\_\-loop} \hyperlink{control__header_8h_a5f9d64e1376655f5e45ccdcd9693d485}{Fpitch\-\_\-loop}}\label{control__header_8h_a5f9d64e1376655f5e45ccdcd9693d485}
+
+\begin{DoxyCompactList}\small\item\em Pitch control loop, uses feedback on \hyperlink{imu__header_8h_abbc13db7b16483062094dfad47e30d7f}{theta\-\_\-filt} to tell what pitching corrective force we need. \end{DoxyCompactList}\item 
+\hypertarget{control__header_8h_ad89b391fe05f2eb23be1db12931f221d}{struct \hyperlink{structControl__loop}{Control\-\_\-loop} \hyperlink{control__header_8h_ad89b391fe05f2eb23be1db12931f221d}{Fyaw\-\_\-loop}}\label{control__header_8h_ad89b391fe05f2eb23be1db12931f221d}
+
+\begin{DoxyCompactList}\small\item\em Yaw control loop, uses feedback on \hyperlink{imu__header_8h_a667979b6fd335e2c4dc4e796a3ed56be}{psi\-\_\-filt} to tell what yawing corrective force we need. \end{DoxyCompactList}\item 
+\hypertarget{control__header_8h_a346020f5a56f6d206c59ae0ec9775147}{struct \hyperlink{structControl__loop}{Control\-\_\-loop} \hyperlink{control__header_8h_a346020f5a56f6d206c59ae0ec9775147}{Mroll\-\_\-loop}}\label{control__header_8h_a346020f5a56f6d206c59ae0ec9775147}
+
+\begin{DoxyCompactList}\small\item\em Roll control loop, uses feedback on \hyperlink{imu__header_8h_af987fceaf6a55676ae7d2b2334dfae21}{phi\-\_\-dot\-\_\-filt} to tell what corrective rolling moment we need. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Control header file. \begin{DoxyAuthor}{Author}
+Danylo Malyuta \href{mailto:danylo.malyuta@gmail.com}{\tt danylo.\-malyuta@gmail.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0
+\end{DoxyVersion}
+This is the header to \hyperlink{control__funcs_8c}{control\-\_\-funcs.\-c} containing necessary definitions and initializations. 

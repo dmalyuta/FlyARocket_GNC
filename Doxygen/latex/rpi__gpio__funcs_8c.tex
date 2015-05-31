@@ -1,0 +1,57 @@
+\hypertarget{rpi__gpio__funcs_8c}{\section{rpi\-\_\-gpio\-\_\-funcs.\-c File Reference}
+\label{rpi__gpio__funcs_8c}\index{rpi\-\_\-gpio\-\_\-funcs.\-c@{rpi\-\_\-gpio\-\_\-funcs.\-c}}
+}
+
+
+G\-P\-I\-O functions file.  
+
+
+{\ttfamily \#include $<$fcntl.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}rpi\-\_\-gpio\-\_\-header.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{rpi__gpio__funcs_8c_ad3bdaca79a25f350a4b4ffb8304520d0}{map\-\_\-peripheral} (struct \hyperlink{structbcm2835__peripheral}{bcm2835\-\_\-peripheral} $\ast$p)
+\item 
+void \hyperlink{rpi__gpio__funcs_8c_a7296d60e6783b497a756672bee8f2b73}{unmap\-\_\-peripheral} (struct \hyperlink{structbcm2835__peripheral}{bcm2835\-\_\-peripheral} $\ast$p)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+G\-P\-I\-O functions file. \begin{DoxyAuthor}{Author}
+Danylo Malyuta \href{mailto:danylo.malyuta@gmail.com}{\tt danylo.\-malyuta@gmail.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0
+\end{DoxyVersion}
+This file contains G\-P\-I\-O low-\/level access functions. This file is a slightly modified version of the code provided by Pieter-\/\-Jan Van de Maele \href{http://www.pieter-jan.com/node/15}{\tt here}. 
+
+\subsection{Function Documentation}
+\hypertarget{rpi__gpio__funcs_8c_ad3bdaca79a25f350a4b4ffb8304520d0}{\index{rpi\-\_\-gpio\-\_\-funcs.\-c@{rpi\-\_\-gpio\-\_\-funcs.\-c}!map\-\_\-peripheral@{map\-\_\-peripheral}}
+\index{map\-\_\-peripheral@{map\-\_\-peripheral}!rpi_gpio_funcs.c@{rpi\-\_\-gpio\-\_\-funcs.\-c}}
+\subsubsection[{map\-\_\-peripheral}]{\setlength{\rightskip}{0pt plus 5cm}int map\-\_\-peripheral (
+\begin{DoxyParamCaption}
+\item[{struct {\bf bcm2835\-\_\-peripheral} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}}\label{rpi__gpio__funcs_8c_ad3bdaca79a25f350a4b4ffb8304520d0}
+This function maps a G\-P\-I\-O port for access in the software. Exposes the physical address defined in the passed structure using mmap on /dev/mem.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Pointer to the G\-P\-I\-O port structure. \\
+\hline
+\end{DoxyParams}
+\hypertarget{rpi__gpio__funcs_8c_a7296d60e6783b497a756672bee8f2b73}{\index{rpi\-\_\-gpio\-\_\-funcs.\-c@{rpi\-\_\-gpio\-\_\-funcs.\-c}!unmap\-\_\-peripheral@{unmap\-\_\-peripheral}}
+\index{unmap\-\_\-peripheral@{unmap\-\_\-peripheral}!rpi_gpio_funcs.c@{rpi\-\_\-gpio\-\_\-funcs.\-c}}
+\subsubsection[{unmap\-\_\-peripheral}]{\setlength{\rightskip}{0pt plus 5cm}void unmap\-\_\-peripheral (
+\begin{DoxyParamCaption}
+\item[{struct {\bf bcm2835\-\_\-peripheral} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}}\label{rpi__gpio__funcs_8c_a7296d60e6783b497a756672bee8f2b73}
+This function unmaps a G\-P\-I\-O port.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Pointer to the G\-P\-I\-O port structure. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,167 @@
+\hypertarget{simplex__funcs_8c}{\section{simplex\-\_\-funcs.\-c File Reference}
+\label{simplex__funcs_8c}\index{simplex\-\_\-funcs.\-c@{simplex\-\_\-funcs.\-c}}
+}
+
+
+Simplex functions file.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}simplex\-\_\-header.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{simplex__funcs_8c_a32ea4090b3d243790c8d473697de44bd}{simplx} (\hyperlink{simplex__header_8h_a42fde6adf063d0e30ad7a238b2d6e7da}{M\-A\-T} a, int m, int n, int m1, int m2, int m3, int $\ast$icase, int $\ast$izrov, int $\ast$iposv)
+\item 
+void \hyperlink{simplex__funcs_8c_abdfdf17d70ce804cbe516d53e96d46c1}{simp1} (\hyperlink{simplex__header_8h_a42fde6adf063d0e30ad7a238b2d6e7da}{M\-A\-T} a, int mm, int $\ast$ll, int nll, int iabf, int $\ast$kp, \hyperlink{simplex__header_8h_a4b654506f18b8bfd61ad2a29a7e38c25}{R\-E\-A\-L} $\ast$bmax)
+\item 
+void \hyperlink{simplex__funcs_8c_abd093efccc7043e24678e422adf3164a}{simp2} (\hyperlink{simplex__header_8h_a42fde6adf063d0e30ad7a238b2d6e7da}{M\-A\-T} a, int m, int n, int $\ast$l2, int nl2, int $\ast$ip, int kp, \hyperlink{simplex__header_8h_a4b654506f18b8bfd61ad2a29a7e38c25}{R\-E\-A\-L} $\ast$q1)
+\item 
+void \hyperlink{simplex__funcs_8c_a6313a32f2829cfab13fa7bd1fd237c44}{simp3} (\hyperlink{simplex__header_8h_a42fde6adf063d0e30ad7a238b2d6e7da}{M\-A\-T} a, int i1, int k1, int ip, int kp)
+\item 
+void \hyperlink{simplex__funcs_8c_a01b1cf65d8b2a0515866249c8c26ee94}{get\-\_\-simplex\-\_\-solution} (int I\-C\-A\-S\-E, int $\ast$I\-P\-O\-S\-V, \hyperlink{simplex__header_8h_a42fde6adf063d0e30ad7a238b2d6e7da}{M\-A\-T} \hyperlink{simplex__header_8h_ace63b68fea4070104433c81319d246a6}{A}, int \hyperlink{simplex__header_8h_a5e78dbd5fd0fc01ba7b98dd15e27221e}{M}, int \hyperlink{simplex__header_8h_a7722c8ecbb62d99aee7ce68b1752f337}{N}, double $\ast$\hyperlink{master__header_8h_af404f6d9a332838b9707056c27a4f21a}{R1}, double $\ast$\hyperlink{master__header_8h_a6e4ea5fe1993f05924fa4d457def2aa3}{R2}, double $\ast$\hyperlink{master__header_8h_a6752016f7a02ff6ff1b749623be15dbb}{R3}, double $\ast$\hyperlink{master__header_8h_af6474ec4ce3b123a435f2b0f453d0aba}{R4})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simplex functions file. \begin{DoxyAuthor}{Author}
+Danylo Malyuta \href{mailto:danylo.malyuta@gmail.com}{\tt danylo.\-malyuta@gmail.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0
+\end{DoxyVersion}
+This file contains Simplex linear programming (linear optimization) functions that are used in optimally allocating thrusts between the 4 valves given Fpitch, Fyaw and Mroll that we desire to exert on the rocket. This code is taken from the kindly provided code by Jean-\/\-Pierre Moreau \href{http://jean-pierre.moreau.pagesperso-orange.fr/Cplus/tsimplex_cpp.txt}{\tt here}. where only \hyperlink{simplex__funcs_8c_a01b1cf65d8b2a0515866249c8c26ee94}{get\-\_\-simplex\-\_\-solution()} function is new (i.\-e. not found at the above site) and is used to conveniently extract the optimal solution directly into the valve thrusts R1, R2, R3, R4 that are defined in the G\-N\-C program (see \hyperlink{master__header_8h}{master\-\_\-header.\-h}).
+
+License from the original .cpp file\-: \begin{DoxyVerb}***************************************************************
+*          LINEAR PROGRAMMING: THE SIMPLEX METHOD             *
+*------------------------------------------------------------ *
+* ------------------------------------------------------------*
+* Reference: "Numerical Recipes By W.H. Press, B. P. Flannery,*
+*             S.A. Teukolsky and W.T. Vetterling, Cambridge   *
+*             University Press, 1986" [BIBLI 08].             *
+*                                                             *
+*                       C++ Release 1.0 By J-P Moreau, Paris  *
+*                                 (www.jpmoreau.fr)           *
+***************************************************************\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\hypertarget{simplex__funcs_8c_a01b1cf65d8b2a0515866249c8c26ee94}{\index{simplex\-\_\-funcs.\-c@{simplex\-\_\-funcs.\-c}!get\-\_\-simplex\-\_\-solution@{get\-\_\-simplex\-\_\-solution}}
+\index{get\-\_\-simplex\-\_\-solution@{get\-\_\-simplex\-\_\-solution}!simplex_funcs.c@{simplex\-\_\-funcs.\-c}}
+\subsubsection[{get\-\_\-simplex\-\_\-solution}]{\setlength{\rightskip}{0pt plus 5cm}void get\-\_\-simplex\-\_\-solution (
+\begin{DoxyParamCaption}
+\item[{int}]{I\-C\-A\-S\-E, }
+\item[{int $\ast$}]{I\-P\-O\-S\-V, }
+\item[{{\bf M\-A\-T}}]{A, }
+\item[{int}]{M, }
+\item[{int}]{N, }
+\item[{double $\ast$}]{R1, }
+\item[{double $\ast$}]{R2, }
+\item[{double $\ast$}]{R3, }
+\item[{double $\ast$}]{R4}
+\end{DoxyParamCaption}
+)}}\label{simplex__funcs_8c_a01b1cf65d8b2a0515866249c8c26ee94}
+This function writes the result of the Simplex optimization into R1, R2, R3 and R4 (the valve thrusts).
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & Simplex table. \\
+\hline
+{\em M} & Total number of contraints. \\
+\hline
+{\em N} & Total number of variables in cost function. \\
+\hline
+{\em R1} & Pointer to the memory holding the R1 valve thrust. \\
+\hline
+{\em R2} & Pointer to the memory holding the R2 valve thrust. \\
+\hline
+{\em R3} & Pointer to the memory holding the R3 valve thrust. \\
+\hline
+{\em R4} & Pointer to the memory holding the R4 valve thrust. \\
+\hline
+\end{DoxyParams}
+\hypertarget{simplex__funcs_8c_abdfdf17d70ce804cbe516d53e96d46c1}{\index{simplex\-\_\-funcs.\-c@{simplex\-\_\-funcs.\-c}!simp1@{simp1}}
+\index{simp1@{simp1}!simplex_funcs.c@{simplex\-\_\-funcs.\-c}}
+\subsubsection[{simp1}]{\setlength{\rightskip}{0pt plus 5cm}void simp1 (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-A\-T}}]{a, }
+\item[{int}]{mm, }
+\item[{int $\ast$}]{ll, }
+\item[{int}]{nll, }
+\item[{int}]{iabf, }
+\item[{int $\ast$}]{kp, }
+\item[{{\bf R\-E\-A\-L} $\ast$}]{bmax}
+\end{DoxyParamCaption}
+)}}\label{simplex__funcs_8c_abdfdf17d70ce804cbe516d53e96d46c1}
+Determines the maximum of those elements whose index is contained in the supplied list ll, either with or without taking the absolute value, as flagged by iabf.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Simplex table. \\
+\hline
+\end{DoxyParams}
+\hypertarget{simplex__funcs_8c_abd093efccc7043e24678e422adf3164a}{\index{simplex\-\_\-funcs.\-c@{simplex\-\_\-funcs.\-c}!simp2@{simp2}}
+\index{simp2@{simp2}!simplex_funcs.c@{simplex\-\_\-funcs.\-c}}
+\subsubsection[{simp2}]{\setlength{\rightskip}{0pt plus 5cm}void simp2 (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-A\-T}}]{a, }
+\item[{int}]{m, }
+\item[{int}]{n, }
+\item[{int $\ast$}]{l2, }
+\item[{int}]{nl2, }
+\item[{int $\ast$}]{ip, }
+\item[{int}]{kp, }
+\item[{{\bf R\-E\-A\-L} $\ast$}]{q1}
+\end{DoxyParamCaption}
+)}}\label{simplex__funcs_8c_abd093efccc7043e24678e422adf3164a}
+Locate a pivot element, taking degeneracy into account.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Simplex table. \\
+\hline
+\end{DoxyParams}
+\hypertarget{simplex__funcs_8c_a6313a32f2829cfab13fa7bd1fd237c44}{\index{simplex\-\_\-funcs.\-c@{simplex\-\_\-funcs.\-c}!simp3@{simp3}}
+\index{simp3@{simp3}!simplex_funcs.c@{simplex\-\_\-funcs.\-c}}
+\subsubsection[{simp3}]{\setlength{\rightskip}{0pt plus 5cm}void simp3 (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-A\-T}}]{a, }
+\item[{int}]{i1, }
+\item[{int}]{k1, }
+\item[{int}]{ip, }
+\item[{int}]{kp}
+\end{DoxyParamCaption}
+)}}\label{simplex__funcs_8c_a6313a32f2829cfab13fa7bd1fd237c44}
+Matrix operations to exchange a left-\/hand and right-\/hand variable (see text). \hypertarget{simplex__funcs_8c_a32ea4090b3d243790c8d473697de44bd}{\index{simplex\-\_\-funcs.\-c@{simplex\-\_\-funcs.\-c}!simplx@{simplx}}
+\index{simplx@{simplx}!simplex_funcs.c@{simplex\-\_\-funcs.\-c}}
+\subsubsection[{simplx}]{\setlength{\rightskip}{0pt plus 5cm}void simplx (
+\begin{DoxyParamCaption}
+\item[{{\bf M\-A\-T}}]{a, }
+\item[{int}]{m, }
+\item[{int}]{n, }
+\item[{int}]{m1, }
+\item[{int}]{m2, }
+\item[{int}]{m3, }
+\item[{int $\ast$}]{icase, }
+\item[{int $\ast$}]{izrov, }
+\item[{int $\ast$}]{iposv}
+\end{DoxyParamCaption}
+)}}\label{simplex__funcs_8c_a32ea4090b3d243790c8d473697de44bd}
+U\-S\-E\-S simp1,simp2,simp3 Simplex method for linear programming. Input parameters a, m, n, mp, np, m1, m2, and m3, and output parameters a, icase, izrov, and iposv are described above (see reference). Parameters\-: M\-M\-A\-X is the maximum number of constraints expected; N\-M\-A\-X is the maximum number of variables expected; E\-P\-S is the absolute precision, which should be adjusted to the scale of your variables.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Simplex table. \\
+\hline
+{\em m} & Total number of constraints (m=m1+m2+m3). \\
+\hline
+{\em n} & Number of variables in cost function. \\
+\hline
+{\em m1} & Number of ($<$=) type inequality constraints. \\
+\hline
+{\em m2} & Number of ($>$=) type inequality constraints. \\
+\hline
+{\em m3} & Number of (=) type constraints. \\
+\hline
+\end{DoxyParams}

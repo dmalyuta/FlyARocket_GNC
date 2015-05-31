@@ -1,0 +1,351 @@
+\hypertarget{imu__funcs_8c}{\section{imu\-\_\-funcs.\-c File Reference}
+\label{imu__funcs_8c}\index{imu\-\_\-funcs.\-c@{imu\-\_\-funcs.\-c}}
+}
+
+
+I\-M\-U functions file (contains I\-M\-U comms, logs and filters).  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$fcntl.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$errno.\-h$>$}\\*
+{\ttfamily \#include $<$sys/termios.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$sys/ioctl.\-h$>$}\\*
+{\ttfamily \#include $<$sys/time.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include $<$pthread.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}imu\-\_\-header.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}master\-\_\-header.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}la\-\_\-header.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{imu__funcs_8c_a628a7b5bc4a309137ce51e9e929bfabf}{open\-\_\-serial\-\_\-port} (int $\ast$fd, char $\ast$directory)
+\item 
+void \hyperlink{imu__funcs_8c_ac9d43b6aaa5a79aa447df61c4fec5ffe}{close\-\_\-port} (int fd)
+\item 
+void \hyperlink{imu__funcs_8c_af0de4ccb0965284af856630060f952ff}{get\-\_\-old\-\_\-attr} (int fd, struct termios $\ast$old\-\_\-options)
+\item 
+void \hyperlink{imu__funcs_8c_a7fa0bd6b1a0206326d09eb5e8d21eb5e}{reset\-\_\-old\-\_\-attr\-\_\-port} (int fd, struct termios $\ast$old\-\_\-options)
+\item 
+void \hyperlink{imu__funcs_8c_ab43fd2629dea282222c48fc720df4517}{set\-\_\-new\-\_\-attr} (int fd, struct termios $\ast$old\-\_\-options, struct termios $\ast$new\-\_\-options)
+\item 
+void \hyperlink{imu__funcs_8c_acff6f9de3e5075f5b3e6c2806651e446}{set\-\_\-to\-\_\-blocking} (int fd)
+\item 
+float \hyperlink{imu__funcs_8c_a284639531ae985a2c56847c4b4d3c941}{min\-\_\-of\-\_\-set} (float now, float before)
+\item 
+void \hyperlink{imu__funcs_8c_a0f46701132540ff5241c276a19f7b38d}{Find\-\_\-raw\-\_\-\-Euler\-\_\-angular\-\_\-velocities} ()
+\item 
+void \hyperlink{imu__funcs_8c_a20a4f75f9d2fefab9dbc656f77eeda06}{Treat\-\_\-reply} (char $\ast$comparison\-\_\-string)
+\item 
+void \hyperlink{imu__funcs_8c_a00994ba3854703e3e5162202f6d88971}{construct\-\_\-zeroed\-\_\-\-D\-C\-M} ()
+\item 
+float \hyperlink{imu__funcs_8c_a530aca183f3048a15b2018cef637d5f5}{T\-O\-\_\-\-D\-E\-G} (float angle)
+\item 
+void \hyperlink{imu__funcs_8c_af774e625f637fc19cc15a923e77cfbe2}{zero\-\_\-\-Euler\-\_\-angles} ()
+\item 
+void \hyperlink{imu__funcs_8c_ad49c526544bbd5b5b163b394bec8a65e}{Calibrate\-\_\-\-I\-M\-U} ()
+\item 
+void \hyperlink{imu__funcs_8c_a0d3dd751864c0bf8eb525ba4d16b02da}{Kalman\-\_\-filter} (struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} $\ast$x, struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} $\ast$P, float z, struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} Q, struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} R, float \hyperlink{imu__header_8h_a778e38aa889751afffa2dea6b803e67a}{dt}, struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{imu__header_8h_a1a2c9eddf9882d1a6a6e51804765d276}{E\-Y\-E2})
+\item 
+void $\ast$ \hyperlink{imu__funcs_8c_adacd103cea6c5f68c6b1ea416394c9f4}{read\-\_\-\-I\-M\-U\-\_\-parallel} (void $\ast$args)
+\item 
+void $\ast$ \hyperlink{imu__funcs_8c_a819d365851c5396da5453c27c37af71b}{get\-\_\-filtered\-\_\-attitude\-\_\-parallel} (void $\ast$args)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{imu__funcs_8c_a6c481df42c58e76b93d7b2dfb1f9c85f}{unsigned char \hyperlink{imu__funcs_8c_a6c481df42c58e76b93d7b2dfb1f9c85f}{I\-M\-U\-\_\-\-S\-Y\-N\-C\-H\-E\-D} =0}\label{imu__funcs_8c_a6c481df42c58e76b93d7b2dfb1f9c85f}
+
+\begin{DoxyCompactList}\small\item\em If =1, then the I\-M\-U and Raspberry Pi U\-A\-R\-T communication has been synced, =0 otherwise. \end{DoxyCompactList}\item 
+\hypertarget{imu__funcs_8c_a26f3dd4d2fa4736feb9aac7f5c68aa9a}{unsigned char \hyperlink{imu__funcs_8c_a26f3dd4d2fa4736feb9aac7f5c68aa9a}{I\-M\-U\-\_\-\-T\-X} \mbox{[}2\mbox{]} =\char`\"{}\#f\char`\"{}}\label{imu__funcs_8c_a26f3dd4d2fa4736feb9aac7f5c68aa9a}
+
+\begin{DoxyCompactList}\small\item\em Buffer holding transmit message to I\-M\-U (call to send Euler angles N\-O\-W) \end{DoxyCompactList}\item 
+\hypertarget{imu__funcs_8c_a3aae9efa0336fe13c6269a2f5d7902dd}{int \hyperlink{imu__funcs_8c_a3aae9efa0336fe13c6269a2f5d7902dd}{num\-\_\-av\-\_\-vars} =0}\label{imu__funcs_8c_a3aae9efa0336fe13c6269a2f5d7902dd}
+
+\begin{DoxyCompactList}\small\item\em How many angles have we collected to average? \end{DoxyCompactList}\item 
+\hypertarget{imu__funcs_8c_a778e38aa889751afffa2dea6b803e67a}{float \hyperlink{imu__funcs_8c_a778e38aa889751afffa2dea6b803e67a}{dt}}\label{imu__funcs_8c_a778e38aa889751afffa2dea6b803e67a}
+
+\begin{DoxyCompactList}\small\item\em The timestep for derivatives (time passed in \mbox{[}s\mbox{]} between current and last iteration) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}{\bf Average Euler angles group}\par
+{\em Average Euler angle values obtained during calibration (zeroing) period }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{imu__funcs_8c_a06b5bf03d3d0ceacfc3bc12979344f27}{float \hyperlink{imu__funcs_8c_a06b5bf03d3d0ceacfc3bc12979344f27}{psi\-\_\-av} =0}\label{imu__funcs_8c_a06b5bf03d3d0ceacfc3bc12979344f27}
+
+\begin{DoxyCompactList}\small\item\em Average value of psi (yaw) during calibration period. \end{DoxyCompactList}\item 
+\hypertarget{imu__funcs_8c_aa0743fc7960260ea5ff67757b31cf391}{float \hyperlink{imu__funcs_8c_aa0743fc7960260ea5ff67757b31cf391}{theta\-\_\-av} =0}\label{imu__funcs_8c_aa0743fc7960260ea5ff67757b31cf391}
+
+\begin{DoxyCompactList}\small\item\em Average value of theta (pitch) during calibration period. \end{DoxyCompactList}\item 
+\hypertarget{imu__funcs_8c_ab5874846896eb41a62940225ad3de4e4}{float \hyperlink{imu__funcs_8c_ab5874846896eb41a62940225ad3de4e4}{phi\-\_\-av} =0}\label{imu__funcs_8c_ab5874846896eb41a62940225ad3de4e4}
+
+\begin{DoxyCompactList}\small\item\em Average value of phi (roll) during calibration period. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Last read Euler angles group}\par
+{\em These are the last set of Euler angles that were read in from I\-M\-U during the previous iteration (1 time step ago). }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{imu__funcs_8c_a5c765a5f789b1c5e270d700ab2c5e547}{float \hyperlink{imu__funcs_8c_a5c765a5f789b1c5e270d700ab2c5e547}{psi\-\_\-save\-\_\-last} =-\/9999.\-0}\label{imu__funcs_8c_a5c765a5f789b1c5e270d700ab2c5e547}
+
+\begin{DoxyCompactList}\small\item\em Last read value of psi. \end{DoxyCompactList}\item 
+\hypertarget{imu__funcs_8c_a388244ea471e5baf0e7250cdb4fea585}{float \hyperlink{imu__funcs_8c_a388244ea471e5baf0e7250cdb4fea585}{theta\-\_\-save\-\_\-last} =-\/9999.\-0}\label{imu__funcs_8c_a388244ea471e5baf0e7250cdb4fea585}
+
+\begin{DoxyCompactList}\small\item\em Last read value of theta. \end{DoxyCompactList}\item 
+\hypertarget{imu__funcs_8c_adcc2ff4b007d895c1393650a38dab549}{float \hyperlink{imu__funcs_8c_adcc2ff4b007d895c1393650a38dab549}{phi\-\_\-save\-\_\-last} =-\/9999.\-0}\label{imu__funcs_8c_adcc2ff4b007d895c1393650a38dab549}
+
+\begin{DoxyCompactList}\small\item\em Last read value of phi. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+I\-M\-U functions file (contains I\-M\-U comms, logs and filters). \begin{DoxyAuthor}{Author}
+Danylo Malyuta \href{mailto:danylo.malyuta@gmail.com}{\tt danylo.\-malyuta@gmail.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0
+\end{DoxyVersion}
+This file contains all necessary functions regarding the communication with the I\-M\-U and the processing (filtering) of received data. 
+
+\subsection{Function Documentation}
+\hypertarget{imu__funcs_8c_ad49c526544bbd5b5b163b394bec8a65e}{\index{imu\-\_\-funcs.\-c@{imu\-\_\-funcs.\-c}!Calibrate\-\_\-\-I\-M\-U@{Calibrate\-\_\-\-I\-M\-U}}
+\index{Calibrate\-\_\-\-I\-M\-U@{Calibrate\-\_\-\-I\-M\-U}!imu_funcs.c@{imu\-\_\-funcs.\-c}}
+\subsubsection[{Calibrate\-\_\-\-I\-M\-U}]{\setlength{\rightskip}{0pt plus 5cm}void Calibrate\-\_\-\-I\-M\-U (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{imu__funcs_8c_ad49c526544bbd5b5b163b394bec8a65e}
+Zero the I\-M\-U data, which means spend some time to get an average reading for psi, theta and phi and then use that average reading to construct a matrix that would zero all three angles for the rocket orientation at which the rocket is in when this function executes (i.\-e. rocket {\itshape s\-\_\-t\-\_\-a\-\_\-t\-\_\-i\-\_\-o\-\_\-n\-\_\-n\-\_\-a\-\_\-r\-\_\-y} on launch pad). \hypertarget{imu__funcs_8c_ac9d43b6aaa5a79aa447df61c4fec5ffe}{\index{imu\-\_\-funcs.\-c@{imu\-\_\-funcs.\-c}!close\-\_\-port@{close\-\_\-port}}
+\index{close\-\_\-port@{close\-\_\-port}!imu_funcs.c@{imu\-\_\-funcs.\-c}}
+\subsubsection[{close\-\_\-port}]{\setlength{\rightskip}{0pt plus 5cm}void close\-\_\-port (
+\begin{DoxyParamCaption}
+\item[{int}]{fd}
+\end{DoxyParamCaption}
+)}}\label{imu__funcs_8c_ac9d43b6aaa5a79aa447df61c4fec5ffe}
+This function closes the serial connection identified by handle fd.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & The file handle. \\
+\hline
+\end{DoxyParams}
+\hypertarget{imu__funcs_8c_a00994ba3854703e3e5162202f6d88971}{\index{imu\-\_\-funcs.\-c@{imu\-\_\-funcs.\-c}!construct\-\_\-zeroed\-\_\-\-D\-C\-M@{construct\-\_\-zeroed\-\_\-\-D\-C\-M}}
+\index{construct\-\_\-zeroed\-\_\-\-D\-C\-M@{construct\-\_\-zeroed\-\_\-\-D\-C\-M}!imu_funcs.c@{imu\-\_\-funcs.\-c}}
+\subsubsection[{construct\-\_\-zeroed\-\_\-\-D\-C\-M}]{\setlength{\rightskip}{0pt plus 5cm}void construct\-\_\-zeroed\-\_\-\-D\-C\-M (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{imu__funcs_8c_a00994ba3854703e3e5162202f6d88971}
+Construct a D\-C\-M (Direct Cosine Matrix), i.\-e. a rotation from body (non-\/inertial)==$>$world (inertial) coordinates based on currently stored yaw,pitch and roll matrices.
+
+Meaning of \char`\"{}zeroed\char`\"{} \-: we pre-\/multiply by R\-\_\-\-M\-A\-T\-R\-I\-X to get the D\-C\-M which is =\mbox{[}I\mbox{]} $<$==$>$ the I\-M\-U is in the orientation at which it was calibrated (\char`\"{}zeroed\char`\"{}). \hypertarget{imu__funcs_8c_a0f46701132540ff5241c276a19f7b38d}{\index{imu\-\_\-funcs.\-c@{imu\-\_\-funcs.\-c}!Find\-\_\-raw\-\_\-\-Euler\-\_\-angular\-\_\-velocities@{Find\-\_\-raw\-\_\-\-Euler\-\_\-angular\-\_\-velocities}}
+\index{Find\-\_\-raw\-\_\-\-Euler\-\_\-angular\-\_\-velocities@{Find\-\_\-raw\-\_\-\-Euler\-\_\-angular\-\_\-velocities}!imu_funcs.c@{imu\-\_\-funcs.\-c}}
+\subsubsection[{Find\-\_\-raw\-\_\-\-Euler\-\_\-angular\-\_\-velocities}]{\setlength{\rightskip}{0pt plus 5cm}void Find\-\_\-raw\-\_\-\-Euler\-\_\-angular\-\_\-velocities (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{imu__funcs_8c_a0f46701132540ff5241c276a19f7b38d}
+Take a numerical derivative of the euler angles to get angular rates \mbox{[}(rad)/s\mbox{]}. \hypertarget{imu__funcs_8c_a819d365851c5396da5453c27c37af71b}{\index{imu\-\_\-funcs.\-c@{imu\-\_\-funcs.\-c}!get\-\_\-filtered\-\_\-attitude\-\_\-parallel@{get\-\_\-filtered\-\_\-attitude\-\_\-parallel}}
+\index{get\-\_\-filtered\-\_\-attitude\-\_\-parallel@{get\-\_\-filtered\-\_\-attitude\-\_\-parallel}!imu_funcs.c@{imu\-\_\-funcs.\-c}}
+\subsubsection[{get\-\_\-filtered\-\_\-attitude\-\_\-parallel}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ get\-\_\-filtered\-\_\-attitude\-\_\-parallel (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{args}
+\end{DoxyParamCaption}
+)}}\label{imu__funcs_8c_a819d365851c5396da5453c27c37af71b}
+This (p)thread does the sole job of filtering received data from the I\-M\-U. It is cadenced at the 1/\-I\-M\-U\-\_\-\-\_\-\-R\-E\-A\-D\-\_\-\-T\-I\-M\-E\-S\-T\-E\-P \mbox{[}M\-Hz\mbox{]} frequency and so, each time that an interation is done, it collects the most recently available data from the I\-M\-U (stored in psi,theta,phi,accel\-X, accel\-Y and accel\-Z variables) and processes/filters it, then saves it to a log file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & A pointer to the input arguments (we have none for this thread) \\
+\hline
+\end{DoxyParams}
+\hypertarget{imu__funcs_8c_af0de4ccb0965284af856630060f952ff}{\index{imu\-\_\-funcs.\-c@{imu\-\_\-funcs.\-c}!get\-\_\-old\-\_\-attr@{get\-\_\-old\-\_\-attr}}
+\index{get\-\_\-old\-\_\-attr@{get\-\_\-old\-\_\-attr}!imu_funcs.c@{imu\-\_\-funcs.\-c}}
+\subsubsection[{get\-\_\-old\-\_\-attr}]{\setlength{\rightskip}{0pt plus 5cm}void get\-\_\-old\-\_\-attr (
+\begin{DoxyParamCaption}
+\item[{int}]{fd, }
+\item[{struct termios $\ast$}]{old\-\_\-options}
+\end{DoxyParamCaption}
+)}}\label{imu__funcs_8c_af0de4ccb0965284af856630060f952ff}
+This function saves the current serial connection attributes old\-\_\-attributes of the connection identified by handle fd.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & The file handle. \\
+\hline
+{\em old\-\_\-options} & the old U\-A\-R\-T connection attributes. \\
+\hline
+\end{DoxyParams}
+\hypertarget{imu__funcs_8c_a0d3dd751864c0bf8eb525ba4d16b02da}{\index{imu\-\_\-funcs.\-c@{imu\-\_\-funcs.\-c}!Kalman\-\_\-filter@{Kalman\-\_\-filter}}
+\index{Kalman\-\_\-filter@{Kalman\-\_\-filter}!imu_funcs.c@{imu\-\_\-funcs.\-c}}
+\subsubsection[{Kalman\-\_\-filter}]{\setlength{\rightskip}{0pt plus 5cm}void Kalman\-\_\-filter (
+\begin{DoxyParamCaption}
+\item[{struct {\bf M\-A\-T\-R\-I\-X} $\ast$}]{x, }
+\item[{struct {\bf M\-A\-T\-R\-I\-X} $\ast$}]{P, }
+\item[{float}]{z, }
+\item[{struct {\bf M\-A\-T\-R\-I\-X}}]{Q, }
+\item[{struct {\bf M\-A\-T\-R\-I\-X}}]{R, }
+\item[{float}]{dt, }
+\item[{struct {\bf M\-A\-T\-R\-I\-X}}]{E\-Y\-E2}
+\end{DoxyParamCaption}
+)}}\label{imu__funcs_8c_a0d3dd751864c0bf8eb525ba4d16b02da}
+This function applies a real-\/time Kalman filter on the signal z. Consequently, this function is called each time a new value of z is read.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Predicted a priori and then updated a posteriori state estimate (it's the matrix version of the filtered value!). \\
+\hline
+{\em P} & Predicted a priori and then updated a posteriori estimate covariance. \\
+\hline
+{\em z} & The input, i.\-e. the noisy signal. \\
+\hline
+{\em Q} & Covariance matrix of process noise (i.\-e. how much noise is there in the actual physics of the plant system?). \\
+\hline
+{\em R} & Covariance matrix of observation (measurement) noise (i.\-e. how much noise is there is our sensors?). \\
+\hline
+{\em dt} & The time step. \\
+\hline
+{\em E\-Y\-E2} & A \mbox{[}2x2\mbox{]} identity matrix. \\
+\hline
+\end{DoxyParams}
+\hypertarget{imu__funcs_8c_a284639531ae985a2c56847c4b4d3c941}{\index{imu\-\_\-funcs.\-c@{imu\-\_\-funcs.\-c}!min\-\_\-of\-\_\-set@{min\-\_\-of\-\_\-set}}
+\index{min\-\_\-of\-\_\-set@{min\-\_\-of\-\_\-set}!imu_funcs.c@{imu\-\_\-funcs.\-c}}
+\subsubsection[{min\-\_\-of\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}float min\-\_\-of\-\_\-set (
+\begin{DoxyParamCaption}
+\item[{float}]{now, }
+\item[{float}]{before}
+\end{DoxyParamCaption}
+)}}\label{imu__funcs_8c_a284639531ae985a2c56847c4b4d3c941}
+This function is used to overcome the difficulty of the atan2() function used in the Razor I\-M\-U firmware wrapping in the +/-\/\-M\-\_\-\-P\-I band, hence producing great discontinuities in the signal that would make filtering useless. What we do is, given a value before, we return now2=now+x$\ast$2$\ast$\-M\-\_\-\-P\-I where x is such that the difference between now2 and before is minimized.
+
+Example \-: if before=+179 and now=-\/178 (because atan2() wrapped), then min\-\_\-of\-\_\-set(now,before) will return now2=now+1$\ast$360=182 hence we don't have the wrapping problem anymore! Note that in the example degress were used to facilitate understanding; the G\-N\-C program works in radians directly!
+
+
+\begin{DoxyParams}{Parameters}
+{\em now} & The value we want to adjust, which has possible wrapped and we want to \char`\"{}unwrap\char`\"{}. \\
+\hline
+{\em before} & The previously collected value, e.\-g. \hyperlink{imu__funcs_8c_a5c765a5f789b1c5e270d700ab2c5e547}{psi\-\_\-save\-\_\-last}, which has itself A\-L\-S\-O been adjusted in the previous iteration by \hyperlink{imu__funcs_8c_a284639531ae985a2c56847c4b4d3c941}{min\-\_\-of\-\_\-set()}! \\
+\hline
+\end{DoxyParams}
+\hypertarget{imu__funcs_8c_a628a7b5bc4a309137ce51e9e929bfabf}{\index{imu\-\_\-funcs.\-c@{imu\-\_\-funcs.\-c}!open\-\_\-serial\-\_\-port@{open\-\_\-serial\-\_\-port}}
+\index{open\-\_\-serial\-\_\-port@{open\-\_\-serial\-\_\-port}!imu_funcs.c@{imu\-\_\-funcs.\-c}}
+\subsubsection[{open\-\_\-serial\-\_\-port}]{\setlength{\rightskip}{0pt plus 5cm}void open\-\_\-serial\-\_\-port (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{fd, }
+\item[{char $\ast$}]{directory}
+\end{DoxyParamCaption}
+)}}\label{imu__funcs_8c_a628a7b5bc4a309137ce51e9e929bfabf}
+This function opens the serial connection with the serial device connected to directory (e.\-g. /dev/tty\-U\-S\-B0) and saves the file handle to $\ast$fd.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & Pointer to the file handle. \\
+\hline
+{\em directory} & Pointer to the string which defines the directory. \\
+\hline
+\end{DoxyParams}
+\hypertarget{imu__funcs_8c_adacd103cea6c5f68c6b1ea416394c9f4}{\index{imu\-\_\-funcs.\-c@{imu\-\_\-funcs.\-c}!read\-\_\-\-I\-M\-U\-\_\-parallel@{read\-\_\-\-I\-M\-U\-\_\-parallel}}
+\index{read\-\_\-\-I\-M\-U\-\_\-parallel@{read\-\_\-\-I\-M\-U\-\_\-parallel}!imu_funcs.c@{imu\-\_\-funcs.\-c}}
+\subsubsection[{read\-\_\-\-I\-M\-U\-\_\-parallel}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ read\-\_\-\-I\-M\-U\-\_\-parallel (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{args}
+\end{DoxyParamCaption}
+)}}\label{imu__funcs_8c_adacd103cea6c5f68c6b1ea416394c9f4}
+This is a (p)thread which does only one thing \-: read the raw I\-M\-U values\-:
+\begin{DoxyItemize}
+\item float psi
+\item float theta
+\item float phi
+\item float accel\-X
+\item float accel\-Y
+\item float accel\-Z
+\end{DoxyItemize}
+
+Once read, these values become available to be saved \& used by other threads (such as the filtering thread).
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & A pointer to the input arguments (we have none for this thread) \\
+\hline
+\end{DoxyParams}
+\hypertarget{imu__funcs_8c_a7fa0bd6b1a0206326d09eb5e8d21eb5e}{\index{imu\-\_\-funcs.\-c@{imu\-\_\-funcs.\-c}!reset\-\_\-old\-\_\-attr\-\_\-port@{reset\-\_\-old\-\_\-attr\-\_\-port}}
+\index{reset\-\_\-old\-\_\-attr\-\_\-port@{reset\-\_\-old\-\_\-attr\-\_\-port}!imu_funcs.c@{imu\-\_\-funcs.\-c}}
+\subsubsection[{reset\-\_\-old\-\_\-attr\-\_\-port}]{\setlength{\rightskip}{0pt plus 5cm}void reset\-\_\-old\-\_\-attr\-\_\-port (
+\begin{DoxyParamCaption}
+\item[{int}]{fd, }
+\item[{struct termios $\ast$}]{old\-\_\-options}
+\end{DoxyParamCaption}
+)}}\label{imu__funcs_8c_a7fa0bd6b1a0206326d09eb5e8d21eb5e}
+This function restores to the connection identified by handle fd its old settings, which were saved back right after the connection was opened.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & The file handle. \\
+\hline
+{\em old\-\_\-options} & the old U\-A\-R\-T connection attributes. \\
+\hline
+\end{DoxyParams}
+\hypertarget{imu__funcs_8c_ab43fd2629dea282222c48fc720df4517}{\index{imu\-\_\-funcs.\-c@{imu\-\_\-funcs.\-c}!set\-\_\-new\-\_\-attr@{set\-\_\-new\-\_\-attr}}
+\index{set\-\_\-new\-\_\-attr@{set\-\_\-new\-\_\-attr}!imu_funcs.c@{imu\-\_\-funcs.\-c}}
+\subsubsection[{set\-\_\-new\-\_\-attr}]{\setlength{\rightskip}{0pt plus 5cm}void set\-\_\-new\-\_\-attr (
+\begin{DoxyParamCaption}
+\item[{int}]{fd, }
+\item[{struct termios $\ast$}]{old\-\_\-options, }
+\item[{struct termios $\ast$}]{new\-\_\-options}
+\end{DoxyParamCaption}
+)}}\label{imu__funcs_8c_ab43fd2629dea282222c48fc720df4517}
+This function sets new\-\_\-options for the connection identified by handle fd.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & The file handle. \\
+\hline
+{\em old\-\_\-options} & The old U\-A\-R\-T connection attributes. \\
+\hline
+{\em new\-\_\-options} & The new U\-A\-R\-T connection attributes that we want to use. \\
+\hline
+\end{DoxyParams}
+\hypertarget{imu__funcs_8c_acff6f9de3e5075f5b3e6c2806651e446}{\index{imu\-\_\-funcs.\-c@{imu\-\_\-funcs.\-c}!set\-\_\-to\-\_\-blocking@{set\-\_\-to\-\_\-blocking}}
+\index{set\-\_\-to\-\_\-blocking@{set\-\_\-to\-\_\-blocking}!imu_funcs.c@{imu\-\_\-funcs.\-c}}
+\subsubsection[{set\-\_\-to\-\_\-blocking}]{\setlength{\rightskip}{0pt plus 5cm}void set\-\_\-to\-\_\-blocking (
+\begin{DoxyParamCaption}
+\item[{int}]{fd}
+\end{DoxyParamCaption}
+)}}\label{imu__funcs_8c_acff6f9de3e5075f5b3e6c2806651e446}
+We always open a serial connection with O\-\_\-\-N\-O\-N\-B\-L\-O\-C\-K in order to avoid the open() function hanging forever due to a badly configured connection from before (not the fault of our program). If we wish to use this connection with O\-\_\-\-N\-O\-N\-B\-L\-O\-C\-K disabled (i.\-e. in blocking mode) then we call this function, which removes the O\-\_\-\-N\-O\-N\-B\-L\-O\-C\-K, thus setting the serial mode to {\bfseries blocking}
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & The file handle \\
+\hline
+\end{DoxyParams}
+\hypertarget{imu__funcs_8c_a530aca183f3048a15b2018cef637d5f5}{\index{imu\-\_\-funcs.\-c@{imu\-\_\-funcs.\-c}!T\-O\-\_\-\-D\-E\-G@{T\-O\-\_\-\-D\-E\-G}}
+\index{T\-O\-\_\-\-D\-E\-G@{T\-O\-\_\-\-D\-E\-G}!imu_funcs.c@{imu\-\_\-funcs.\-c}}
+\subsubsection[{T\-O\-\_\-\-D\-E\-G}]{\setlength{\rightskip}{0pt plus 5cm}float T\-O\-\_\-\-D\-E\-G (
+\begin{DoxyParamCaption}
+\item[{float}]{angle}
+\end{DoxyParamCaption}
+)}}\label{imu__funcs_8c_a530aca183f3048a15b2018cef637d5f5}
+Convert from radians to degrees \hypertarget{imu__funcs_8c_a20a4f75f9d2fefab9dbc656f77eeda06}{\index{imu\-\_\-funcs.\-c@{imu\-\_\-funcs.\-c}!Treat\-\_\-reply@{Treat\-\_\-reply}}
+\index{Treat\-\_\-reply@{Treat\-\_\-reply}!imu_funcs.c@{imu\-\_\-funcs.\-c}}
+\subsubsection[{Treat\-\_\-reply}]{\setlength{\rightskip}{0pt plus 5cm}void Treat\-\_\-reply (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{comparison\-\_\-string}
+\end{DoxyParamCaption}
+)}}\label{imu__funcs_8c_a20a4f75f9d2fefab9dbc656f77eeda06}
+This function handles user input, loops until the user inputs the right input (and gives cues to the user if he/she doesn't input the right input).
+
+
+\begin{DoxyParams}{Parameters}
+{\em comparison\-\_\-string} & The string that the user must enter. \\
+\hline
+\end{DoxyParams}
+\hypertarget{imu__funcs_8c_af774e625f637fc19cc15a923e77cfbe2}{\index{imu\-\_\-funcs.\-c@{imu\-\_\-funcs.\-c}!zero\-\_\-\-Euler\-\_\-angles@{zero\-\_\-\-Euler\-\_\-angles}}
+\index{zero\-\_\-\-Euler\-\_\-angles@{zero\-\_\-\-Euler\-\_\-angles}!imu_funcs.c@{imu\-\_\-funcs.\-c}}
+\subsubsection[{zero\-\_\-\-Euler\-\_\-angles}]{\setlength{\rightskip}{0pt plus 5cm}void zero\-\_\-\-Euler\-\_\-angles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{imu__funcs_8c_af774e625f637fc19cc15a923e77cfbe2}
+Convert the Euler angles received from I\-M\-U and adjusted for wrapping by \hyperlink{imu__funcs_8c_a284639531ae985a2c56847c4b4d3c941}{min\-\_\-of\-\_\-set()} function into the \char`\"{}zeroed\char`\"{} Euler angles in that they would all be =0.\-0 if the rocket is in the orientation at which it was calibrated (i.\-e. at which its Euler angles were \char`\"{}zeroed\char`\"{}/at which the \char`\"{}zero point\char`\"{} of the Euler angles was taken). 

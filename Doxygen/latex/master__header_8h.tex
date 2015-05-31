@@ -1,0 +1,349 @@
+\hypertarget{master__header_8h}{\section{master\-\_\-header.\-h File Reference}
+\label{master__header_8h}\index{master\-\_\-header.\-h@{master\-\_\-header.\-h}}
+}
+
+
+Master header file.  
+
+
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$sys/time.\-h$>$}\\*
+{\ttfamily \#include $<$pthread.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}la\-\_\-header.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{master__header_8h_ae3593488fd933fd856b687d074f25f91}{\#define \hyperlink{master__header_8h_ae3593488fd933fd856b687d074f25f91}{V\-A\-L\-V\-E\-\_\-\-C\-H\-A\-R\-A\-C\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N}~13}\label{master__header_8h_ae3593488fd933fd856b687d074f25f91}
+
+\begin{DoxyCompactList}\small\item\em The number of points there are in the calibrated valve thrust curve (flow rate vs. P\-W\-M) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{master__header_8h_a3ec78d27b90718d84fabf3573a2f0129}{char \hyperlink{master__header_8h_a3ec78d27b90718d84fabf3573a2f0129}{E\-R\-R\-O\-R\-\_\-\-M\-E\-S\-S\-A\-G\-E} \mbox{[}200\mbox{]}}\label{master__header_8h_a3ec78d27b90718d84fabf3573a2f0129}
+
+\begin{DoxyCompactList}\small\item\em Allocate buffer for an error message to be printed into \hyperlink{master__header_8h_a0942b9a4f7a184e9d6b95901e2b9ba4f}{error\-\_\-log} if errors occur. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_ac252c85bbad7e441650702547296055d}{struct timeval \hyperlink{master__header_8h_ac252c85bbad7e441650702547296055d}{G\-L\-O\-B\-A\-L\-\_\-\-\_\-\-T\-I\-M\-E\-\_\-\-S\-T\-A\-R\-T\-P\-O\-I\-N\-T}}\label{master__header_8h_ac252c85bbad7e441650702547296055d}
+
+\begin{DoxyCompactList}\small\item\em Structure holding the time when the program started (very first line of \hyperlink{master_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()}) \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a6c481df42c58e76b93d7b2dfb1f9c85f}{unsigned char \hyperlink{master__header_8h_a6c481df42c58e76b93d7b2dfb1f9c85f}{I\-M\-U\-\_\-\-S\-Y\-N\-C\-H\-E\-D}}\label{master__header_8h_a6c481df42c58e76b93d7b2dfb1f9c85f}
+
+\begin{DoxyCompactList}\small\item\em If =1, then the I\-M\-U and Raspberry Pi U\-A\-R\-T communication has been synced, =0 otherwise. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_ae4349d02b28eb32bb9153ebc5763217e}{unsigned long long int \hyperlink{master__header_8h_ae4349d02b28eb32bb9153ebc5763217e}{S\-P\-I\-\_\-\-\_\-\-R\-E\-A\-D\-\_\-\-T\-I\-M\-E\-S\-T\-E\-P}}\label{master__header_8h_ae4349d02b28eb32bb9153ebc5763217e}
+
+\begin{DoxyCompactList}\small\item\em Time intervals \mbox{[}us\mbox{]} at which we read over S\-P\-I (for pressure/temperature Honeywell sensors). \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a3cbe1858f5d39f6470d8975f7d82c147}{unsigned char \hyperlink{master__header_8h_a3cbe1858f5d39f6470d8975f7d82c147}{S\-P\-I\-\_\-quit}}\label{master__header_8h_a3cbe1858f5d39f6470d8975f7d82c147}
+
+\begin{DoxyCompactList}\small\item\em ==0 by default, ==1 signals the S\-P\-I reading thread (\hyperlink{pressure__funcs_8c_a6c8634a0f37e059edc662324a919c39e}{get\-\_\-readings\-\_\-\-S\-P\-I\-\_\-parallel()}) to exit. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a2dad9d03b6168bcb6c69d461514a833f}{unsigned long long int \hyperlink{master__header_8h_a2dad9d03b6168bcb6c69d461514a833f}{I\-M\-U\-\_\-\-\_\-\-R\-E\-A\-D\-\_\-\-T\-I\-M\-E\-S\-T\-E\-P}}\label{master__header_8h_a2dad9d03b6168bcb6c69d461514a833f}
+
+\begin{DoxyCompactList}\small\item\em Time intervals \mbox{[}us\mbox{]} at which we read over U\-A\-R\-T the I\-M\-U data. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a0c2fbbcefec3fbaa9bf5405eafb92688}{unsigned char \hyperlink{master__header_8h_a0c2fbbcefec3fbaa9bf5405eafb92688}{I\-M\-U\-\_\-quit}}\label{master__header_8h_a0c2fbbcefec3fbaa9bf5405eafb92688}
+
+\begin{DoxyCompactList}\small\item\em ==0 by default, ==1 signals the I\-M\-U reading and filtering threads (\hyperlink{imu__funcs_8c_adacd103cea6c5f68c6b1ea416394c9f4}{read\-\_\-\-I\-M\-U\-\_\-parallel()} and \hyperlink{imu__funcs_8c_a819d365851c5396da5453c27c37af71b}{get\-\_\-filtered\-\_\-attitude\-\_\-parallel()}) to exit. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a490cfe9811abc6b34f25aac2f2dce376}{unsigned char \hyperlink{master__header_8h_a490cfe9811abc6b34f25aac2f2dce376}{P\-W\-M1}}\label{master__header_8h_a490cfe9811abc6b34f25aac2f2dce376}
+
+\begin{DoxyCompactList}\small\item\em P\-W\-M value for the R1 valve. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a5d8592107df1c79c0aa74977f1260ec4}{unsigned char \hyperlink{master__header_8h_a5d8592107df1c79c0aa74977f1260ec4}{P\-W\-M2}}\label{master__header_8h_a5d8592107df1c79c0aa74977f1260ec4}
+
+\begin{DoxyCompactList}\small\item\em P\-W\-M value for the R2 valve. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a009f20b0c08a53c149c3af40a4c69674}{unsigned char \hyperlink{master__header_8h_a009f20b0c08a53c149c3af40a4c69674}{P\-W\-M3}}\label{master__header_8h_a009f20b0c08a53c149c3af40a4c69674}
+
+\begin{DoxyCompactList}\small\item\em P\-W\-M value for the R3 valve. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_afef2fc7f7231604b5ab9a090848d9dc6}{unsigned char \hyperlink{master__header_8h_afef2fc7f7231604b5ab9a090848d9dc6}{P\-W\-M4}}\label{master__header_8h_afef2fc7f7231604b5ab9a090848d9dc6}
+
+\begin{DoxyCompactList}\small\item\em P\-W\-M value for the R4 valve. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_af404f6d9a332838b9707056c27a4f21a}{double \hyperlink{master__header_8h_af404f6d9a332838b9707056c27a4f21a}{R1}}\label{master__header_8h_af404f6d9a332838b9707056c27a4f21a}
+
+\begin{DoxyCompactList}\small\item\em Valve R1 thrust. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a6e4ea5fe1993f05924fa4d457def2aa3}{double \hyperlink{master__header_8h_a6e4ea5fe1993f05924fa4d457def2aa3}{R2}}\label{master__header_8h_a6e4ea5fe1993f05924fa4d457def2aa3}
+
+\begin{DoxyCompactList}\small\item\em Valve R2 thrust. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a6752016f7a02ff6ff1b749623be15dbb}{double \hyperlink{master__header_8h_a6752016f7a02ff6ff1b749623be15dbb}{R3}}\label{master__header_8h_a6752016f7a02ff6ff1b749623be15dbb}
+
+\begin{DoxyCompactList}\small\item\em Valve R3 thrust. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_af6474ec4ce3b123a435f2b0f453d0aba}{double \hyperlink{master__header_8h_af6474ec4ce3b123a435f2b0f453d0aba}{R4}}\label{master__header_8h_af6474ec4ce3b123a435f2b0f453d0aba}
+
+\begin{DoxyCompactList}\small\item\em Valve R4 thrust. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_ab324d426f7c3fd563450bd71a15aefe7}{unsigned int \hyperlink{master__header_8h_ab324d426f7c3fd563450bd71a15aefe7}{P\-W\-M\-\_\-valve\-\_\-charac} \mbox{[}\hyperlink{master__header_8h_ae3593488fd933fd856b687d074f25f91}{V\-A\-L\-V\-E\-\_\-\-C\-H\-A\-R\-A\-C\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N}\mbox{]}}\label{master__header_8h_ab324d426f7c3fd563450bd71a15aefe7}
+
+\begin{DoxyCompactList}\small\item\em P\-W\-M value of characteristic thrust curve. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a9ee7453017d47063c9f1e9e6ad69c424}{double \hyperlink{master__header_8h_a9ee7453017d47063c9f1e9e6ad69c424}{R\-\_\-valve\-\_\-charac} \mbox{[}\hyperlink{master__header_8h_ae3593488fd933fd856b687d074f25f91}{V\-A\-L\-V\-E\-\_\-\-C\-H\-A\-R\-A\-C\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N}\mbox{]}}\label{master__header_8h_a9ee7453017d47063c9f1e9e6ad69c424}
+
+\begin{DoxyCompactList}\small\item\em Thrust (R) value of characteristic thrust value. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a873684cefeb665f3d5e6b495de57fc0d}{double \hyperlink{master__header_8h_a873684cefeb665f3d5e6b495de57fc0d}{d}}\label{master__header_8h_a873684cefeb665f3d5e6b495de57fc0d}
+
+\begin{DoxyCompactList}\small\item\em \mbox{[}m\mbox{]} offset distance of R\-C\-S valves from centerline (for roll control) \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a24acaae245ca32a559b504e1a1e084d9}{double \hyperlink{master__header_8h_a24acaae245ca32a559b504e1a1e084d9}{Fpitch}}\label{master__header_8h_a24acaae245ca32a559b504e1a1e084d9}
+
+\begin{DoxyCompactList}\small\item\em Pitch force (parallel to body -\/\-Z axis, so as to produce positive pitch rate when Fpitch$>$0 (right hand rule)) \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a03c2e0033499a13a6e9113bec977055f}{double \hyperlink{master__header_8h_a03c2e0033499a13a6e9113bec977055f}{Fyaw}}\label{master__header_8h_a03c2e0033499a13a6e9113bec977055f}
+
+\begin{DoxyCompactList}\small\item\em Yaw force (parallel to body +\-Y axis, so as to produce positive yaw rate when Fyaw$>$0 (right hand rule)) \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a3c7bd12558dd2888ffe85eadeac62fc3}{double \hyperlink{master__header_8h_a3c7bd12558dd2888ffe85eadeac62fc3}{Mroll}}\label{master__header_8h_a3c7bd12558dd2888ffe85eadeac62fc3}
+
+\begin{DoxyCompactList}\small\item\em Roll moment (positive about +\-X axis, so as to produce positive roll rate when Mroll$>$0 (right hand rule)) \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a7722c8ecbb62d99aee7ce68b1752f337}{int \hyperlink{master__header_8h_a7722c8ecbb62d99aee7ce68b1752f337}{N}}\label{master__header_8h_a7722c8ecbb62d99aee7ce68b1752f337}
+
+\begin{DoxyCompactList}\small\item\em Number of variables in cost function. Our variables are R1, R2, R3, R4 so N=4. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a7a2aaeb8c0218468f3775cedc6d0087c}{int \hyperlink{master__header_8h_a7a2aaeb8c0218468f3775cedc6d0087c}{M1}}\label{master__header_8h_a7a2aaeb8c0218468f3775cedc6d0087c}
+
+\begin{DoxyCompactList}\small\item\em No ($<$=) type constraints. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a4ae62474468edbb5f37cd79ee5e7ca90}{int \hyperlink{master__header_8h_a4ae62474468edbb5f37cd79ee5e7ca90}{M2}}\label{master__header_8h_a4ae62474468edbb5f37cd79ee5e7ca90}
+
+\begin{DoxyCompactList}\small\item\em No ($>$=) type constraints. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a1b0d06f043612b284f80743aa186de4c}{int \hyperlink{master__header_8h_a1b0d06f043612b284f80743aa186de4c}{M3}}\label{master__header_8h_a1b0d06f043612b284f80743aa186de4c}
+
+\begin{DoxyCompactList}\small\item\em 3 (=) type constraints (for Fpitch, Fyaw, Mroll) \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a5e78dbd5fd0fc01ba7b98dd15e27221e}{int \hyperlink{master__header_8h_a5e78dbd5fd0fc01ba7b98dd15e27221e}{M}}\label{master__header_8h_a5e78dbd5fd0fc01ba7b98dd15e27221e}
+
+\begin{DoxyCompactList}\small\item\em Total number of constraints (M=M1+\-M2+\-M3) \end{DoxyCompactList}\item 
+float \hyperlink{master__header_8h_ab68ddad07171b0184b749ff21f40aea8}{V\-A\-L\-V\-E\-\_\-\-\_\-\-M\-A\-X\-\_\-\-T\-H\-R\-U\-S\-T}
+\begin{DoxyCompactList}\small\item\em Maximum thrust of R\-C\-S solenoid valves (i.\-e. when fully opened) \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_ab7c4a9735befe31f101e920cf2d922a8}{char \hyperlink{master__header_8h_ab7c4a9735befe31f101e920cf2d922a8}{M\-E\-S\-S\-A\-G\-E} \mbox{[}700\mbox{]}}\label{master__header_8h_ab7c4a9735befe31f101e920cf2d922a8}
+
+\begin{DoxyCompactList}\small\item\em Message buffer string sometimes used for putting together a string, then writing it to a file. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a29a78f75123873b8cff72f6895b42d33}{pthread\-\_\-mutex\-\_\-t \hyperlink{master__header_8h_a29a78f75123873b8cff72f6895b42d33}{error\-\_\-log\-\_\-write\-\_\-lock}}\label{master__header_8h_a29a78f75123873b8cff72f6895b42d33}
+
+\begin{DoxyCompactList}\small\item\em Mutex to protect multiple threads from writing to the error log file at once. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_abcca7bf825357b5d007fa1b74f0c87c6}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_abcca7bf825357b5d007fa1b74f0c87c6}{A\-\_\-kalman}}\label{master__header_8h_abcca7bf825357b5d007fa1b74f0c87c6}
+
+\begin{DoxyCompactList}\small\item\em Temporary matrix for Kalman filtering, dynamic equation x\-\_\-dot=A\-\_\-kalman$\ast$x ; y=C\-\_\-kalman$\ast$x, but in discrete time! \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a0b2be3ffe13cc12db829a2f5d74c1437}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_a0b2be3ffe13cc12db829a2f5d74c1437}{C\-\_\-kalman}}\label{master__header_8h_a0b2be3ffe13cc12db829a2f5d74c1437}
+
+\begin{DoxyCompactList}\small\item\em Temporary matrix for Kalman filtering, dynamic equation x\-\_\-dot=A\-\_\-kalman$\ast$x ; y=C\-\_\-kalman$\ast$x, but in discrete time! \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a987ede4096fe3a3e1e159f0690167ef4}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_a987ede4096fe3a3e1e159f0690167ef4}{inn}}\label{master__header_8h_a987ede4096fe3a3e1e159f0690167ef4}
+
+\begin{DoxyCompactList}\small\item\em Temporary matrix \char`\"{}\-Innovation or measurement residual\char`\"{} (see \href{http://en.wikipedia.org/wiki/Kalman_filter#Update}{\tt Wikipedia}) \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_adbd85b44323c597c3a7a4d0a6ed49192}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_adbd85b44323c597c3a7a4d0a6ed49192}{S}}\label{master__header_8h_adbd85b44323c597c3a7a4d0a6ed49192}
+
+\begin{DoxyCompactList}\small\item\em Temporary matrix \char`\"{}\-Innovation (or residual) covariance\char`\"{} (see \href{http://en.wikipedia.org/wiki/Kalman_filter#Update}{\tt Wikipedia}) \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a107f0845bd2d21fa210455b619ced07c}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_a107f0845bd2d21fa210455b619ced07c}{K}}\label{master__header_8h_a107f0845bd2d21fa210455b619ced07c}
+
+\begin{DoxyCompactList}\small\item\em Temporary matrix \char`\"{}\-Optimal Kalman gain\char`\"{} (see \href{http://en.wikipedia.org/wiki/Kalman_filter#Update}{\tt Wikipedia}) \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a208beef538560359625f34731892c3a8}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_a208beef538560359625f34731892c3a8}{z\-\_\-temp}}\label{master__header_8h_a208beef538560359625f34731892c3a8}
+
+\begin{DoxyCompactList}\small\item\em Temporary matrix used to convert the current scalar unfiltered signal value (e.\-g. \hyperlink{imu__header_8h_aace8e2df2e07a1def1b869e5511bc602}{psi} or \hyperlink{imu__header_8h_aadfc5c227ca658a29a59a0ce6fc15792}{theta}, etc.) into a \mbox{[}1x1\mbox{]} \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} used in calculating \hyperlink{master__header_8h_a987ede4096fe3a3e1e159f0690167ef4}{inn} (see \hyperlink{imu__funcs_8c_a0d3dd751864c0bf8eb525ba4d16b02da}{Kalman\-\_\-filter()}), needed due to how our linear algebra functions in \hyperlink{la__header_8h}{la\-\_\-header.\-h} operate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}{\bf I\-M\-U timing}\par
+{\em Contains the timing structures and variables necessary for setting the I\-M\-U filtering thread loop frequency (see \hyperlink{imu__funcs_8c_a819d365851c5396da5453c27c37af71b}{get\-\_\-filtered\-\_\-attitude\-\_\-parallel()}). }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{master__header_8h_a4bab2ef5bf4e1293f55b6bcd60728326}{struct timeval {\bfseries now\-\_\-imu}}\label{master__header_8h_a4bab2ef5bf4e1293f55b6bcd60728326}
+
+\item 
+\hypertarget{master__header_8h_afe353d759e1942b04ffa8801b9961253}{struct timeval {\bfseries before\-\_\-imu}}\label{master__header_8h_afe353d759e1942b04ffa8801b9961253}
+
+\item 
+\hypertarget{master__header_8h_af96b076a9e3b8ffbbf49cd2be5644e03}{struct timeval {\bfseries elapsed\-\_\-imu}}\label{master__header_8h_af96b076a9e3b8ffbbf49cd2be5644e03}
+
+\item 
+\hypertarget{master__header_8h_a4937434986f7893e54c225aa86634198}{unsigned long long int {\bfseries time\-\_\-imu}}\label{master__header_8h_a4937434986f7893e54c225aa86634198}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Pressure sensor timing}\par
+{\em Contains the timing structures and variables necessary to set the the pressure/temperature logging thread loop frequency (see \hyperlink{pressure__funcs_8c_a6c8634a0f37e059edc662324a919c39e}{get\-\_\-readings\-\_\-\-S\-P\-I\-\_\-parallel()}) }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{master__header_8h_a855389ceb3fcda1fce103403986196de}{struct timeval {\bfseries now\-\_\-pressure}}\label{master__header_8h_a855389ceb3fcda1fce103403986196de}
+
+\item 
+\hypertarget{master__header_8h_a716ffd6284e05887f4fb80f9619b0da6}{struct timeval {\bfseries before\-\_\-pressure}}\label{master__header_8h_a716ffd6284e05887f4fb80f9619b0da6}
+
+\item 
+\hypertarget{master__header_8h_a4d2e6d81757cb79662903b9e36640c8a}{struct timeval {\bfseries elapsed\-\_\-pressure}}\label{master__header_8h_a4d2e6d81757cb79662903b9e36640c8a}
+
+\item 
+\hypertarget{master__header_8h_aaca23792489192565493e7bd119592df}{unsigned long long int {\bfseries time\-\_\-pressure}}\label{master__header_8h_aaca23792489192565493e7bd119592df}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf General loop timing}\par
+{\em Contains the timing structures and variables necessary to make sure a loop executes a given amount of time }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{master__header_8h_ad87438c16509ed3216294f3bdb5a54ce}{struct timeval {\bfseries now\-\_\-loop}}\label{master__header_8h_ad87438c16509ed3216294f3bdb5a54ce}
+
+\item 
+\hypertarget{master__header_8h_a629d9ed23dbcbc493c89c5c778325cc1}{struct timeval {\bfseries before\-\_\-loop}}\label{master__header_8h_a629d9ed23dbcbc493c89c5c778325cc1}
+
+\item 
+\hypertarget{master__header_8h_af3bb88d06a79c556f11c1ad31a3e2fab}{struct timeval {\bfseries elapsed\-\_\-loop}}\label{master__header_8h_af3bb88d06a79c556f11c1ad31a3e2fab}
+
+\item 
+\hypertarget{master__header_8h_aeb80f38df95284a48502e6c2618102fa}{unsigned long long int {\bfseries time\-\_\-loop}}\label{master__header_8h_aeb80f38df95284a48502e6c2618102fa}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Control loop timing}\par
+{\em Contains the timing structures and variables necessary for timing necessary to set the control loop frequency (see \hyperlink{master_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()}) }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{master__header_8h_aa183a2fc566cb420f8dfd07be85848f3}{struct timeval {\bfseries now\-\_\-control}}\label{master__header_8h_aa183a2fc566cb420f8dfd07be85848f3}
+
+\item 
+\hypertarget{master__header_8h_a2e5e0a9c40d64cf0d81a660be3751458}{struct timeval {\bfseries before\-\_\-control}}\label{master__header_8h_a2e5e0a9c40d64cf0d81a660be3751458}
+
+\item 
+\hypertarget{master__header_8h_a5310bf385c3e01cc88d953256a9b23b3}{struct timeval {\bfseries elapsed\-\_\-control}}\label{master__header_8h_a5310bf385c3e01cc88d953256a9b23b3}
+
+\item 
+\hypertarget{master__header_8h_a41d413a963d33a8b3d49ccdcf92479a0}{unsigned long long int {\bfseries time\-\_\-control}}\label{master__header_8h_a41d413a963d33a8b3d49ccdcf92479a0}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf I\-M\-U filter get global time}\par
+{\em Contains the timing structures and variables necessary for getting the global time within the I\-M\-U data filtering loop (see \hyperlink{imu__funcs_8c_a819d365851c5396da5453c27c37af71b}{get\-\_\-filtered\-\_\-attitude\-\_\-parallel()}) }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{master__header_8h_a4c04bfac2fbd347718f180f43e338997}{struct timeval {\bfseries now\-\_\-imu\-\_\-glob}}\label{master__header_8h_a4c04bfac2fbd347718f180f43e338997}
+
+\item 
+\hypertarget{master__header_8h_ae408cc9eac688d3e4f76e3db7a8e40f9}{struct timeval {\bfseries elapsed\-\_\-imu\-\_\-glob}}\label{master__header_8h_ae408cc9eac688d3e4f76e3db7a8e40f9}
+
+\item 
+\hypertarget{master__header_8h_abf5ca21f3a22bb37e9d9fe6f35af0937}{unsigned long long int {\bfseries time\-\_\-imu\-\_\-glob}}\label{master__header_8h_abf5ca21f3a22bb37e9d9fe6f35af0937}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Pressure read get global time}\par
+{\em Contains the timing structures and variables necessary for getting the global time within the pressure/tempearture sensor data logging loop (see \hyperlink{pressure__funcs_8c_a6c8634a0f37e059edc662324a919c39e}{get\-\_\-readings\-\_\-\-S\-P\-I\-\_\-parallel()}) }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{master__header_8h_afcf1d642e0309e9f4e56a09f6e0aaf6f}{struct timeval {\bfseries now\-\_\-pressure\-\_\-glob}}\label{master__header_8h_afcf1d642e0309e9f4e56a09f6e0aaf6f}
+
+\item 
+\hypertarget{master__header_8h_a492e196d544eb6e64cf0575ef167c0a5}{struct timeval {\bfseries elapsed\-\_\-pressure\-\_\-glob}}\label{master__header_8h_a492e196d544eb6e64cf0575ef167c0a5}
+
+\item 
+\hypertarget{master__header_8h_ac29b1cb871baa025df58fa0b6fe19b96}{unsigned long long int {\bfseries time\-\_\-pressure\-\_\-glob}}\label{master__header_8h_ac29b1cb871baa025df58fa0b6fe19b96}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Control loop get global time}\par
+{\em Contains the timing structures and variables necessary for getting the global time within the control loop (see \hyperlink{master_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()}) }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{master__header_8h_aae1e858e308fe04417b5bc3e0bc97c30}{struct timeval {\bfseries now\-\_\-control\-\_\-glob}}\label{master__header_8h_aae1e858e308fe04417b5bc3e0bc97c30}
+
+\item 
+\hypertarget{master__header_8h_a3b13d26c3fe9faa834b10b0844bad006}{struct timeval {\bfseries elapsed\-\_\-control\-\_\-glob}}\label{master__header_8h_a3b13d26c3fe9faa834b10b0844bad006}
+
+\item 
+\hypertarget{master__header_8h_ad2e8b4fb6b78617de53fd720a1357cd0}{unsigned long long int {\bfseries time\-\_\-control\-\_\-glob}}\label{master__header_8h_ad2e8b4fb6b78617de53fd720a1357cd0}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Log files group}\par
+{\em Contains the pointes to files we use for recording flight data. }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{master__header_8h_a0942b9a4f7a184e9d6b95901e2b9ba4f}{F\-I\-L\-E $\ast$ \hyperlink{master__header_8h_a0942b9a4f7a184e9d6b95901e2b9ba4f}{error\-\_\-log}}\label{master__header_8h_a0942b9a4f7a184e9d6b95901e2b9ba4f}
+
+\begin{DoxyCompactList}\small\item\em Error log (stores errors) \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a156a8e3690962c825db6129da60068d2}{F\-I\-L\-E $\ast$ \hyperlink{master__header_8h_a156a8e3690962c825db6129da60068d2}{pressure\-\_\-log}}\label{master__header_8h_a156a8e3690962c825db6129da60068d2}
+
+\begin{DoxyCompactList}\small\item\em Pressure log (stores pressures and tempeartures collected by Honeywell H\-S\-C Tru\-Stability sensors) \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_acfbcaf4efce8ebd037ba912955853c0c}{F\-I\-L\-E $\ast$ \hyperlink{master__header_8h_acfbcaf4efce8ebd037ba912955853c0c}{imu\-\_\-log}}\label{master__header_8h_acfbcaf4efce8ebd037ba912955853c0c}
+
+\begin{DoxyCompactList}\small\item\em I\-M\-U log (stores raw and filtered Euler angles and angular rates, the body rates and the accelerometer data) \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_ae06637938d6d98b3460b9a9fc04ca510}{F\-I\-L\-E $\ast$ \hyperlink{master__header_8h_ae06637938d6d98b3460b9a9fc04ca510}{control\-\_\-log}}\label{master__header_8h_ae06637938d6d98b3460b9a9fc04ca510}
+
+\begin{DoxyCompactList}\small\item\em Control log (stores the control loop data such as computed \hyperlink{master__header_8h_a24acaae245ca32a559b504e1a1e084d9}{Fpitch}, \hyperlink{master__header_8h_a03c2e0033499a13a6e9113bec977055f}{Fyaw}, \hyperlink{master__header_8h_a3c7bd12558dd2888ffe85eadeac62fc3}{Mroll}, the optimally distributed valves thrusts \hyperlink{master__header_8h_af404f6d9a332838b9707056c27a4f21a}{R1},...,\hyperlink{master__header_8h_af6474ec4ce3b123a435f2b0f453d0aba}{R4} and the computed P\-W\-M signals \hyperlink{master__header_8h_a490cfe9811abc6b34f25aac2f2dce376}{P\-W\-M1},...,\hyperlink{master__header_8h_afef2fc7f7231604b5ab9a090848d9dc6}{P\-W\-M4}) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Yaw Kalman filtering matrices}\par
+{\em These matrices pertain to the real-\/time Kalman filtering of the yaw angle and angular rate }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{master__header_8h_a59cb94df9d83fc6fb778dfcf4f64a806}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_a59cb94df9d83fc6fb778dfcf4f64a806}{P\-\_\-psi}}\label{master__header_8h_a59cb94df9d83fc6fb778dfcf4f64a806}
+
+\begin{DoxyCompactList}\small\item\em Predicted a priori and then updated a posteriori estimate covariance matrix of the \hyperlink{imu__header_8h_a667979b6fd335e2c4dc4e796a3ed56be}{psi\-\_\-filt} estimate. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_aadaa12043f25565a1490d6c84c6f190a}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_aadaa12043f25565a1490d6c84c6f190a}{P\-\_\-psidot}}\label{master__header_8h_aadaa12043f25565a1490d6c84c6f190a}
+
+\begin{DoxyCompactList}\small\item\em Predicted a priori and then updated a posteriori estimate covariance matrix of the \hyperlink{imu__header_8h_a644260d93f9b48151fff727e69f75143}{psi\-\_\-dot\-\_\-filt} estimate. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a8952485df67da6b993e63ff4ce9f8555}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_a8952485df67da6b993e63ff4ce9f8555}{x\-\_\-psi}}\label{master__header_8h_a8952485df67da6b993e63ff4ce9f8555}
+
+\begin{DoxyCompactList}\small\item\em Predicted a priori and then updated a posteriori state estimate (the \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} version of \hyperlink{imu__header_8h_a667979b6fd335e2c4dc4e796a3ed56be}{psi\-\_\-filt}) \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a99357188eb725d9cda85ed4b9e0530a6}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_a99357188eb725d9cda85ed4b9e0530a6}{x\-\_\-psidot}}\label{master__header_8h_a99357188eb725d9cda85ed4b9e0530a6}
+
+\begin{DoxyCompactList}\small\item\em Predicted a priori and then updated a posteriori state estimate (the \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} version of \hyperlink{imu__header_8h_a644260d93f9b48151fff727e69f75143}{psi\-\_\-dot\-\_\-filt}) \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_aff197441004c733c594cc8174c7d41e0}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_aff197441004c733c594cc8174c7d41e0}{Q\-\_\-psi}}\label{master__header_8h_aff197441004c733c594cc8174c7d41e0}
+
+\begin{DoxyCompactList}\small\item\em Covariance matrix of process noise of \hyperlink{imu__header_8h_aace8e2df2e07a1def1b869e5511bc602}{psi}. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a21741bca17404f81bbddb13e215e5222}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_a21741bca17404f81bbddb13e215e5222}{Q\-\_\-psidot}}\label{master__header_8h_a21741bca17404f81bbddb13e215e5222}
+
+\begin{DoxyCompactList}\small\item\em Covariance matrix of process noise of \hyperlink{imu__header_8h_af02373e94c758eed8531e75b96ff7bff}{psi\-\_\-dot}. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a7ce2c06af88ac7aab9f377cc89809d74}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_a7ce2c06af88ac7aab9f377cc89809d74}{R\-\_\-psi}}\label{master__header_8h_a7ce2c06af88ac7aab9f377cc89809d74}
+
+\begin{DoxyCompactList}\small\item\em Covariance matrix of observation of \hyperlink{imu__header_8h_aace8e2df2e07a1def1b869e5511bc602}{psi}. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_ac22209758f00e381b22391c8e91c4c81}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_ac22209758f00e381b22391c8e91c4c81}{R\-\_\-psidot}}\label{master__header_8h_ac22209758f00e381b22391c8e91c4c81}
+
+\begin{DoxyCompactList}\small\item\em Covariance matrix of observation of \hyperlink{imu__header_8h_af02373e94c758eed8531e75b96ff7bff}{psi\-\_\-dot}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Pitch Kalman filtering matrices}\par
+{\em These matrices pertain to the real-\/time Kalman filtering of the pitch angle and angular rate }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{master__header_8h_aa1fb57177ba493e183628fa846e22ec3}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_aa1fb57177ba493e183628fa846e22ec3}{P\-\_\-theta}}\label{master__header_8h_aa1fb57177ba493e183628fa846e22ec3}
+
+\begin{DoxyCompactList}\small\item\em Predicted a priori and then updated a posteriori estimate covariance matrix of the \hyperlink{imu__header_8h_abbc13db7b16483062094dfad47e30d7f}{theta\-\_\-filt} estimate. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a6af0345fdd89590b194401d1602a5c6a}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_a6af0345fdd89590b194401d1602a5c6a}{x\-\_\-theta}}\label{master__header_8h_a6af0345fdd89590b194401d1602a5c6a}
+
+\begin{DoxyCompactList}\small\item\em Predicted a priori and then updated a posteriori state estimate (the \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} version of \hyperlink{imu__header_8h_abbc13db7b16483062094dfad47e30d7f}{theta\-\_\-filt}) \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a91c8d06d7ce8da6cb65e81a1872eacd2}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_a91c8d06d7ce8da6cb65e81a1872eacd2}{Q\-\_\-theta}}\label{master__header_8h_a91c8d06d7ce8da6cb65e81a1872eacd2}
+
+\begin{DoxyCompactList}\small\item\em Covariance matrix of process noise of \hyperlink{imu__header_8h_aadfc5c227ca658a29a59a0ce6fc15792}{theta}. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_aeb8e8845f693cd95bd8f17479bd85a07}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_aeb8e8845f693cd95bd8f17479bd85a07}{R\-\_\-theta}}\label{master__header_8h_aeb8e8845f693cd95bd8f17479bd85a07}
+
+\begin{DoxyCompactList}\small\item\em Covariance matrix of observation of \hyperlink{imu__header_8h_aadfc5c227ca658a29a59a0ce6fc15792}{theta}. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_ae1af12920eb42d7bcf8a371c76a50a31}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_ae1af12920eb42d7bcf8a371c76a50a31}{P\-\_\-thetadot}}\label{master__header_8h_ae1af12920eb42d7bcf8a371c76a50a31}
+
+\begin{DoxyCompactList}\small\item\em Predicted a priori and then updated a posteriori estimate covariance matrix of the \hyperlink{imu__header_8h_a61999694fc798a809e7547d39f6a369c}{theta\-\_\-dot\-\_\-filt} estimate. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a8d547193b9e8507b7519bec3cd9eb5af}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_a8d547193b9e8507b7519bec3cd9eb5af}{x\-\_\-thetadot}}\label{master__header_8h_a8d547193b9e8507b7519bec3cd9eb5af}
+
+\begin{DoxyCompactList}\small\item\em Predicted a priori and then updated a posteriori state estimate (the \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} version of \hyperlink{imu__header_8h_a61999694fc798a809e7547d39f6a369c}{theta\-\_\-dot\-\_\-filt}) \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_aa035ecb1f959c5a2346ffbe06477a331}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_aa035ecb1f959c5a2346ffbe06477a331}{Q\-\_\-thetadot}}\label{master__header_8h_aa035ecb1f959c5a2346ffbe06477a331}
+
+\begin{DoxyCompactList}\small\item\em Covariance matrix of process noise of \hyperlink{imu__header_8h_a51e2c6c20a8f3b56806383e174e348e5}{theta\-\_\-dot}. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a3683cb0abe255ce8084c68e9305ebe8a}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_a3683cb0abe255ce8084c68e9305ebe8a}{R\-\_\-thetadot}}\label{master__header_8h_a3683cb0abe255ce8084c68e9305ebe8a}
+
+\begin{DoxyCompactList}\small\item\em Covariance matrix of observation of \hyperlink{imu__header_8h_a51e2c6c20a8f3b56806383e174e348e5}{theta\-\_\-dot}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Roll Kalman filtering matrices}\par
+{\em These matrices pertain to the real-\/time Kalman filtering of the roll angle and angular rate }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{master__header_8h_ab7071e08c34de880e1fbdee23e256d5c}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_ab7071e08c34de880e1fbdee23e256d5c}{P\-\_\-phi}}\label{master__header_8h_ab7071e08c34de880e1fbdee23e256d5c}
+
+\begin{DoxyCompactList}\small\item\em Predicted a priori and then updated a posteriori estimate covariance matrix of the \hyperlink{imu__header_8h_a1d9d158571bd246e7287375ad1e6b9ad}{phi\-\_\-filt} estimate. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a7a91c3a0b462c305623653203463ad81}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_a7a91c3a0b462c305623653203463ad81}{x\-\_\-phi}}\label{master__header_8h_a7a91c3a0b462c305623653203463ad81}
+
+\begin{DoxyCompactList}\small\item\em Predicted a priori and then updated a posteriori state estimate (the \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} version of \hyperlink{imu__header_8h_a1d9d158571bd246e7287375ad1e6b9ad}{phi\-\_\-filt}) \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a51c0a1d016ac363ff613a8bbc9d6dd30}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_a51c0a1d016ac363ff613a8bbc9d6dd30}{Q\-\_\-phi}}\label{master__header_8h_a51c0a1d016ac363ff613a8bbc9d6dd30}
+
+\begin{DoxyCompactList}\small\item\em Covariance matrix of process noise of \hyperlink{imu__header_8h_ab30c622a174639ec92b375db9b2ee56d}{phi}. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a17c576e94ad182eb3a936da838795747}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_a17c576e94ad182eb3a936da838795747}{R\-\_\-phi}}\label{master__header_8h_a17c576e94ad182eb3a936da838795747}
+
+\begin{DoxyCompactList}\small\item\em Covariance matrix of observation of \hyperlink{imu__header_8h_ab30c622a174639ec92b375db9b2ee56d}{phi}. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a24dba7f84148e7ff26fc9eb85bc2e7a2}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_a24dba7f84148e7ff26fc9eb85bc2e7a2}{P\-\_\-phidot}}\label{master__header_8h_a24dba7f84148e7ff26fc9eb85bc2e7a2}
+
+\begin{DoxyCompactList}\small\item\em Predicted a priori and then updated a posteriori estimate covariance matrix of the \hyperlink{imu__header_8h_af987fceaf6a55676ae7d2b2334dfae21}{phi\-\_\-dot\-\_\-filt} estimate. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a769535ee025d21aada6eb7c696035ab6}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_a769535ee025d21aada6eb7c696035ab6}{x\-\_\-phidot}}\label{master__header_8h_a769535ee025d21aada6eb7c696035ab6}
+
+\begin{DoxyCompactList}\small\item\em Predicted a priori and then updated a posteriori state estimate (the \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} version of \hyperlink{imu__header_8h_af987fceaf6a55676ae7d2b2334dfae21}{phi\-\_\-dot\-\_\-filt}) \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a08ad8530b9c9ef662785ff497e7b3ab7}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_a08ad8530b9c9ef662785ff497e7b3ab7}{Q\-\_\-phidot}}\label{master__header_8h_a08ad8530b9c9ef662785ff497e7b3ab7}
+
+\begin{DoxyCompactList}\small\item\em Covariance matrix of process noise of \hyperlink{imu__header_8h_a3978de6cb595ccbcc206e2744ba5db3e}{phi\-\_\-dot}. \end{DoxyCompactList}\item 
+\hypertarget{master__header_8h_a583ca51cc1f45dea02bf6ca7c820ecbf}{struct \hyperlink{structMATRIX}{M\-A\-T\-R\-I\-X} \hyperlink{master__header_8h_a583ca51cc1f45dea02bf6ca7c820ecbf}{R\-\_\-phidot}}\label{master__header_8h_a583ca51cc1f45dea02bf6ca7c820ecbf}
+
+\begin{DoxyCompactList}\small\item\em Covariance matrix of observation of \hyperlink{imu__header_8h_a3978de6cb595ccbcc206e2744ba5db3e}{phi\-\_\-dot}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Master header file. \begin{DoxyAuthor}{Author}
+Danylo Malyuta \href{mailto:danylo.malyuta@gmail.com}{\tt danylo.\-malyuta@gmail.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0
+\end{DoxyVersion}
+This is the header to \hyperlink{master__funcs_8c}{master\-\_\-funcs.\-c} containing necessary definitions and initializations. 
+
+\subsection{Variable Documentation}
+\hypertarget{master__header_8h_ab68ddad07171b0184b749ff21f40aea8}{\index{master\-\_\-header.\-h@{master\-\_\-header.\-h}!V\-A\-L\-V\-E\-\_\-\-\_\-\-M\-A\-X\-\_\-\-T\-H\-R\-U\-S\-T@{V\-A\-L\-V\-E\-\_\-\-\_\-\-M\-A\-X\-\_\-\-T\-H\-R\-U\-S\-T}}
+\index{V\-A\-L\-V\-E\-\_\-\-\_\-\-M\-A\-X\-\_\-\-T\-H\-R\-U\-S\-T@{V\-A\-L\-V\-E\-\_\-\-\_\-\-M\-A\-X\-\_\-\-T\-H\-R\-U\-S\-T}!master_header.h@{master\-\_\-header.\-h}}
+\subsubsection[{V\-A\-L\-V\-E\-\_\-\-\_\-\-M\-A\-X\-\_\-\-T\-H\-R\-U\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}float V\-A\-L\-V\-E\-\_\-\-\_\-\-M\-A\-X\-\_\-\-T\-H\-R\-U\-S\-T}}\label{master__header_8h_ab68ddad07171b0184b749ff21f40aea8}
+
+
+Maximum thrust of R\-C\-S solenoid valves (i.\-e. when fully opened) 
+
+Maximum thrust of R\-C\-S solenoid valves (i.\-e. when fully opened) 

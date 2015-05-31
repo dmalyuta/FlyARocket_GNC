@@ -1,0 +1,66 @@
+\hypertarget{spycam__funcs_8c}{\section{spycam\-\_\-funcs.\-c File Reference}
+\label{spycam__funcs_8c}\index{spycam\-\_\-funcs.\-c@{spycam\-\_\-funcs.\-c}}
+}
+
+
+Raspberry Pi spy camera functions file.  
+
+
+{\ttfamily \#include $<$signal.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}spycam\-\_\-header.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{spycam__funcs_8c_a58f674016d08977cecd1230c77ddb9e2}{start\-Video} (char $\ast$filename, char $\ast$options)
+\item 
+void \hyperlink{spycam__funcs_8c_a97c176c16888bfc4594e7296faf58910}{stop\-Video} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{spycam__funcs_8c_ae0d46a978d5cd6707411f276ad869b9c}{pid\-\_\-t \hyperlink{spycam__funcs_8c_ae0d46a978d5cd6707411f276ad869b9c}{pid} =0}\label{spycam__funcs_8c_ae0d46a978d5cd6707411f276ad869b9c}
+
+\begin{DoxyCompactList}\small\item\em Process I\-D variable for the Raspberry Pi spy camera video recording. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Raspberry Pi spy camera functions file. \begin{DoxyAuthor}{Author}
+Danylo Malyuta \href{mailto:danylo.malyuta@gmail.com}{\tt danylo.\-malyuta@gmail.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0
+\end{DoxyVersion}
+This file contains functions to start and stop camera recording with particular settings. The code is taken directly from the very kindly provided code by ceptimus \href{http://ceptimus.co.uk/?p=91}{\tt here}.
+
+No license file nor text was provided with this source code, so none is included here. 
+
+\subsection{Function Documentation}
+\hypertarget{spycam__funcs_8c_a58f674016d08977cecd1230c77ddb9e2}{\index{spycam\-\_\-funcs.\-c@{spycam\-\_\-funcs.\-c}!start\-Video@{start\-Video}}
+\index{start\-Video@{start\-Video}!spycam_funcs.c@{spycam\-\_\-funcs.\-c}}
+\subsubsection[{start\-Video}]{\setlength{\rightskip}{0pt plus 5cm}void start\-Video (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{filename, }
+\item[{char $\ast$}]{options}
+\end{DoxyParamCaption}
+)}}\label{spycam__funcs_8c_a58f674016d08977cecd1230c77ddb9e2}
+This function starts the Raspberry Pi camera recording with specific recording options $\ast$options stored at the adress pointed to by options. If you want to enable preview/monitoring then make the obvious change to remove the -\/n (no preview) option from the source code of this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & A string specifying the name of the resulting video file (must have .h264 ending). \\
+\hline
+{\em options} & Normal raspivid options. Avoid -\/t, -\/n, -\/o, and -\/s as the code fills those in for you. \\
+\hline
+\end{DoxyParams}
+\hypertarget{spycam__funcs_8c_a97c176c16888bfc4594e7296faf58910}{\index{spycam\-\_\-funcs.\-c@{spycam\-\_\-funcs.\-c}!stop\-Video@{stop\-Video}}
+\index{stop\-Video@{stop\-Video}!spycam_funcs.c@{spycam\-\_\-funcs.\-c}}
+\subsubsection[{stop\-Video}]{\setlength{\rightskip}{0pt plus 5cm}void stop\-Video (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{spycam__funcs_8c_a97c176c16888bfc4594e7296faf58910}
+This functions stops the camera recording process. 

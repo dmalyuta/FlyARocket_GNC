@@ -1,0 +1,48 @@
+\hypertarget{structSPI__data}{\section{S\-P\-I\-\_\-data Struct Reference}
+\label{structSPI__data}\index{S\-P\-I\-\_\-data@{S\-P\-I\-\_\-data}}
+}
+
+
+{\ttfamily \#include $<$pressure\-\_\-header.\-h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structSPI__data_aaf787f81751e9d18950132ae7d9a8da4}{unsigned char \hyperlink{structSPI__data_aaf787f81751e9d18950132ae7d9a8da4}{mode}}\label{structSPI__data_aaf787f81751e9d18950132ae7d9a8da4}
+
+\begin{DoxyCompactList}\small\item\em S\-P\-I mode. \end{DoxyCompactList}\item 
+\hypertarget{structSPI__data_a753df088a8164dcd9b1cacda6127da39}{unsigned char \hyperlink{structSPI__data_a753df088a8164dcd9b1cacda6127da39}{bits}}\label{structSPI__data_a753df088a8164dcd9b1cacda6127da39}
+
+\begin{DoxyCompactList}\small\item\em Number of bits per S\-P\-I transmission. \end{DoxyCompactList}\item 
+\hypertarget{structSPI__data_a5a97f7a0be149b0eea43de02bb9f5538}{unsigned long int \hyperlink{structSPI__data_a5a97f7a0be149b0eea43de02bb9f5538}{max\-\_\-speed}}\label{structSPI__data_a5a97f7a0be149b0eea43de02bb9f5538}
+
+\begin{DoxyCompactList}\small\item\em Frequency of S\-P\-I transmission (in \mbox{[}Hz\mbox{]}) \end{DoxyCompactList}\item 
+\hypertarget{structSPI__data_a30db968277621df77b6ba5171c79da08}{unsigned char \hyperlink{structSPI__data_a30db968277621df77b6ba5171c79da08}{buffer\-\_\-length}}\label{structSPI__data_a30db968277621df77b6ba5171c79da08}
+
+\begin{DoxyCompactList}\small\item\em Length of S\-P\-I transmit/receive buffer. \end{DoxyCompactList}\item 
+\hypertarget{structSPI__data_ab122e183f5f46e7984e7f581fa980ffe}{unsigned int \hyperlink{structSPI__data_ab122e183f5f46e7984e7f581fa980ffe}{P\-\_\-\-O\-U\-T\-\_\-\-\_\-\-M\-A\-X}}\label{structSPI__data_ab122e183f5f46e7984e7f581fa980ffe}
+
+\begin{DoxyCompactList}\small\item\em Maximum decimal value received when recording max pressure, refer to \href{http://sensing.honeywell.com/honeywell-sensing-trustability-hsc-series-high-accuracy-board-mount-pressure-sensors-50099148-a-en.pdf}{\tt datasheet} page 13 for second to last model number (\char`\"{}\-Transfer Function\char`\"{}) given H\-S\-C D L\-N N 100\-M\-D S A 5. \end{DoxyCompactList}\item 
+\hypertarget{structSPI__data_a9ceacc1af63c3628f794e93a71ea2126}{unsigned int \hyperlink{structSPI__data_a9ceacc1af63c3628f794e93a71ea2126}{P\-\_\-\-O\-U\-T\-\_\-\-\_\-\-M\-I\-N}}\label{structSPI__data_a9ceacc1af63c3628f794e93a71ea2126}
+
+\begin{DoxyCompactList}\small\item\em Minimum decimal value received when recording min pressure, refer to \href{http://sensing.honeywell.com/honeywell-sensing-trustability-hsc-series-high-accuracy-board-mount-pressure-sensors-50099148-a-en.pdf}{\tt datasheet} page 13 for second to last model number (\char`\"{}\-Transfer Function\char`\"{}) given H\-S\-C D L\-N N 100\-M\-D S A 5. \end{DoxyCompactList}\item 
+\hypertarget{structSPI__data_a634b17223c7720d100d159ea751d0ec9}{float \hyperlink{structSPI__data_a634b17223c7720d100d159ea751d0ec9}{P\-\_\-\-\_\-\-M\-A\-X}}\label{structSPI__data_a634b17223c7720d100d159ea751d0ec9}
+
+\begin{DoxyCompactList}\small\item\em \mbox{[}mbar\mbox{]} maximum sensor pressure reading \end{DoxyCompactList}\item 
+\hypertarget{structSPI__data_af33e94cc7303e19d8324916a596ff14c}{float \hyperlink{structSPI__data_af33e94cc7303e19d8324916a596ff14c}{P\-\_\-\-\_\-\-M\-I\-N}}\label{structSPI__data_af33e94cc7303e19d8324916a596ff14c}
+
+\begin{DoxyCompactList}\small\item\em \mbox{[}mbar\mbox{]} minimum sensor pressure reading \end{DoxyCompactList}\item 
+\hypertarget{structSPI__data_a8813b11d25bd5c4d31bd8945e2c1d33a}{unsigned int \hyperlink{structSPI__data_a8813b11d25bd5c4d31bd8945e2c1d33a}{radial\-\_\-sensor\-\_\-fd}}\label{structSPI__data_a8813b11d25bd5c4d31bd8945e2c1d33a}
+
+\begin{DoxyCompactList}\small\item\em Radial sensor connection handle. \end{DoxyCompactList}\item 
+\hypertarget{structSPI__data_a071114b977c92258f04ee298aabb0297}{unsigned int \hyperlink{structSPI__data_a071114b977c92258f04ee298aabb0297}{axial\-\_\-sensor\-\_\-fd}}\label{structSPI__data_a071114b977c92258f04ee298aabb0297}
+
+\begin{DoxyCompactList}\small\item\em Axial sensor connection handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This structure contains all info necessary to communicate with and to interpret incoming data from the Honeywell H\-S\-C sensors. Please refer to the \href{http://sensing.honeywell.com/honeywell-sensing-trustability-hsc-series-high-accuracy-board-mount-pressure-sensors-50099148-a-en.pdf}{\tt datasheet} and \href{http://sensing.honeywell.com/spi-comms-digital-ouptu-pressure-sensors-tn-008202-3-en-final-30may12.pdf}{\tt Honeywell S\-P\-I companion} for info on parameters like P\-\_\-\-\_\-\-O\-U\-T\-\_\-\-M\-A\-X, P\-\_\-\-O\-U\-T\-\_\-\-\_\-\-M\-I\-N, etc. Note that the specific pressure sensors that we use are\-: H\-S\-C D L\-N N 100\-M\-D S A 5. 
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{pressure__header_8h}{pressure\-\_\-header.\-h}\end{DoxyCompactItemize}

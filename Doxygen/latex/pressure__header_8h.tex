@@ -1,0 +1,65 @@
+\hypertarget{pressure__header_8h}{\section{pressure\-\_\-header.\-h File Reference}
+\label{pressure__header_8h}\index{pressure\-\_\-header.\-h@{pressure\-\_\-header.\-h}}
+}
+
+
+Honeywell pressure/temperature sensors header file.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structSPI__data}{S\-P\-I\-\_\-data}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{pressure__header_8h_a2d66f7ecdddd16be2061ccc58ed24c35}{\#define \hyperlink{pressure__header_8h_a2d66f7ecdddd16be2061ccc58ed24c35}{B\-Y\-T\-E\-\_\-\-N\-U\-M\-B\-E\-R}~4}\label{pressure__header_8h_a2d66f7ecdddd16be2061ccc58ed24c35}
+
+\begin{DoxyCompactList}\small\item\em How many bytes we want to receive from the pressure sensor per reading. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{pressure__header_8h_a11097047a088f43781a7a332dca3feee}{const char \hyperlink{pressure__header_8h_a11097047a088f43781a7a332dca3feee}{R\-A\-D\-I\-A\-L\-\_\-\-S\-E\-N\-S\-O\-R} \mbox{[}$\,$\mbox{]}}\label{pressure__header_8h_a11097047a088f43781a7a332dca3feee}
+
+\begin{DoxyCompactList}\small\item\em File path for the radial pressure sensor S\-P\-I connection. \end{DoxyCompactList}\item 
+\hypertarget{pressure__header_8h_a00c0bd0ea7784ee9add4bdfd7e33bb92}{const char \hyperlink{pressure__header_8h_a00c0bd0ea7784ee9add4bdfd7e33bb92}{A\-X\-I\-A\-L\-\_\-\-S\-E\-N\-S\-O\-R} \mbox{[}$\,$\mbox{]}}\label{pressure__header_8h_a00c0bd0ea7784ee9add4bdfd7e33bb92}
+
+\begin{DoxyCompactList}\small\item\em File path for the axial pressure sensor S\-P\-I connection. \end{DoxyCompactList}\item 
+\hypertarget{pressure__header_8h_aa7ecd5fe5c95cd42a28dd0c0601605df}{struct \hyperlink{structSPI__data}{S\-P\-I\-\_\-data} \hyperlink{pressure__header_8h_aa7ecd5fe5c95cd42a28dd0c0601605df}{S\-P\-I\-\_\-config}}\label{pressure__header_8h_aa7ecd5fe5c95cd42a28dd0c0601605df}
+
+\begin{DoxyCompactList}\small\item\em Holds the S\-P\-I configuration. \end{DoxyCompactList}\item 
+\hypertarget{pressure__header_8h_a0016ac7e8a2e087a0e0d4a36f8e33b4f}{unsigned char \hyperlink{pressure__header_8h_a0016ac7e8a2e087a0e0d4a36f8e33b4f}{radial\-\_\-status}}\label{pressure__header_8h_a0016ac7e8a2e087a0e0d4a36f8e33b4f}
+
+\begin{DoxyCompactList}\small\item\em Holds status of radial sensor. \end{DoxyCompactList}\item 
+\hypertarget{pressure__header_8h_a5432013ac543ecc6b3c848249fbffbb9}{float \hyperlink{pressure__header_8h_a5432013ac543ecc6b3c848249fbffbb9}{radial\-\_\-pressure}}\label{pressure__header_8h_a5432013ac543ecc6b3c848249fbffbb9}
+
+\begin{DoxyCompactList}\small\item\em Holds differential pressure reading of radially mounted pressure sensor. \end{DoxyCompactList}\item 
+\hypertarget{pressure__header_8h_ae4334f337a37203c44328c020ee33bb4}{float \hyperlink{pressure__header_8h_ae4334f337a37203c44328c020ee33bb4}{radial\-\_\-temperature}}\label{pressure__header_8h_ae4334f337a37203c44328c020ee33bb4}
+
+\begin{DoxyCompactList}\small\item\em Holds compensated temperature reading of radially mounted pressure sensor. \end{DoxyCompactList}\item 
+\hypertarget{pressure__header_8h_a967759071a6092e727c6371c115e90a2}{char \hyperlink{pressure__header_8h_a967759071a6092e727c6371c115e90a2}{axial\-\_\-status}}\label{pressure__header_8h_a967759071a6092e727c6371c115e90a2}
+
+\begin{DoxyCompactList}\small\item\em Holds status of axial sensor. \end{DoxyCompactList}\item 
+\hypertarget{pressure__header_8h_aa25e00923e361dffe516ff778c26ed6d}{float \hyperlink{pressure__header_8h_aa25e00923e361dffe516ff778c26ed6d}{axial\-\_\-pressure}}\label{pressure__header_8h_aa25e00923e361dffe516ff778c26ed6d}
+
+\begin{DoxyCompactList}\small\item\em Holds differential pressure reading of axially mounted pressure sensor. \end{DoxyCompactList}\item 
+\hypertarget{pressure__header_8h_ab07aa5a9125cebc7cc3fc96003a11b5a}{float \hyperlink{pressure__header_8h_ab07aa5a9125cebc7cc3fc96003a11b5a}{axial\-\_\-temperature}}\label{pressure__header_8h_ab07aa5a9125cebc7cc3fc96003a11b5a}
+
+\begin{DoxyCompactList}\small\item\em Holds compensated temperature reading of axially mounted pressure sensor. \end{DoxyCompactList}\item 
+\hypertarget{pressure__header_8h_ac698c71ea28bbc160f170afbf2faecbe}{unsigned char \hyperlink{pressure__header_8h_ac698c71ea28bbc160f170afbf2faecbe}{data} \mbox{[}\hyperlink{pressure__header_8h_a2d66f7ecdddd16be2061ccc58ed24c35}{B\-Y\-T\-E\-\_\-\-N\-U\-M\-B\-E\-R}\mbox{]}}\label{pressure__header_8h_ac698c71ea28bbc160f170afbf2faecbe}
+
+\begin{DoxyCompactList}\small\item\em We will receive 4 bytes from the pressure sensor. \end{DoxyCompactList}\item 
+\hypertarget{pressure__header_8h_a4b81aaf60ccf7ef31d6b25171bd587bb}{struct spi\-\_\-ioc\-\_\-transfer \hyperlink{pressure__header_8h_a4b81aaf60ccf7ef31d6b25171bd587bb}{transfer} \mbox{[}\hyperlink{pressure__header_8h_a2d66f7ecdddd16be2061ccc58ed24c35}{B\-Y\-T\-E\-\_\-\-N\-U\-M\-B\-E\-R}\mbox{]}}\label{pressure__header_8h_a4b81aaf60ccf7ef31d6b25171bd587bb}
+
+\begin{DoxyCompactList}\small\item\em S\-P\-I transfer structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Honeywell pressure/temperature sensors header file. \begin{DoxyAuthor}{Author}
+Danylo Malyuta \href{mailto:danylo.malyuta@gmail.com}{\tt danylo.\-malyuta@gmail.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0
+\end{DoxyVersion}
+This is the header to \hyperlink{pressure__funcs_8c}{pressure\-\_\-funcs.\-c} containing necessary definitions and initializations. 

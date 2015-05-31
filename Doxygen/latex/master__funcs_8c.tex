@@ -1,0 +1,165 @@
+\hypertarget{master__funcs_8c}{\section{master\-\_\-funcs.\-c File Reference}
+\label{master__funcs_8c}\index{master\-\_\-funcs.\-c@{master\-\_\-funcs.\-c}}
+}
+
+
+Master functions file.  
+
+
+{\ttfamily \#include $<$sys/time.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$pthread.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}master\-\_\-header.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}spycam\-\_\-header.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{master__funcs_8c_a0ebc9cbfa5616a43caa96e7394543752}{write\-\_\-to\-\_\-file\-\_\-custom} (F\-I\-L\-E $\ast$file\-\_\-ptr, char $\ast$string, F\-I\-L\-E $\ast$\hyperlink{master__header_8h_a0942b9a4f7a184e9d6b95901e2b9ba4f}{error\-\_\-log})
+\item 
+void \hyperlink{master__funcs_8c_a38415767eeeb2be505d4e823dc187437}{check\-\_\-time} (struct timeval $\ast$now, struct timeval before, struct timeval elapsed, unsigned long long int $\ast$time)
+\item 
+void \hyperlink{master__funcs_8c_acaeb180ec54844f644d844aef7ecb8d3}{open\-\_\-file} (F\-I\-L\-E $\ast$$\ast$log, char $\ast$path, char $\ast$setting, F\-I\-L\-E $\ast$\hyperlink{master__header_8h_a0942b9a4f7a184e9d6b95901e2b9ba4f}{error\-\_\-log})
+\item 
+void \hyperlink{master__funcs_8c_a74b332f6927a5430b862f575cdb07e72}{open\-\_\-error\-\_\-file} (F\-I\-L\-E $\ast$$\ast$\hyperlink{master__header_8h_a0942b9a4f7a184e9d6b95901e2b9ba4f}{error\-\_\-log}, char $\ast$path, char $\ast$setting)
+\item 
+void \hyperlink{master__funcs_8c_aab039920099459bf8d53159b68485e24}{passive\-\_\-wait} (struct timeval $\ast$now, struct timeval $\ast$before, struct timeval $\ast$elapsed, unsigned long long int $\ast$time, unsigned long long int T\-I\-M\-E\-\_\-\-\_\-\-S\-T\-E\-P)
+\item 
+\hypertarget{master__funcs_8c_abcb618eb016786383b05af1c989404b8}{void {\bfseries search\-\_\-\-P\-W\-M} (double thrust, unsigned char $\ast$pwm)}\label{master__funcs_8c_abcb618eb016786383b05af1c989404b8}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{master__funcs_8c_ab324d426f7c3fd563450bd71a15aefe7}{unsigned int \hyperlink{master__funcs_8c_ab324d426f7c3fd563450bd71a15aefe7}{P\-W\-M\-\_\-valve\-\_\-charac} \mbox{[}\hyperlink{master__header_8h_ae3593488fd933fd856b687d074f25f91}{V\-A\-L\-V\-E\-\_\-\-C\-H\-A\-R\-A\-C\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N}\mbox{]} = \{0,6,14,25,39,50,63,75,87,98,106,115,127\}}\label{master__funcs_8c_ab324d426f7c3fd563450bd71a15aefe7}
+
+\begin{DoxyCompactList}\small\item\em P\-W\-M value of characteristic thrust curve. \end{DoxyCompactList}\item 
+\hypertarget{master__funcs_8c_a9ee7453017d47063c9f1e9e6ad69c424}{double \hyperlink{master__funcs_8c_a9ee7453017d47063c9f1e9e6ad69c424}{R\-\_\-valve\-\_\-charac} \mbox{[}\hyperlink{master__header_8h_ae3593488fd933fd856b687d074f25f91}{V\-A\-L\-V\-E\-\_\-\-C\-H\-A\-R\-A\-C\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N}\mbox{]} = \{0.\-0000,0.\-0091,0.\-0478,0.\-0981,0.\-1656,0.\-2245,0.\-2816,0.\-3344,0.\-3737,0.\-4166,0.\-4406,0.\-4676,0.\-5000\}}\label{master__funcs_8c_a9ee7453017d47063c9f1e9e6ad69c424}
+
+\begin{DoxyCompactList}\small\item\em Thrust (R) value of characteristic thrust value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Master functions file. \begin{DoxyAuthor}{Author}
+Danylo Malyuta \href{mailto:danylo.malyuta@gmail.com}{\tt danylo.\-malyuta@gmail.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0
+\end{DoxyVersion}
+This file contains some of the primary, \char`\"{}every-\/day\char`\"{} functions used by the G\-N\-C algorithm to achieve its tasks. The file is called \char`\"{}master\-\_\-funcs\char`\"{} because the functions here are general in that they tend to appear everywhere in the code to perform routine tasks like file I/\-O, waiting, etc. 
+
+\subsection{Function Documentation}
+\hypertarget{master__funcs_8c_a38415767eeeb2be505d4e823dc187437}{\index{master\-\_\-funcs.\-c@{master\-\_\-funcs.\-c}!check\-\_\-time@{check\-\_\-time}}
+\index{check\-\_\-time@{check\-\_\-time}!master_funcs.c@{master\-\_\-funcs.\-c}}
+\subsubsection[{check\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}void check\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{struct timeval $\ast$}]{now, }
+\item[{struct timeval}]{before, }
+\item[{struct timeval}]{elapsed, }
+\item[{unsigned long long int $\ast$}]{time}
+\end{DoxyParamCaption}
+)}}\label{master__funcs_8c_a38415767eeeb2be505d4e823dc187437}
+This function the value pointed to by time with the time that has passed between $\ast$now and the last time gettimeofday(\&before,\-N\-U\-L\-L) was called.
+
+
+\begin{DoxyParams}{Parameters}
+{\em now} & The current time (struct timeval). \\
+\hline
+{\em before} & The previous time (struct timeval). \\
+\hline
+{\em elapsed} & The time elapsed between now and before (struct timeval). \\
+\hline
+{\em time} & The time in \mbox{[}us\mbox{]} that elapsed between now and before. \\
+\hline
+\end{DoxyParams}
+\hypertarget{master__funcs_8c_a74b332f6927a5430b862f575cdb07e72}{\index{master\-\_\-funcs.\-c@{master\-\_\-funcs.\-c}!open\-\_\-error\-\_\-file@{open\-\_\-error\-\_\-file}}
+\index{open\-\_\-error\-\_\-file@{open\-\_\-error\-\_\-file}!master_funcs.c@{master\-\_\-funcs.\-c}}
+\subsubsection[{open\-\_\-error\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}void open\-\_\-error\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$$\ast$}]{error\-\_\-log, }
+\item[{char $\ast$}]{path, }
+\item[{char $\ast$}]{setting}
+\end{DoxyParamCaption}
+)}}\label{master__funcs_8c_a74b332f6927a5430b862f575cdb07e72}
+This file opens the error file. The function is separate from \hyperlink{master__funcs_8c_acaeb180ec54844f644d844aef7ecb8d3}{open\-\_\-file()} because in case of error we can't write to the error file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em error\-\_\-log} & Pointer to the error log. \\
+\hline
+{\em path} & This is the path to the error log. \\
+\hline
+{\em setting} & This is the mode in which we want to open the error log (e.\-g 'w', write only). \\
+\hline
+\end{DoxyParams}
+\hypertarget{master__funcs_8c_acaeb180ec54844f644d844aef7ecb8d3}{\index{master\-\_\-funcs.\-c@{master\-\_\-funcs.\-c}!open\-\_\-file@{open\-\_\-file}}
+\index{open\-\_\-file@{open\-\_\-file}!master_funcs.c@{master\-\_\-funcs.\-c}}
+\subsubsection[{open\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}void open\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$$\ast$}]{log, }
+\item[{char $\ast$}]{path, }
+\item[{char $\ast$}]{setting, }
+\item[{F\-I\-L\-E $\ast$}]{error\-\_\-log}
+\end{DoxyParamCaption}
+)}}\label{master__funcs_8c_acaeb180ec54844f644d844aef7ecb8d3}
+This function opens a file at $\ast$path in the mode $\ast$setting. If unsuccessful, it writes the error into the error\-\_\-log (which may itself be unsuccessful and throws an error.
+
+
+\begin{DoxyParams}{Parameters}
+{\em log} & This is the pointer to the file we want to open. \\
+\hline
+{\em path} & This is the path to the file. \\
+\hline
+{\em setting} & This is the mode in which we want to open the file (e.\-g. 'w', write only). \\
+\hline
+{\em error\-\_\-log} & Pointer to the error log, used in case of error opening log (argument 1). \\
+\hline
+\end{DoxyParams}
+\hypertarget{master__funcs_8c_aab039920099459bf8d53159b68485e24}{\index{master\-\_\-funcs.\-c@{master\-\_\-funcs.\-c}!passive\-\_\-wait@{passive\-\_\-wait}}
+\index{passive\-\_\-wait@{passive\-\_\-wait}!master_funcs.c@{master\-\_\-funcs.\-c}}
+\subsubsection[{passive\-\_\-wait}]{\setlength{\rightskip}{0pt plus 5cm}void passive\-\_\-wait (
+\begin{DoxyParamCaption}
+\item[{struct timeval $\ast$}]{now, }
+\item[{struct timeval $\ast$}]{before, }
+\item[{struct timeval $\ast$}]{elapsed, }
+\item[{unsigned long long int $\ast$}]{time, }
+\item[{unsigned long long int}]{T\-I\-M\-E\-\_\-\-\_\-\-S\-T\-E\-P}
+\end{DoxyParamCaption}
+)}}\label{master__funcs_8c_aab039920099459bf8d53159b68485e24}
+This function does a passive (instead of a busy) wait.
+
+
+\begin{DoxyParams}{Parameters}
+{\em now} & The time now (struct timeval). \\
+\hline
+{\em before} & The time before (struct timeval). \\
+\hline
+{\em elapsed} & The time elapsed (struct timeval). \\
+\hline
+{\em time} & The time in \mbox{[}us\mbox{]} between now and before. \\
+\hline
+{\em T\-I\-M\-E\-\_\-\-\_\-\-S\-T\-E\-P} & The time we want to iterate at within the loop from which \hyperlink{master__funcs_8c_aab039920099459bf8d53159b68485e24}{passive\-\_\-wait()} was called. \\
+\hline
+\end{DoxyParams}
+\hypertarget{master__funcs_8c_a0ebc9cbfa5616a43caa96e7394543752}{\index{master\-\_\-funcs.\-c@{master\-\_\-funcs.\-c}!write\-\_\-to\-\_\-file\-\_\-custom@{write\-\_\-to\-\_\-file\-\_\-custom}}
+\index{write\-\_\-to\-\_\-file\-\_\-custom@{write\-\_\-to\-\_\-file\-\_\-custom}!master_funcs.c@{master\-\_\-funcs.\-c}}
+\subsubsection[{write\-\_\-to\-\_\-file\-\_\-custom}]{\setlength{\rightskip}{0pt plus 5cm}void write\-\_\-to\-\_\-file\-\_\-custom (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{file\-\_\-ptr, }
+\item[{char $\ast$}]{string, }
+\item[{F\-I\-L\-E $\ast$}]{error\-\_\-log}
+\end{DoxyParamCaption}
+)}}\label{master__funcs_8c_a0ebc9cbfa5616a43caa96e7394543752}
+This function allows to write a custom string to a file
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\-\_\-ptr} & Pointer to file. \\
+\hline
+{\em string} & The file path. \\
+\hline
+{\em error\-\_\-log} & Pointer to error log file. \\
+\hline
+\end{DoxyParams}

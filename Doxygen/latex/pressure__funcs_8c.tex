@@ -1,0 +1,87 @@
+\hypertarget{pressure__funcs_8c}{\section{pressure\-\_\-funcs.\-c File Reference}
+\label{pressure__funcs_8c}\index{pressure\-\_\-funcs.\-c@{pressure\-\_\-funcs.\-c}}
+}
+
+
+Honeywell pressure/temperature sensors functions file.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$fcntl.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$sys/ioctl.\-h$>$}\\*
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$linux/spi/spidev.\-h$>$}\\*
+{\ttfamily \#include $<$pthread.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}pressure\-\_\-header.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}master\-\_\-header.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{pressure__funcs_8c_a13d931d4705e660b720ed2b8c0e28695}{pressure\-\_\-sensor\-\_\-\-S\-P\-I\-\_\-connect} (const char $\ast$directory, unsigned int $\ast$fd, unsigned char mode, unsigned char bits, unsigned long int max\-\_\-speed)
+\item 
+void $\ast$ \hyperlink{pressure__funcs_8c_a6c8634a0f37e059edc662324a919c39e}{get\-\_\-readings\-\_\-\-S\-P\-I\-\_\-parallel} (void $\ast$args)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{pressure__funcs_8c_a11097047a088f43781a7a332dca3feee}{const char \hyperlink{pressure__funcs_8c_a11097047a088f43781a7a332dca3feee}{R\-A\-D\-I\-A\-L\-\_\-\-S\-E\-N\-S\-O\-R} \mbox{[}$\,$\mbox{]} = \char`\"{}/dev/spidev0.\-0\char`\"{}}\label{pressure__funcs_8c_a11097047a088f43781a7a332dca3feee}
+
+\begin{DoxyCompactList}\small\item\em File path for the radial pressure sensor S\-P\-I connection. \end{DoxyCompactList}\item 
+\hypertarget{pressure__funcs_8c_a00c0bd0ea7784ee9add4bdfd7e33bb92}{const char \hyperlink{pressure__funcs_8c_a00c0bd0ea7784ee9add4bdfd7e33bb92}{A\-X\-I\-A\-L\-\_\-\-S\-E\-N\-S\-O\-R} \mbox{[}$\,$\mbox{]} = \char`\"{}/dev/spidev0.\-1\char`\"{}}\label{pressure__funcs_8c_a00c0bd0ea7784ee9add4bdfd7e33bb92}
+
+\begin{DoxyCompactList}\small\item\em File path for the axial pressure sensor S\-P\-I connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Honeywell pressure/temperature sensors functions file. \begin{DoxyAuthor}{Author}
+Danylo Malyuta \href{mailto:danylo.malyuta@gmail.com}{\tt danylo.\-malyuta@gmail.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0
+\end{DoxyVersion}
+This file contains functions that log data from the Honeywell H\-S\-C D L\-N N 100\-M\-D S A 5 pressure/temperature sensors (H\-S\-C -\/ High Accuracy, Compensated/\-Amplified -\/ Tru\-Stability Series) over S\-P\-I communication. 
+
+\subsection{Function Documentation}
+\hypertarget{pressure__funcs_8c_a6c8634a0f37e059edc662324a919c39e}{\index{pressure\-\_\-funcs.\-c@{pressure\-\_\-funcs.\-c}!get\-\_\-readings\-\_\-\-S\-P\-I\-\_\-parallel@{get\-\_\-readings\-\_\-\-S\-P\-I\-\_\-parallel}}
+\index{get\-\_\-readings\-\_\-\-S\-P\-I\-\_\-parallel@{get\-\_\-readings\-\_\-\-S\-P\-I\-\_\-parallel}!pressure_funcs.c@{pressure\-\_\-funcs.\-c}}
+\subsubsection[{get\-\_\-readings\-\_\-\-S\-P\-I\-\_\-parallel}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ get\-\_\-readings\-\_\-\-S\-P\-I\-\_\-parallel (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{args}
+\end{DoxyParamCaption}
+)}}\label{pressure__funcs_8c_a6c8634a0f37e059edc662324a919c39e}
+This is a (p)thread which does the sole job of reading data from the Honeywell H\-S\-C sensors (pressure and temperature).
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & A pointer to the input arguments. We pass the S\-P\-I connection struct pointer as a void pointer and then typecast it back to a struct pointer (see \href{https://computing.llnl.gov/tutorials/pthreads/samples/hello_arg2.c}{\tt example}). \\
+\hline
+\end{DoxyParams}
+\hypertarget{pressure__funcs_8c_a13d931d4705e660b720ed2b8c0e28695}{\index{pressure\-\_\-funcs.\-c@{pressure\-\_\-funcs.\-c}!pressure\-\_\-sensor\-\_\-\-S\-P\-I\-\_\-connect@{pressure\-\_\-sensor\-\_\-\-S\-P\-I\-\_\-connect}}
+\index{pressure\-\_\-sensor\-\_\-\-S\-P\-I\-\_\-connect@{pressure\-\_\-sensor\-\_\-\-S\-P\-I\-\_\-connect}!pressure_funcs.c@{pressure\-\_\-funcs.\-c}}
+\subsubsection[{pressure\-\_\-sensor\-\_\-\-S\-P\-I\-\_\-connect}]{\setlength{\rightskip}{0pt plus 5cm}void pressure\-\_\-sensor\-\_\-\-S\-P\-I\-\_\-connect (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{directory, }
+\item[{unsigned int $\ast$}]{fd, }
+\item[{unsigned char}]{mode, }
+\item[{unsigned char}]{bits, }
+\item[{unsigned long int}]{max\-\_\-speed}
+\end{DoxyParamCaption}
+)}}\label{pressure__funcs_8c_a13d931d4705e660b720ed2b8c0e28695}
+This function opens the S\-P\-I connection to the pressure sensor connected to $\ast$directory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em directory} & The file path. \\
+\hline
+{\em fd} & The connection handle once opened. \\
+\hline
+{\em mode} & S\-P\-I mode (0, 1, 2 or 3). Honeywell H\-S\-C pressure sensors use mode 0, so that's what we use in this program! \\
+\hline
+{\em bits} & Number of bits per S\-P\-I transmission. \\
+\hline
+{\em max\-\_\-speed} & The S\-P\-I connection speed. \\
+\hline
+\end{DoxyParams}

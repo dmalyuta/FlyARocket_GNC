@@ -1,0 +1,85 @@
+\hypertarget{simplex__header_8h}{\section{simplex\-\_\-header.\-h File Reference}
+\label{simplex__header_8h}\index{simplex\-\_\-header.\-h@{simplex\-\_\-header.\-h}}
+}
+
+
+Simplex header file.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{simplex__header_8h_ae640f769af4067b42af6136b98cf09c2}{\#define \hyperlink{simplex__header_8h_ae640f769af4067b42af6136b98cf09c2}{M\-M\-A\-X}~5}\label{simplex__header_8h_ae640f769af4067b42af6136b98cf09c2}
+
+\begin{DoxyCompactList}\small\item\em Number of rows of the simplex table. \end{DoxyCompactList}\item 
+\hypertarget{simplex__header_8h_a5de5d183f9a6a8d53316f743e1ca6dc2}{\#define \hyperlink{simplex__header_8h_a5de5d183f9a6a8d53316f743e1ca6dc2}{N\-M\-A\-X}~6}\label{simplex__header_8h_a5de5d183f9a6a8d53316f743e1ca6dc2}
+
+\begin{DoxyCompactList}\small\item\em Number of columns of the simplex table. \end{DoxyCompactList}\item 
+\hypertarget{simplex__header_8h_a4b654506f18b8bfd61ad2a29a7e38c25}{\#define \hyperlink{simplex__header_8h_a4b654506f18b8bfd61ad2a29a7e38c25}{R\-E\-A\-L}~double}\label{simplex__header_8h_a4b654506f18b8bfd61ad2a29a7e38c25}
+
+\begin{DoxyCompactList}\small\item\em Alias for a double. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{simplex__header_8h_a42fde6adf063d0e30ad7a238b2d6e7da}{typedef \hyperlink{simplex__header_8h_a4b654506f18b8bfd61ad2a29a7e38c25}{R\-E\-A\-L} \hyperlink{simplex__header_8h_a42fde6adf063d0e30ad7a238b2d6e7da}{M\-A\-T} \mbox{[}\hyperlink{simplex__header_8h_ae640f769af4067b42af6136b98cf09c2}{M\-M\-A\-X}\mbox{]}\mbox{[}\hyperlink{simplex__header_8h_a5de5d183f9a6a8d53316f743e1ca6dc2}{N\-M\-A\-X}\mbox{]}}\label{simplex__header_8h_a42fde6adf063d0e30ad7a238b2d6e7da}
+
+\begin{DoxyCompactList}\small\item\em A \mbox{[}M\-M\-A\-Xx\-N\-M\-A\-X\mbox{]} matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{simplex__header_8h_ace63b68fea4070104433c81319d246a6}{\hyperlink{simplex__header_8h_a42fde6adf063d0e30ad7a238b2d6e7da}{M\-A\-T} \hyperlink{simplex__header_8h_ace63b68fea4070104433c81319d246a6}{A}}\label{simplex__header_8h_ace63b68fea4070104433c81319d246a6}
+
+\begin{DoxyCompactList}\small\item\em Simplex table. \end{DoxyCompactList}\item 
+\hypertarget{simplex__header_8h_a7b073130bae459e5f0bb5625868443e2}{int {\bfseries I\-P\-O\-S\-V} \mbox{[}\hyperlink{simplex__header_8h_ae640f769af4067b42af6136b98cf09c2}{M\-M\-A\-X}\mbox{]}}\label{simplex__header_8h_a7b073130bae459e5f0bb5625868443e2}
+
+\item 
+\hypertarget{simplex__header_8h_aae57c018da4ff21ec5ef18e89f2d3f3e}{int {\bfseries I\-Z\-R\-O\-V} \mbox{[}\hyperlink{simplex__header_8h_a5de5d183f9a6a8d53316f743e1ca6dc2}{N\-M\-A\-X}\mbox{]}}\label{simplex__header_8h_aae57c018da4ff21ec5ef18e89f2d3f3e}
+
+\item 
+\hypertarget{simplex__header_8h_acb559820d9ca11295b4500f179ef6392}{int \hyperlink{simplex__header_8h_acb559820d9ca11295b4500f179ef6392}{i}}\label{simplex__header_8h_acb559820d9ca11295b4500f179ef6392}
+
+\begin{DoxyCompactList}\small\item\em Index variable for loops. \end{DoxyCompactList}\item 
+\hypertarget{simplex__header_8h_a37d972ae0b47b9099e30983131d31916}{int \hyperlink{simplex__header_8h_a37d972ae0b47b9099e30983131d31916}{j}}\label{simplex__header_8h_a37d972ae0b47b9099e30983131d31916}
+
+\begin{DoxyCompactList}\small\item\em Index variable for loops. \end{DoxyCompactList}\item 
+\hypertarget{simplex__header_8h_a98c1868ebc3ea1101030b1059963d2c2}{int {\bfseries I\-C\-A\-S\-E}}\label{simplex__header_8h_a98c1868ebc3ea1101030b1059963d2c2}
+
+\item 
+\hypertarget{simplex__header_8h_a7722c8ecbb62d99aee7ce68b1752f337}{int \hyperlink{simplex__header_8h_a7722c8ecbb62d99aee7ce68b1752f337}{N}}\label{simplex__header_8h_a7722c8ecbb62d99aee7ce68b1752f337}
+
+\begin{DoxyCompactList}\small\item\em Number of variables in cost function. Our variables are R1, R2, R3, R4 so N=4. \end{DoxyCompactList}\item 
+\hypertarget{simplex__header_8h_a5e78dbd5fd0fc01ba7b98dd15e27221e}{int \hyperlink{simplex__header_8h_a5e78dbd5fd0fc01ba7b98dd15e27221e}{M}}\label{simplex__header_8h_a5e78dbd5fd0fc01ba7b98dd15e27221e}
+
+\begin{DoxyCompactList}\small\item\em Total number of constraints (M=M1+\-M2+\-M3) \end{DoxyCompactList}\item 
+\hypertarget{simplex__header_8h_a7a2aaeb8c0218468f3775cedc6d0087c}{int \hyperlink{simplex__header_8h_a7a2aaeb8c0218468f3775cedc6d0087c}{M1}}\label{simplex__header_8h_a7a2aaeb8c0218468f3775cedc6d0087c}
+
+\begin{DoxyCompactList}\small\item\em No ($<$=) type constraints. \end{DoxyCompactList}\item 
+\hypertarget{simplex__header_8h_a4ae62474468edbb5f37cd79ee5e7ca90}{int \hyperlink{simplex__header_8h_a4ae62474468edbb5f37cd79ee5e7ca90}{M2}}\label{simplex__header_8h_a4ae62474468edbb5f37cd79ee5e7ca90}
+
+\begin{DoxyCompactList}\small\item\em No ($>$=) type constraints. \end{DoxyCompactList}\item 
+\hypertarget{simplex__header_8h_a1b0d06f043612b284f80743aa186de4c}{int \hyperlink{simplex__header_8h_a1b0d06f043612b284f80743aa186de4c}{M3}}\label{simplex__header_8h_a1b0d06f043612b284f80743aa186de4c}
+
+\begin{DoxyCompactList}\small\item\em 3 (=) type constraints (for Fpitch, Fyaw, Mroll) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simplex header file. \begin{DoxyAuthor}{Author}
+Simplex header file \href{mailto:danylo.malyuta@gmail.com}{\tt danylo.\-malyuta@gmail.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0
+\end{DoxyVersion}
+This is the header to \hyperlink{simplex__funcs_8c}{simplex\-\_\-funcs.\-c} containing necessary definitions and initializations. This header supports, but was not provided with, the code kindly provided code by Jean-\/\-Pierre Moreau \href{http://jean-pierre.moreau.pagesperso-orange.fr/Cplus/tsimplex_cpp.txt}{\tt here}. where the header definitions in this file were directly incorporated into the code at the above url.
+
+License from the original cpp file\-: \begin{DoxyVerb}***************************************************************
+*          LINEAR PROGRAMMING: THE SIMPLEX METHOD             *
+*------------------------------------------------------------ *
+* ------------------------------------------------------------*
+* Reference: "Numerical Recipes By W.H. Press, B. P. Flannery,*
+*             S.A. Teukolsky and W.T. Vetterling, Cambridge   *
+*             University Press, 1986" [BIBLI 08].             *
+*                                                             *
+*                       C++ Release 1.0 By J-P Moreau, Paris  *
+*                                 (www.jpmoreau.fr)           *
+***************************************************************\end{DoxyVerb}
+ 

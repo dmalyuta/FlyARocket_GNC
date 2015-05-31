@@ -1,0 +1,69 @@
+\hypertarget{control__funcs_8c}{\section{control\-\_\-funcs.\-c File Reference}
+\label{control__funcs_8c}\index{control\-\_\-funcs.\-c@{control\-\_\-funcs.\-c}}
+}
+
+
+Control functions source file.  
+
+
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}master\-\_\-header.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}control\-\_\-header.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{control__funcs_8c_a61112075a4a85516d83e6a5783195f6a}{Fpitch\-\_\-loop\-\_\-control\-\_\-setup} ()
+\item 
+void \hyperlink{control__funcs_8c_a7ae1b1a2260fb4f478a16bfbef58a40c}{Fyaw\-\_\-loop\-\_\-control\-\_\-setup} ()
+\item 
+void \hyperlink{control__funcs_8c_a96c5ad1205f723d2600471fd9962144b}{Mroll\-\_\-loop\-\_\-control\-\_\-setup} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{control__funcs_8c_ab68ddad07171b0184b749ff21f40aea8}{V\-A\-L\-V\-E\-\_\-\-\_\-\-M\-A\-X\-\_\-\-T\-H\-R\-U\-S\-T} =0.\-5
+\begin{DoxyCompactList}\small\item\em Maximum thrust of R\-C\-S solenoid valves (i.\-e. when fully opened) // T\-O\-D\-O\-: confirm with Gautier! \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Control functions source file. \begin{DoxyAuthor}{Author}
+Danylo Malyuta \href{mailto:danylo.malyuta@gmail.com}{\tt danylo.\-malyuta@gmail.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0
+\end{DoxyVersion}
+This file contains functions regarding the control algorithm. 
+
+\subsection{Function Documentation}
+\hypertarget{control__funcs_8c_a61112075a4a85516d83e6a5783195f6a}{\index{control\-\_\-funcs.\-c@{control\-\_\-funcs.\-c}!Fpitch\-\_\-loop\-\_\-control\-\_\-setup@{Fpitch\-\_\-loop\-\_\-control\-\_\-setup}}
+\index{Fpitch\-\_\-loop\-\_\-control\-\_\-setup@{Fpitch\-\_\-loop\-\_\-control\-\_\-setup}!control_funcs.c@{control\-\_\-funcs.\-c}}
+\subsubsection[{Fpitch\-\_\-loop\-\_\-control\-\_\-setup}]{\setlength{\rightskip}{0pt plus 5cm}void Fpitch\-\_\-loop\-\_\-control\-\_\-setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{control__funcs_8c_a61112075a4a85516d83e6a5783195f6a}
+This function setups up all control parameters relating to the pitch control. \hypertarget{control__funcs_8c_a7ae1b1a2260fb4f478a16bfbef58a40c}{\index{control\-\_\-funcs.\-c@{control\-\_\-funcs.\-c}!Fyaw\-\_\-loop\-\_\-control\-\_\-setup@{Fyaw\-\_\-loop\-\_\-control\-\_\-setup}}
+\index{Fyaw\-\_\-loop\-\_\-control\-\_\-setup@{Fyaw\-\_\-loop\-\_\-control\-\_\-setup}!control_funcs.c@{control\-\_\-funcs.\-c}}
+\subsubsection[{Fyaw\-\_\-loop\-\_\-control\-\_\-setup}]{\setlength{\rightskip}{0pt plus 5cm}void Fyaw\-\_\-loop\-\_\-control\-\_\-setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{control__funcs_8c_a7ae1b1a2260fb4f478a16bfbef58a40c}
+This function sets up all control parameters relating to the yaw control. \hypertarget{control__funcs_8c_a96c5ad1205f723d2600471fd9962144b}{\index{control\-\_\-funcs.\-c@{control\-\_\-funcs.\-c}!Mroll\-\_\-loop\-\_\-control\-\_\-setup@{Mroll\-\_\-loop\-\_\-control\-\_\-setup}}
+\index{Mroll\-\_\-loop\-\_\-control\-\_\-setup@{Mroll\-\_\-loop\-\_\-control\-\_\-setup}!control_funcs.c@{control\-\_\-funcs.\-c}}
+\subsubsection[{Mroll\-\_\-loop\-\_\-control\-\_\-setup}]{\setlength{\rightskip}{0pt plus 5cm}void Mroll\-\_\-loop\-\_\-control\-\_\-setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{control__funcs_8c_a96c5ad1205f723d2600471fd9962144b}
+This function sets up all control parameters relating to the roll control. 
+
+\subsection{Variable Documentation}
+\hypertarget{control__funcs_8c_ab68ddad07171b0184b749ff21f40aea8}{\index{control\-\_\-funcs.\-c@{control\-\_\-funcs.\-c}!V\-A\-L\-V\-E\-\_\-\-\_\-\-M\-A\-X\-\_\-\-T\-H\-R\-U\-S\-T@{V\-A\-L\-V\-E\-\_\-\-\_\-\-M\-A\-X\-\_\-\-T\-H\-R\-U\-S\-T}}
+\index{V\-A\-L\-V\-E\-\_\-\-\_\-\-M\-A\-X\-\_\-\-T\-H\-R\-U\-S\-T@{V\-A\-L\-V\-E\-\_\-\-\_\-\-M\-A\-X\-\_\-\-T\-H\-R\-U\-S\-T}!control_funcs.c@{control\-\_\-funcs.\-c}}
+\subsubsection[{V\-A\-L\-V\-E\-\_\-\-\_\-\-M\-A\-X\-\_\-\-T\-H\-R\-U\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}float V\-A\-L\-V\-E\-\_\-\-\_\-\-M\-A\-X\-\_\-\-T\-H\-R\-U\-S\-T =0.\-5}}\label{control__funcs_8c_ab68ddad07171b0184b749ff21f40aea8}
+
+
+Maximum thrust of R\-C\-S solenoid valves (i.\-e. when fully opened) // T\-O\-D\-O\-: confirm with Gautier! 
+
+Maximum thrust of R\-C\-S solenoid valves (i.\-e. when fully opened) 

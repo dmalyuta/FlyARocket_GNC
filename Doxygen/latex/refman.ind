@@ -1,0 +1,320 @@
+\begin{theindex}
+
+  \item {bcm2835\discretionary {-}{}{}\_\discretionary {-}{}{}peripheral}, 
+		\hyperpage{7}
+
+  \indexspace
+
+  \item {Calibrate\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}I\discretionary {-}{}{}M\discretionary {-}{}{}U}
+    \subitem {imu\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{14}
+  \item {check\discretionary {-}{}{}\_\discretionary {-}{}{}time}
+    \subitem {master\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{26}
+  \item {close\discretionary {-}{}{}\_\discretionary {-}{}{}port}
+    \subitem {imu\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{14}
+  \item {construct\discretionary {-}{}{}\_\discretionary {-}{}{}zeroed\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}D\discretionary {-}{}{}C\discretionary {-}{}{}M}
+    \subitem {imu\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{14}
+  \item {control\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{11}
+    \subitem {Fpitch\discretionary {-}{}{}\_\discretionary {-}{}{}loop\discretionary {-}{}{}\_\discretionary {-}{}{}control\discretionary {-}{}{}\_\discretionary {-}{}{}setup}, 
+		\hyperpage{11}
+    \subitem {Fyaw\discretionary {-}{}{}\_\discretionary {-}{}{}loop\discretionary {-}{}{}\_\discretionary {-}{}{}control\discretionary {-}{}{}\_\discretionary {-}{}{}setup}, 
+		\hyperpage{11}
+    \subitem {Mroll\discretionary {-}{}{}\_\discretionary {-}{}{}loop\discretionary {-}{}{}\_\discretionary {-}{}{}control\discretionary {-}{}{}\_\discretionary {-}{}{}setup}, 
+		\hyperpage{12}
+  \item {control\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h}, 
+		\hyperpage{12}
+  \item {Control\discretionary {-}{}{}\_\discretionary {-}{}{}loop}, 
+		\hyperpage{7}
+
+  \indexspace
+
+  \item {Find\discretionary {-}{}{}\_\discretionary {-}{}{}raw\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Euler\discretionary {-}{}{}\_\discretionary {-}{}{}angular\discretionary {-}{}{}\_\discretionary {-}{}{}velocities}
+    \subitem {imu\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{14}
+  \item {Fpitch\discretionary {-}{}{}\_\discretionary {-}{}{}loop\discretionary {-}{}{}\_\discretionary {-}{}{}control\discretionary {-}{}{}\_\discretionary {-}{}{}setup}
+    \subitem {control\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{11}
+  \item {Fyaw\discretionary {-}{}{}\_\discretionary {-}{}{}loop\discretionary {-}{}{}\_\discretionary {-}{}{}control\discretionary {-}{}{}\_\discretionary {-}{}{}setup}
+    \subitem {control\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{11}
+
+  \indexspace
+
+  \item {get\discretionary {-}{}{}\_\discretionary {-}{}{}filtered\discretionary {-}{}{}\_\discretionary {-}{}{}attitude\discretionary {-}{}{}\_\discretionary {-}{}{}parallel}
+    \subitem {imu\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{15}
+  \item {get\discretionary {-}{}{}\_\discretionary {-}{}{}old\discretionary {-}{}{}\_\discretionary {-}{}{}attr}
+    \subitem {imu\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{15}
+  \item {get\discretionary {-}{}{}\_\discretionary {-}{}{}readings\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}parallel}
+    \subitem {pressure\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{36}
+  \item {get\discretionary {-}{}{}\_\discretionary {-}{}{}simplex\discretionary {-}{}{}\_\discretionary {-}{}{}solution}
+    \subitem {simplex\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{41}
+  \item {gpio}
+    \subitem {master.\discretionary {-}{}{}c}, \hyperpage{25}
+    \subitem {rpi\discretionary {-}{}{}\_\discretionary {-}{}{}gpio\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h}, 
+		\hyperpage{40}
+
+  \indexspace
+
+  \item {imu\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{13}
+    \subitem {Calibrate\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}I\discretionary {-}{}{}M\discretionary {-}{}{}U}, 
+		\hyperpage{14}
+    \subitem {close\discretionary {-}{}{}\_\discretionary {-}{}{}port}, 
+		\hyperpage{14}
+    \subitem {construct\discretionary {-}{}{}\_\discretionary {-}{}{}zeroed\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}D\discretionary {-}{}{}C\discretionary {-}{}{}M}, 
+		\hyperpage{14}
+    \subitem {Find\discretionary {-}{}{}\_\discretionary {-}{}{}raw\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Euler\discretionary {-}{}{}\_\discretionary {-}{}{}angular\discretionary {-}{}{}\_\discretionary {-}{}{}velocities}, 
+		\hyperpage{14}
+    \subitem {get\discretionary {-}{}{}\_\discretionary {-}{}{}filtered\discretionary {-}{}{}\_\discretionary {-}{}{}attitude\discretionary {-}{}{}\_\discretionary {-}{}{}parallel}, 
+		\hyperpage{15}
+    \subitem {get\discretionary {-}{}{}\_\discretionary {-}{}{}old\discretionary {-}{}{}\_\discretionary {-}{}{}attr}, 
+		\hyperpage{15}
+    \subitem {Kalman\discretionary {-}{}{}\_\discretionary {-}{}{}filter}, 
+		\hyperpage{15}
+    \subitem {min\discretionary {-}{}{}\_\discretionary {-}{}{}of\discretionary {-}{}{}\_\discretionary {-}{}{}set}, 
+		\hyperpage{15}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}serial\discretionary {-}{}{}\_\discretionary {-}{}{}port}, 
+		\hyperpage{16}
+    \subitem {read\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}I\discretionary {-}{}{}M\discretionary {-}{}{}U\discretionary {-}{}{}\_\discretionary {-}{}{}parallel}, 
+		\hyperpage{16}
+    \subitem {reset\discretionary {-}{}{}\_\discretionary {-}{}{}old\discretionary {-}{}{}\_\discretionary {-}{}{}attr\discretionary {-}{}{}\_\discretionary {-}{}{}port}, 
+		\hyperpage{16}
+    \subitem {set\discretionary {-}{}{}\_\discretionary {-}{}{}new\discretionary {-}{}{}\_\discretionary {-}{}{}attr}, 
+		\hyperpage{16}
+    \subitem {set\discretionary {-}{}{}\_\discretionary {-}{}{}to\discretionary {-}{}{}\_\discretionary {-}{}{}blocking}, 
+		\hyperpage{17}
+    \subitem {T\discretionary {-}{}{}O\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}G}, 
+		\hyperpage{17}
+    \subitem {Treat\discretionary {-}{}{}\_\discretionary {-}{}{}reply}, 
+		\hyperpage{17}
+    \subitem {zero\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Euler\discretionary {-}{}{}\_\discretionary {-}{}{}angles}, 
+		\hyperpage{17}
+  \item {imu\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h}, 
+		\hyperpage{17}
+  \item {init\discretionary {-}{}{}Matrix}
+    \subitem {la\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{21}
+
+  \indexspace
+
+  \item {Kalman\discretionary {-}{}{}\_\discretionary {-}{}{}filter}
+    \subitem {imu\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{15}
+
+  \indexspace
+
+  \item {la\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{20}
+    \subitem {init\discretionary {-}{}{}Matrix}, \hyperpage{21}
+    \subitem {madd}, \hyperpage{21}
+    \subitem {minverse\discretionary {-}{}{}\_\discretionary {-}{}{}1x1}, 
+		\hyperpage{21}
+    \subitem {mmultiply}, \hyperpage{21}
+    \subitem {msubtract}, \hyperpage{22}
+    \subitem {transpose}, \hyperpage{22}
+  \item {la\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h}, 
+		\hyperpage{22}
+
+  \indexspace
+
+  \item {M\discretionary {-}{}{}A\discretionary {-}{}{}T\discretionary {-}{}{}R\discretionary {-}{}{}I\discretionary {-}{}{}X}, 
+		\hyperpage{8}
+  \item {M\discretionary {-}{}{}S\discretionary {-}{}{}P430\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}receive}
+    \subitem {msp430\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{33}
+  \item {M\discretionary {-}{}{}S\discretionary {-}{}{}P430\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}write}
+    \subitem {msp430\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{33}
+  \item {M\discretionary {-}{}{}S\discretionary {-}{}{}P430\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}write\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}W\discretionary {-}{}{}M}
+    \subitem {msp430\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{33}
+  \item {madd}
+    \subitem {la\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{21}
+  \item {main}
+    \subitem {master.\discretionary {-}{}{}c}, \hyperpage{25}
+  \item {map\discretionary {-}{}{}\_\discretionary {-}{}{}peripheral}
+    \subitem {rpi\discretionary {-}{}{}\_\discretionary {-}{}{}gpio\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{38}
+  \item {master.\discretionary {-}{}{}c}, \hyperpage{22}
+    \subitem {gpio}, \hyperpage{25}
+    \subitem {main}, \hyperpage{25}
+  \item {master\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{26}
+    \subitem {check\discretionary {-}{}{}\_\discretionary {-}{}{}time}, 
+		\hyperpage{26}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}error\discretionary {-}{}{}\_\discretionary {-}{}{}file}, 
+		\hyperpage{27}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}file}, 
+		\hyperpage{27}
+    \subitem {passive\discretionary {-}{}{}\_\discretionary {-}{}{}wait}, 
+		\hyperpage{27}
+    \subitem {write\discretionary {-}{}{}\_\discretionary {-}{}{}to\discretionary {-}{}{}\_\discretionary {-}{}{}file\discretionary {-}{}{}\_\discretionary {-}{}{}custom}, 
+		\hyperpage{27}
+  \item {master\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h}, 
+		\hyperpage{28}
+  \item {min\discretionary {-}{}{}\_\discretionary {-}{}{}of\discretionary {-}{}{}\_\discretionary {-}{}{}set}
+    \subitem {imu\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{15}
+  \item {minverse\discretionary {-}{}{}\_\discretionary {-}{}{}1x1}
+    \subitem {la\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{21}
+  \item {mmultiply}
+    \subitem {la\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{21}
+  \item {Mroll\discretionary {-}{}{}\_\discretionary {-}{}{}loop\discretionary {-}{}{}\_\discretionary {-}{}{}control\discretionary {-}{}{}\_\discretionary {-}{}{}setup}
+    \subitem {control\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{12}
+  \item {msp430\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{32}
+    \subitem {M\discretionary {-}{}{}S\discretionary {-}{}{}P430\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}receive}, 
+		\hyperpage{33}
+    \subitem {M\discretionary {-}{}{}S\discretionary {-}{}{}P430\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}write}, 
+		\hyperpage{33}
+    \subitem {M\discretionary {-}{}{}S\discretionary {-}{}{}P430\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}write\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}W\discretionary {-}{}{}M}, 
+		\hyperpage{33}
+  \item {msp430\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h}, 
+		\hyperpage{34}
+  \item {msubtract}
+    \subitem {la\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{22}
+
+  \indexspace
+
+  \item {open\discretionary {-}{}{}\_\discretionary {-}{}{}error\discretionary {-}{}{}\_\discretionary {-}{}{}file}
+    \subitem {master\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{27}
+  \item {open\discretionary {-}{}{}\_\discretionary {-}{}{}file}
+    \subitem {master\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{27}
+  \item {open\discretionary {-}{}{}\_\discretionary {-}{}{}serial\discretionary {-}{}{}\_\discretionary {-}{}{}port}
+    \subitem {imu\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{16}
+
+  \indexspace
+
+  \item {passive\discretionary {-}{}{}\_\discretionary {-}{}{}wait}
+    \subitem {master\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{27}
+  \item {pressure\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{35}
+    \subitem {get\discretionary {-}{}{}\_\discretionary {-}{}{}readings\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}parallel}, 
+		\hyperpage{36}
+    \subitem {pressure\discretionary {-}{}{}\_\discretionary {-}{}{}sensor\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}connect}, 
+		\hyperpage{37}
+  \item {pressure\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h}, 
+		\hyperpage{37}
+  \item {pressure\discretionary {-}{}{}\_\discretionary {-}{}{}sensor\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}connect}
+    \subitem {pressure\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{37}
+
+  \indexspace
+
+  \item {read\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}I\discretionary {-}{}{}M\discretionary {-}{}{}U\discretionary {-}{}{}\_\discretionary {-}{}{}parallel}
+    \subitem {imu\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{16}
+  \item {reset\discretionary {-}{}{}\_\discretionary {-}{}{}old\discretionary {-}{}{}\_\discretionary {-}{}{}attr\discretionary {-}{}{}\_\discretionary {-}{}{}port}
+    \subitem {imu\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{16}
+  \item {rpi\discretionary {-}{}{}\_\discretionary {-}{}{}gpio\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{38}
+    \subitem {map\discretionary {-}{}{}\_\discretionary {-}{}{}peripheral}, 
+		\hyperpage{38}
+    \subitem {unmap\discretionary {-}{}{}\_\discretionary {-}{}{}peripheral}, 
+		\hyperpage{39}
+  \item {rpi\discretionary {-}{}{}\_\discretionary {-}{}{}gpio\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h}, 
+		\hyperpage{39}
+    \subitem {gpio}, \hyperpage{40}
+
+  \indexspace
+
+  \item {S\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}data}, 
+		\hyperpage{8}
+  \item {set\discretionary {-}{}{}\_\discretionary {-}{}{}new\discretionary {-}{}{}\_\discretionary {-}{}{}attr}
+    \subitem {imu\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{16}
+  \item {set\discretionary {-}{}{}\_\discretionary {-}{}{}to\discretionary {-}{}{}\_\discretionary {-}{}{}blocking}
+    \subitem {imu\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{17}
+  \item {simp1}
+    \subitem {simplex\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{41}
+  \item {simp2}
+    \subitem {simplex\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{41}
+  \item {simp3}
+    \subitem {simplex\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{41}
+  \item {simplex\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{40}
+    \subitem {get\discretionary {-}{}{}\_\discretionary {-}{}{}simplex\discretionary {-}{}{}\_\discretionary {-}{}{}solution}, 
+		\hyperpage{41}
+    \subitem {simp1}, \hyperpage{41}
+    \subitem {simp2}, \hyperpage{41}
+    \subitem {simp3}, \hyperpage{41}
+    \subitem {simplx}, \hyperpage{41}
+  \item {simplex\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h}, 
+		\hyperpage{42}
+  \item {simplx}
+    \subitem {simplex\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{41}
+  \item {spycam\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{43}
+    \subitem {start\discretionary {-}{}{}Video}, \hyperpage{44}
+    \subitem {stop\discretionary {-}{}{}Video}, \hyperpage{44}
+  \item {spycam\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h}, 
+		\hyperpage{44}
+  \item {start\discretionary {-}{}{}Video}
+    \subitem {spycam\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{44}
+  \item {stop\discretionary {-}{}{}Video}
+    \subitem {spycam\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{44}
+
+  \indexspace
+
+  \item {T\discretionary {-}{}{}O\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}G}
+    \subitem {imu\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{17}
+  \item {transpose}
+    \subitem {la\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{22}
+  \item {Treat\discretionary {-}{}{}\_\discretionary {-}{}{}reply}
+    \subitem {imu\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{17}
+
+  \indexspace
+
+  \item {unmap\discretionary {-}{}{}\_\discretionary {-}{}{}peripheral}
+    \subitem {rpi\discretionary {-}{}{}\_\discretionary {-}{}{}gpio\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{39}
+
+  \indexspace
+
+  \item {V\discretionary {-}{}{}A\discretionary {-}{}{}L\discretionary {-}{}{}V\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}M\discretionary {-}{}{}A\discretionary {-}{}{}X\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}T\discretionary {-}{}{}H\discretionary {-}{}{}R\discretionary {-}{}{}U\discretionary {-}{}{}S\discretionary {-}{}{}T}
+    \subitem {control\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{12}
+    \subitem {master\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h}, 
+		\hyperpage{32}
+
+  \indexspace
+
+  \item {write\discretionary {-}{}{}\_\discretionary {-}{}{}to\discretionary {-}{}{}\_\discretionary {-}{}{}file\discretionary {-}{}{}\_\discretionary {-}{}{}custom}
+    \subitem {master\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{27}
+
+  \indexspace
+
+  \item {zero\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Euler\discretionary {-}{}{}\_\discretionary {-}{}{}angles}
+    \subitem {imu\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{17}
+
+\end{theindex}

@@ -1,0 +1,200 @@
+\hypertarget{master_8c}{\section{master.\-c File Reference}
+\label{master_8c}\index{master.\-c@{master.\-c}}
+}
+
+
+Master G\-N\-C source file (main function file).  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$fcntl.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$stdint.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$termios.\-h$>$}\\*
+{\ttfamily \#include $<$linux/spi/spidev.\-h$>$}\\*
+{\ttfamily \#include $<$signal.\-h$>$}\\*
+{\ttfamily \#include $<$sys/time.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$pthread.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}control\-\_\-header.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}master\-\_\-header.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}imu\-\_\-header.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}la\-\_\-header.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}msp430\-\_\-header.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}simplex\-\_\-header.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}rpi\-\_\-gpio\-\_\-header.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}spycam\-\_\-header.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pressure\-\_\-header.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{master_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{master_8c_ae70c9b89889bf0bc6cfeba28ff41a8ec}{unsigned long long int \hyperlink{master_8c_ae70c9b89889bf0bc6cfeba28ff41a8ec}{E\-N\-G\-I\-N\-E\-\_\-\-\_\-\-B\-U\-R\-N\-\_\-\-T\-I\-M\-E} =1100000}\label{master_8c_ae70c9b89889bf0bc6cfeba28ff41a8ec}
+
+\begin{DoxyCompactList}\small\item\em Upper bountd on time \mbox{[}us\mbox{]} between engine start and engine burnout // T\-O\-D\-O \-: change this with Xavier! \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a2ccecb3518df04beb7ad8510fc2eac6a}{unsigned long long int \hyperlink{master_8c_a2ccecb3518df04beb7ad8510fc2eac6a}{A\-C\-T\-I\-V\-E\-\_\-\-\_\-\-C\-O\-N\-T\-R\-O\-L\-\_\-\-T\-I\-M\-E} =20000000}\label{master_8c_a2ccecb3518df04beb7ad8510fc2eac6a}
+
+\begin{DoxyCompactList}\small\item\em Time \mbox{[}us\mbox{]} during which control loop will be active // T\-O\-D\-O \-: change this with Xavier! \end{DoxyCompactList}\item 
+\hypertarget{master_8c_afca7e5dfc8d7935f7b389f58933bfa63}{unsigned long long int \hyperlink{master_8c_afca7e5dfc8d7935f7b389f58933bfa63}{D\-E\-S\-C\-E\-N\-T\-\_\-\-\_\-\-T\-I\-M\-E} =15000000}\label{master_8c_afca7e5dfc8d7935f7b389f58933bfa63}
+
+\begin{DoxyCompactList}\small\item\em Time \mbox{[}us\mbox{]} for rocket descent with parachute (i.\-e. between parachutes opening and a soft touchdown) // T\-O\-D\-O \-: change this with Xavier! \end{DoxyCompactList}\item 
+\hypertarget{master_8c_ad65316b8093332d3801f420bc1edfd3e}{unsigned long long int \hyperlink{master_8c_ad65316b8093332d3801f420bc1edfd3e}{C\-O\-N\-T\-R\-O\-L\-\_\-\-\_\-\-T\-I\-M\-E\-\_\-\-S\-T\-E\-P} =20000}\label{master_8c_ad65316b8093332d3801f420bc1edfd3e}
+
+\begin{DoxyCompactList}\small\item\em =1/(control loop frequency \mbox{[}M\-Hz\mbox{]}), the time interval between applying control, in \mbox{[}us\mbox{]} \end{DoxyCompactList}\item 
+\hypertarget{master_8c_ae4349d02b28eb32bb9153ebc5763217e}{unsigned long long int \hyperlink{master_8c_ae4349d02b28eb32bb9153ebc5763217e}{S\-P\-I\-\_\-\-\_\-\-R\-E\-A\-D\-\_\-\-T\-I\-M\-E\-S\-T\-E\-P} =20000}\label{master_8c_ae4349d02b28eb32bb9153ebc5763217e}
+
+\begin{DoxyCompactList}\small\item\em Time intervals \mbox{[}us\mbox{]} at which we read over S\-P\-I (for pressure/temperature Honeywell sensors). \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a2dad9d03b6168bcb6c69d461514a833f}{unsigned long long int \hyperlink{master_8c_a2dad9d03b6168bcb6c69d461514a833f}{I\-M\-U\-\_\-\-\_\-\-R\-E\-A\-D\-\_\-\-T\-I\-M\-E\-S\-T\-E\-P} =20000}\label{master_8c_a2dad9d03b6168bcb6c69d461514a833f}
+
+\begin{DoxyCompactList}\small\item\em Time intervals \mbox{[}us\mbox{]} at which we read over U\-A\-R\-T the I\-M\-U data. \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a0d2de52d42f8a27829b87641927ff93f}{unsigned long int \hyperlink{master_8c_a0d2de52d42f8a27829b87641927ff93f}{C\-A\-L\-I\-B\-\_\-\-\_\-\-T\-I\-M\-E} = 5000000}\label{master_8c_a0d2de52d42f8a27829b87641927ff93f}
+
+\begin{DoxyCompactList}\small\item\em Calibration time \mbox{[}us\mbox{]}, i.\-e. microseconds. \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a3cbe1858f5d39f6470d8975f7d82c147}{unsigned char \hyperlink{master_8c_a3cbe1858f5d39f6470d8975f7d82c147}{S\-P\-I\-\_\-quit} =0}\label{master_8c_a3cbe1858f5d39f6470d8975f7d82c147}
+
+\begin{DoxyCompactList}\small\item\em ==0 by default, ==1 signals the S\-P\-I reading thread (\hyperlink{pressure__funcs_8c_a6c8634a0f37e059edc662324a919c39e}{get\-\_\-readings\-\_\-\-S\-P\-I\-\_\-parallel()}) to exit. \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a0c2fbbcefec3fbaa9bf5405eafb92688}{unsigned char \hyperlink{master_8c_a0c2fbbcefec3fbaa9bf5405eafb92688}{I\-M\-U\-\_\-quit} =0}\label{master_8c_a0c2fbbcefec3fbaa9bf5405eafb92688}
+
+\begin{DoxyCompactList}\small\item\em ==0 by default, ==1 signals the I\-M\-U reading and filtering threads (\hyperlink{imu__funcs_8c_adacd103cea6c5f68c6b1ea416394c9f4}{read\-\_\-\-I\-M\-U\-\_\-parallel()} and \hyperlink{imu__funcs_8c_a819d365851c5396da5453c27c37af71b}{get\-\_\-filtered\-\_\-attitude\-\_\-parallel()}) to exit. \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a490cfe9811abc6b34f25aac2f2dce376}{unsigned char \hyperlink{master_8c_a490cfe9811abc6b34f25aac2f2dce376}{P\-W\-M1} =0}\label{master_8c_a490cfe9811abc6b34f25aac2f2dce376}
+
+\begin{DoxyCompactList}\small\item\em P\-W\-M value for the R1 valve. \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a5d8592107df1c79c0aa74977f1260ec4}{unsigned char \hyperlink{master_8c_a5d8592107df1c79c0aa74977f1260ec4}{P\-W\-M2} =0}\label{master_8c_a5d8592107df1c79c0aa74977f1260ec4}
+
+\begin{DoxyCompactList}\small\item\em P\-W\-M value for the R2 valve. \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a009f20b0c08a53c149c3af40a4c69674}{unsigned char \hyperlink{master_8c_a009f20b0c08a53c149c3af40a4c69674}{P\-W\-M3} =0}\label{master_8c_a009f20b0c08a53c149c3af40a4c69674}
+
+\begin{DoxyCompactList}\small\item\em P\-W\-M value for the R3 valve. \end{DoxyCompactList}\item 
+\hypertarget{master_8c_afef2fc7f7231604b5ab9a090848d9dc6}{unsigned char \hyperlink{master_8c_afef2fc7f7231604b5ab9a090848d9dc6}{P\-W\-M4} =0}\label{master_8c_afef2fc7f7231604b5ab9a090848d9dc6}
+
+\begin{DoxyCompactList}\small\item\em P\-W\-M value for the R4 valve. \end{DoxyCompactList}\item 
+\hypertarget{master_8c_af404f6d9a332838b9707056c27a4f21a}{double \hyperlink{master_8c_af404f6d9a332838b9707056c27a4f21a}{R1} =0}\label{master_8c_af404f6d9a332838b9707056c27a4f21a}
+
+\begin{DoxyCompactList}\small\item\em Valve R1 thrust. \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a6e4ea5fe1993f05924fa4d457def2aa3}{double \hyperlink{master_8c_a6e4ea5fe1993f05924fa4d457def2aa3}{R2} =0}\label{master_8c_a6e4ea5fe1993f05924fa4d457def2aa3}
+
+\begin{DoxyCompactList}\small\item\em Valve R2 thrust. \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a6752016f7a02ff6ff1b749623be15dbb}{double \hyperlink{master_8c_a6752016f7a02ff6ff1b749623be15dbb}{R3} =0}\label{master_8c_a6752016f7a02ff6ff1b749623be15dbb}
+
+\begin{DoxyCompactList}\small\item\em Valve R3 thrust. \end{DoxyCompactList}\item 
+\hypertarget{master_8c_af6474ec4ce3b123a435f2b0f453d0aba}{double \hyperlink{master_8c_af6474ec4ce3b123a435f2b0f453d0aba}{R4} =0}\label{master_8c_af6474ec4ce3b123a435f2b0f453d0aba}
+
+\begin{DoxyCompactList}\small\item\em Valve R4 thrust. \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a873684cefeb665f3d5e6b495de57fc0d}{double \hyperlink{master_8c_a873684cefeb665f3d5e6b495de57fc0d}{d} =0.\-005}\label{master_8c_a873684cefeb665f3d5e6b495de57fc0d}
+
+\begin{DoxyCompactList}\small\item\em \mbox{[}m\mbox{]} offset distance of R\-C\-S valves from centerline (for roll control) \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a24acaae245ca32a559b504e1a1e084d9}{double \hyperlink{master_8c_a24acaae245ca32a559b504e1a1e084d9}{Fpitch} =0}\label{master_8c_a24acaae245ca32a559b504e1a1e084d9}
+
+\begin{DoxyCompactList}\small\item\em Pitch force (parallel to body -\/\-Z axis, so as to produce positive pitch rate when Fpitch$>$0 (right hand rule)) \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a03c2e0033499a13a6e9113bec977055f}{double \hyperlink{master_8c_a03c2e0033499a13a6e9113bec977055f}{Fyaw} =0}\label{master_8c_a03c2e0033499a13a6e9113bec977055f}
+
+\begin{DoxyCompactList}\small\item\em Yaw force (parallel to body +\-Y axis, so as to produce positive yaw rate when Fyaw$>$0 (right hand rule)) \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a3c7bd12558dd2888ffe85eadeac62fc3}{double \hyperlink{master_8c_a3c7bd12558dd2888ffe85eadeac62fc3}{Mroll} =0}\label{master_8c_a3c7bd12558dd2888ffe85eadeac62fc3}
+
+\begin{DoxyCompactList}\small\item\em Roll moment (positive about +\-X axis, so as to produce positive roll rate when Mroll$>$0 (right hand rule)) \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a7722c8ecbb62d99aee7ce68b1752f337}{int \hyperlink{master_8c_a7722c8ecbb62d99aee7ce68b1752f337}{N} =4}\label{master_8c_a7722c8ecbb62d99aee7ce68b1752f337}
+
+\begin{DoxyCompactList}\small\item\em Number of variables in cost function. Our variables are R1, R2, R3, R4 so N=4. \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a7a2aaeb8c0218468f3775cedc6d0087c}{int \hyperlink{master_8c_a7a2aaeb8c0218468f3775cedc6d0087c}{M1} =0}\label{master_8c_a7a2aaeb8c0218468f3775cedc6d0087c}
+
+\begin{DoxyCompactList}\small\item\em No ($<$=) type constraints. \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a4ae62474468edbb5f37cd79ee5e7ca90}{int \hyperlink{master_8c_a4ae62474468edbb5f37cd79ee5e7ca90}{M2} =0}\label{master_8c_a4ae62474468edbb5f37cd79ee5e7ca90}
+
+\begin{DoxyCompactList}\small\item\em No ($>$=) type constraints. \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a1b0d06f043612b284f80743aa186de4c}{int \hyperlink{master_8c_a1b0d06f043612b284f80743aa186de4c}{M3} =3}\label{master_8c_a1b0d06f043612b284f80743aa186de4c}
+
+\begin{DoxyCompactList}\small\item\em 3 (=) type constraints (for Fpitch, Fyaw, Mroll) \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a5e78dbd5fd0fc01ba7b98dd15e27221e}{int \hyperlink{master_8c_a5e78dbd5fd0fc01ba7b98dd15e27221e}{M} =3}\label{master_8c_a5e78dbd5fd0fc01ba7b98dd15e27221e}
+
+\begin{DoxyCompactList}\small\item\em Total number of constraints (M=M1+\-M2+\-M3) \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a20e25587eb43f10683bcfadd136eb9d7}{char \hyperlink{master_8c_a20e25587eb43f10683bcfadd136eb9d7}{flight\-\_\-type} =0}\label{master_8c_a20e25587eb43f10683bcfadd136eb9d7}
+
+\begin{DoxyCompactList}\small\item\em =1 for active control flight, =0 for passive flight (i.\-e. only data logging) \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a0942b9a4f7a184e9d6b95901e2b9ba4f}{F\-I\-L\-E $\ast$ \hyperlink{master_8c_a0942b9a4f7a184e9d6b95901e2b9ba4f}{error\-\_\-log} =N\-U\-L\-L}\label{master_8c_a0942b9a4f7a184e9d6b95901e2b9ba4f}
+
+\begin{DoxyCompactList}\small\item\em Error log (stores errors) \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a156a8e3690962c825db6129da60068d2}{F\-I\-L\-E $\ast$ \hyperlink{master_8c_a156a8e3690962c825db6129da60068d2}{pressure\-\_\-log} =N\-U\-L\-L}\label{master_8c_a156a8e3690962c825db6129da60068d2}
+
+\begin{DoxyCompactList}\small\item\em Pressure log (stores pressures and tempeartures collected by Honeywell H\-S\-C Tru\-Stability sensors) \end{DoxyCompactList}\item 
+\hypertarget{master_8c_acfbcaf4efce8ebd037ba912955853c0c}{F\-I\-L\-E $\ast$ \hyperlink{master_8c_acfbcaf4efce8ebd037ba912955853c0c}{imu\-\_\-log} =N\-U\-L\-L}\label{master_8c_acfbcaf4efce8ebd037ba912955853c0c}
+
+\begin{DoxyCompactList}\small\item\em I\-M\-U log (stores raw and filtered Euler angles and angular rates, the body rates and the accelerometer data) \end{DoxyCompactList}\item 
+\hypertarget{master_8c_ae06637938d6d98b3460b9a9fc04ca510}{F\-I\-L\-E $\ast$ \hyperlink{master_8c_ae06637938d6d98b3460b9a9fc04ca510}{control\-\_\-log} =N\-U\-L\-L}\label{master_8c_ae06637938d6d98b3460b9a9fc04ca510}
+
+\begin{DoxyCompactList}\small\item\em Control log (stores the control loop data such as computed \hyperlink{master__header_8h_a24acaae245ca32a559b504e1a1e084d9}{Fpitch}, \hyperlink{master__header_8h_a03c2e0033499a13a6e9113bec977055f}{Fyaw}, \hyperlink{master__header_8h_a3c7bd12558dd2888ffe85eadeac62fc3}{Mroll}, the optimally distributed valves thrusts \hyperlink{master__header_8h_af404f6d9a332838b9707056c27a4f21a}{R1},...,\hyperlink{master__header_8h_af6474ec4ce3b123a435f2b0f453d0aba}{R4} and the computed P\-W\-M signals \hyperlink{master__header_8h_a490cfe9811abc6b34f25aac2f2dce376}{P\-W\-M1},...,\hyperlink{master__header_8h_afef2fc7f7231604b5ab9a090848d9dc6}{P\-W\-M4}) \end{DoxyCompactList}\item 
+struct \hyperlink{structbcm2835__peripheral}{bcm2835\-\_\-peripheral} \hyperlink{master_8c_a9181fa0a34f8c0ed9983a6088fa1de19}{gpio} = \{\hyperlink{rpi__gpio__header_8h_acce3b8a909ed8b957b4e411dfb7cbd91}{G\-P\-I\-O\-\_\-\-B\-A\-S\-E}\}
+\begin{DoxyCompactList}\small\item\em Our access register to the Raspberry Pi's G\-P\-I\-Os. \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a9fd9d19baa498f5f274cc0ed9a5bf19f}{unsigned char \hyperlink{master_8c_a9fd9d19baa498f5f274cc0ed9a5bf19f}{launch\-\_\-detect\-\_\-gpio} =12}\label{master_8c_a9fd9d19baa498f5f274cc0ed9a5bf19f}
+
+\begin{DoxyCompactList}\small\item\em Number of G\-P\-I\-O (i.\-e. G\-P\-I\-O$<$num$>$) to which the launch umbillical cable is connected and hence which detects the launch. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}{\bf Control algorithm input variables}\par
+{\em Below 6 variables are the ones that the control algorithm \char`\"{}sees\char`\"{}, as in that they are updated at our C\-O\-N\-T\-R\-O\-L frequence, which we decide, while the angles read from the I\-M\-U are read as fast as possible to data-\/log all information on rocket orientation! }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{master_8c_afd6dad607b4c78ead02cb0d1fe9f7da9}{float \hyperlink{master_8c_afd6dad607b4c78ead02cb0d1fe9f7da9}{psi\-\_\-cont} =0}\label{master_8c_afd6dad607b4c78ead02cb0d1fe9f7da9}
+
+\begin{DoxyCompactList}\small\item\em Yaw angle. \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a947d1de72277ee237be09b3045a3267e}{float \hyperlink{master_8c_a947d1de72277ee237be09b3045a3267e}{psidot\-\_\-cont} =0}\label{master_8c_a947d1de72277ee237be09b3045a3267e}
+
+\begin{DoxyCompactList}\small\item\em Yaw rate. \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a447f7a245bed6a4bf1419397a6796fe2}{float \hyperlink{master_8c_a447f7a245bed6a4bf1419397a6796fe2}{theta\-\_\-cont} =0}\label{master_8c_a447f7a245bed6a4bf1419397a6796fe2}
+
+\begin{DoxyCompactList}\small\item\em Pitch angle. \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a4393d99287a8d82b76d027263ebb2f16}{float \hyperlink{master_8c_a4393d99287a8d82b76d027263ebb2f16}{thetadot\-\_\-cont} =0}\label{master_8c_a4393d99287a8d82b76d027263ebb2f16}
+
+\begin{DoxyCompactList}\small\item\em Pitch rate. \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a6e4f43054d6dd79db81f76b8d4bc78b1}{float \hyperlink{master_8c_a6e4f43054d6dd79db81f76b8d4bc78b1}{phi\-\_\-cont} =0}\label{master_8c_a6e4f43054d6dd79db81f76b8d4bc78b1}
+
+\begin{DoxyCompactList}\small\item\em Roll angle. \end{DoxyCompactList}\item 
+\hypertarget{master_8c_abaaeebf27cbf4160bd6c104223d91bc1}{float \hyperlink{master_8c_abaaeebf27cbf4160bd6c104223d91bc1}{wx\-\_\-cont} =0}\label{master_8c_abaaeebf27cbf4160bd6c104223d91bc1}
+
+\begin{DoxyCompactList}\small\item\em X-\/body rate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Reference angles and rates}\par
+{\em Below are the values that we want to achieve when controlling the rocket. In our case they are 0 because we want to achieve a steay, perfectly vertical orientation. But they can be even time-\/varying in other applications -\/ e.\-g. for guiding the rocket along a trajectory. }\begin{DoxyCompactItemize}
+\item 
+\hypertarget{master_8c_a1fa20676865915317a353665b78fa677}{float \hyperlink{master_8c_a1fa20676865915317a353665b78fa677}{psi\-\_\-ref} =0}\label{master_8c_a1fa20676865915317a353665b78fa677}
+
+\begin{DoxyCompactList}\small\item\em Yaw angle reference \mbox{[}(rad)\mbox{]}. \end{DoxyCompactList}\item 
+\hypertarget{master_8c_a1998083078b172081e824577b82fef6b}{float \hyperlink{master_8c_a1998083078b172081e824577b82fef6b}{theta\-\_\-ref} =0}\label{master_8c_a1998083078b172081e824577b82fef6b}
+
+\begin{DoxyCompactList}\small\item\em Pitch angle reference \mbox{[}(rad)\mbox{]}. \end{DoxyCompactList}\item 
+\hypertarget{master_8c_aefb70f2fa88635c005237246792ab6bb}{float \hyperlink{master_8c_aefb70f2fa88635c005237246792ab6bb}{wx\-\_\-ref} =0}\label{master_8c_aefb70f2fa88635c005237246792ab6bb}
+
+\begin{DoxyCompactList}\small\item\em Roll rate reference \mbox{[}(rad)/s\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Master G\-N\-C source file (main function file). \begin{DoxyAuthor}{Author}
+Danylo Malyuta \href{mailto:danylo.malyuta@gmail.com}{\tt danylo.\-malyuta@gmail.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0
+\end{DoxyVersion}
+This is the master file of the G\-N\-C program which manages all parallel threads and calls all necessary functions for the collection and processing of data as well as for rocket control. 
+
+\subsection{Function Documentation}
+\hypertarget{master_8c_a840291bc02cba5474a4cb46a9b9566fe}{\index{master.\-c@{master.\-c}!main@{main}}
+\index{main@{main}!master.c@{master.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{master_8c_a840291bc02cba5474a4cb46a9b9566fe}
+{\bfseries This is the main function of the flight software}. This function is what defines the sequence of steps that occur during pre-\/flight and flight and what orchestrates all processes that occur, such as the starting of parallel threads, of active control and of data logging. It accepts no input parameters. 
+
+\subsection{Variable Documentation}
+\hypertarget{master_8c_a9181fa0a34f8c0ed9983a6088fa1de19}{\index{master.\-c@{master.\-c}!gpio@{gpio}}
+\index{gpio@{gpio}!master.c@{master.\-c}}
+\subsubsection[{gpio}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf bcm2835\-\_\-peripheral} gpio = \{{\bf G\-P\-I\-O\-\_\-\-B\-A\-S\-E}\}}}\label{master_8c_a9181fa0a34f8c0ed9983a6088fa1de19}
+
+
+Our access register to the Raspberry Pi's G\-P\-I\-Os. 
+
+The G\-P\-I\-O port access variable. 
