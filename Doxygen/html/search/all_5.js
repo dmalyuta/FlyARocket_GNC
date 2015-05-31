@@ -7,5 +7,6 @@ var searchData=
   ['fpitch_5floop_5fcontrol_5fsetup',['Fpitch_loop_control_setup',['../control__funcs_8c.html#a61112075a4a85516d83e6a5783195f6a',1,'control_funcs.c']]],
   ['fyaw',['Fyaw',['../master_8c.html#a03c2e0033499a13a6e9113bec977055f',1,'Fyaw():&#160;master.c'],['../master__header_8h.html#a03c2e0033499a13a6e9113bec977055f',1,'Fyaw():&#160;master.c']]],
   ['fyaw_5floop',['Fyaw_loop',['../control__header_8h.html#ad89b391fe05f2eb23be1db12931f221d',1,'control_header.h']]],
-  ['fyaw_5floop_5fcontrol_5fsetup',['Fyaw_loop_control_setup',['../control__funcs_8c.html#a7ae1b1a2260fb4f478a16bfbef58a40c',1,'control_funcs.c']]]
+  ['fyaw_5floop_5fcontrol_5fsetup',['Fyaw_loop_control_setup',['../control__funcs_8c.html#a7ae1b1a2260fb4f478a16bfbef58a40c',1,'control_funcs.c']]],
+  ['flyarocket_5fgnc',['FlyARocket_GNC',['../md_README.html',1,'']]]
 ];
