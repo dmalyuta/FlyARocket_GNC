@@ -32,6 +32,6 @@ var searchData=
   ['msp430_5fuart',['MSP430_UART',['../msp430__header_8h.html#a83f9f6fae14487dbe1bdb754919b91fa',1,'msp430_header.h']]],
   ['msp430_5fuart_5freceive',['MSP430_UART_receive',['../msp430__funcs_8c.html#a37c1f83aba04ac0ce28faf5ba3b537a5',1,'msp430_funcs.c']]],
   ['msp430_5fuart_5fwrite',['MSP430_UART_write',['../msp430__funcs_8c.html#a33738ffa4af6e11695b247aee563b6f5',1,'msp430_funcs.c']]],
-  ['msp430_5fuart_5fwrite_5fpwm',['MSP430_UART_write_PWM',['../msp430__funcs_8c.html#ae203ca5e5e2220a92f8153f05208664f',1,'msp430_funcs.c']]],
+  ['msp430_5fuart_5fwrite_5fpwm',['MSP430_UART_write_PWM',['../msp430__funcs_8c.html#a8efdf02df6574899acd7b8634f8f4007',1,'msp430_funcs.c']]],
   ['msubtract',['msubtract',['../la__funcs_8c.html#acbf340d949fa4be6dd552e38eaceece3',1,'la_funcs.c']]]
 ];

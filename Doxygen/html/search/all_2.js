@@ -12,5 +12,6 @@ var searchData=
   ['control_5fheader_2eh',['control_header.h',['../control__header_8h.html',1,'']]],
   ['control_5flog',['control_log',['../master_8c.html#ae06637938d6d98b3460b9a9fc04ca510',1,'control_log():&#160;master.c'],['../master__header_8h.html#ae06637938d6d98b3460b9a9fc04ca510',1,'control_log():&#160;master.c']]],
   ['control_5floop',['Control_loop',['../structControl__loop.html',1,'']]],
-  ['control_5frange',['control_range',['../structControl__loop.html#a02d838eed6e69e1a58cc437f1a014665',1,'Control_loop']]]
+  ['control_5fquit',['Control_quit',['../master__header_8h.html#a683306c600ef5cbf03bdc97f0f190007',1,'master_header.h']]],
+  ['control_5frange',['control_range',['../structControl__loop.html#a356d69d54de1f56c81ebd3fa7f68ddc6',1,'Control_loop']]]
 ];

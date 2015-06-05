@@ -6,16 +6,13 @@ function xdot = rocket_dynamics(t,x,d,x_R1,x_R2,x_R3,x_R4,I,Fpitch_loop,Fyaw_loo
     global CONTROL__START_TIME;
     global VALVE__MAX_THRUST;
     global VALVE__SLEW_RATE;
+    global TIME_RCS_WORKED;
     
     global Fyaw;
     global Fpitch;
     global Mroll;
     
     global R1; global R2; global R3; global R4;
-    
-    global psi_imu_last;
-    global theta_imu_last;
-    global phi_imu_last;
     
     global t_last;
     
@@ -41,10 +38,10 @@ function xdot = rocket_dynamics(t,x,d,x_R1,x_R2,x_R3,x_R4,I,Fpitch_loop,Fyaw_loo
     
     %*** Introduce disturbances (to see control response)
     % YOU MAY EDIT THESE TO APPLY DIFFERENT DISTURBANCES
-    if (t>=5 && t<=5.1)
-        psidot=psidot+d2r(40)*heaviside(t-5);
-        phidot=phidot+d2r(100)*heaviside(t-5);
-    end
+%     if (t>=5 && t<=5.1)
+%         psidot=psidot+d2r(40)*heaviside(t-5);
+%         phidot=phidot+d2r(100)*heaviside(t-5);
+%     end
 
     dt=t-t_last; % Time change
     if (dt>=CONTROL__TIME_STEP)
@@ -59,10 +56,6 @@ function xdot = rocket_dynamics(t,x,d,x_R1,x_R2,x_R3,x_R4,I,Fpitch_loop,Fyaw_loo
         thetadot_imu=thetadot+noise_on_theta(2);
         phi_imu=phi+noise_on_phi(1);
         phidot_imu=phidot+noise_on_phi(2);
-        
-        psi_imu_last=psi_imu;
-        theta_imu_last=theta_imu;
-        phi_imu_last=phi_imu;
         
         %*** Now filter these noisy signals with Kalman filtering to obtain smoothed signals used for control
         % Filter the IMU angles and the very noisy numerical derivatives
@@ -118,6 +111,7 @@ function xdot = rocket_dynamics(t,x,d,x_R1,x_R2,x_R3,x_R4,I,Fpitch_loop,Fyaw_loo
 
             % Assign the valve thrusts
             % Apply saturation and slew rate actuator limits
+            TIME_RCS_WORKED=TIME_RCS_WORKED+dt;
             X(1)=limit_actuator(X(1),abs(R1(3)),dt,VALVE__MAX_THRUST,VALVE__SLEW_RATE);
             X(2)=limit_actuator(X(2),abs(R2(2)),dt,VALVE__MAX_THRUST,VALVE__SLEW_RATE);
             X(3)=limit_actuator(X(3),abs(R3(3)),dt,VALVE__MAX_THRUST,VALVE__SLEW_RATE);
@@ -145,9 +139,9 @@ function xdot = rocket_dynamics(t,x,d,x_R1,x_R2,x_R3,x_R4,I,Fpitch_loop,Fyaw_loo
     %      the body axes using the rotation matrix world-->body (using Tait-Bryan angle convention).
     % YOU MAY EDIT THIS TO APPLY DIFFERENT PERTURBING MOMENT (you could even add an accurate aerodynamic model and add it to Mtot)
     Mperturb=[0;0;0];
-    if (t>=8 && t<=8.1)
-        Mperturb = [0;0;-0.1];
-    end
+%     if (t>=3 && t<=3.1)
+%         Mperturb = [0;0.3;0.3];
+%     end
     
     Mtot = cross(x_R1,R1)+cross(x_R2,R2)+cross(x_R3,R3)+cross(x_R4,R4)+Mperturb; % Moment acting on rocket, assumed to be just the RCS (aerodynamic forces neglected
                                                                                  % as RCS control only makes sense at relatively low speeds)
@@ -162,15 +156,22 @@ function xdot = rocket_dynamics(t,x,d,x_R1,x_R2,x_R3,x_R4,I,Fpitch_loop,Fyaw_loo
 end
 
 function y = limit_actuator(x,x_prev,dt,saturation,slew_rate)
-    saturated=0; % ==1 when control exceed saturation limit
+    
+    global TIME__DROPOFF;
+    global TIME__FULL;
+    global DROPOFF_CONSTANT;
+    global TIME_RCS_WORKED;
+    
+    if (TIME_RCS_WORKED>TIME__DROPOFF && TIME_RCS_WORKED<TIME__FULL)
+        saturation=saturation*exp(-(TIME_RCS_WORKED-TIME__DROPOFF)/DROPOFF_CONSTANT);
+    elseif (TIME_RCS_WORKED>=TIME__FULL)
+        saturation=0;
+    end
+
     SR_up=0; % ==1 when control increasing faster than slew rate on going up
     SR_down=0; % ==1 when control decreasing faster than slew rate on going down
     
     y=x; % By default, let the limited control value be the original control value (assume no limits have been violated)
-    
-    if (x>=saturation)
-        saturated=1;
-    end
     if (x>=(x_prev+slew_rate*dt))
         SR_up=1;
     end

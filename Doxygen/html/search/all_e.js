@@ -36,10 +36,10 @@ var searchData=
   ['psi_5fsave',['psi_save',['../imu__header_8h.html#ac18323455f0a84b6a2a7822c39f4a329',1,'imu_header.h']]],
   ['psi_5fsave_5flast',['psi_save_last',['../imu__funcs_8c.html#a5c765a5f789b1c5e270d700ab2c5e547',1,'psi_save_last():&#160;imu_funcs.c'],['../imu__header_8h.html#a5c765a5f789b1c5e270d700ab2c5e547',1,'psi_save_last():&#160;imu_funcs.c']]],
   ['psidot_5fcont',['psidot_cont',['../master_8c.html#a947d1de72277ee237be09b3045a3267e',1,'master.c']]],
-  ['pwm1',['PWM1',['../master_8c.html#a490cfe9811abc6b34f25aac2f2dce376',1,'PWM1():&#160;master.c'],['../master__header_8h.html#a490cfe9811abc6b34f25aac2f2dce376',1,'PWM1():&#160;master.c']]],
-  ['pwm2',['PWM2',['../master_8c.html#a5d8592107df1c79c0aa74977f1260ec4',1,'PWM2():&#160;master.c'],['../master__header_8h.html#a5d8592107df1c79c0aa74977f1260ec4',1,'PWM2():&#160;master.c']]],
-  ['pwm3',['PWM3',['../master_8c.html#a009f20b0c08a53c149c3af40a4c69674',1,'PWM3():&#160;master.c'],['../master__header_8h.html#a009f20b0c08a53c149c3af40a4c69674',1,'PWM3():&#160;master.c']]],
-  ['pwm4',['PWM4',['../master_8c.html#afef2fc7f7231604b5ab9a090848d9dc6',1,'PWM4():&#160;master.c'],['../master__header_8h.html#afef2fc7f7231604b5ab9a090848d9dc6',1,'PWM4():&#160;master.c']]],
-  ['pwm_5ftx_5fpacket',['PWM_TX_packet',['../msp430__header_8h.html#a260e61212c8c714cbc71567a2edc70bb',1,'msp430_header.h']]],
+  ['pwm1',['PWM1',['../master_8c.html#adc2f9c564aa0a90a16cb87350cce5adf',1,'PWM1():&#160;master.c'],['../master__header_8h.html#adc2f9c564aa0a90a16cb87350cce5adf',1,'PWM1():&#160;master.c']]],
+  ['pwm2',['PWM2',['../master_8c.html#aff21db3b340a021bee19e5a0e1657fef',1,'PWM2():&#160;master.c'],['../master__header_8h.html#aff21db3b340a021bee19e5a0e1657fef',1,'PWM2():&#160;master.c']]],
+  ['pwm3',['PWM3',['../master_8c.html#a827c226fa79fb53ea8b96082d5d49106',1,'PWM3():&#160;master.c'],['../master__header_8h.html#a827c226fa79fb53ea8b96082d5d49106',1,'PWM3():&#160;master.c']]],
+  ['pwm4',['PWM4',['../master_8c.html#a3f972178ea1f7d61ab54ff14b6cd0074',1,'PWM4():&#160;master.c'],['../master__header_8h.html#a3f972178ea1f7d61ab54ff14b6cd0074',1,'PWM4():&#160;master.c']]],
+  ['pwm_5ftx_5fpacket',['PWM_TX_packet',['../msp430__header_8h.html#ad10fa79439111dde88b7dd94d3d1d577',1,'msp430_header.h']]],
   ['pwm_5fvalve_5fcharac',['PWM_valve_charac',['../master__funcs_8c.html#ab324d426f7c3fd563450bd71a15aefe7',1,'PWM_valve_charac():&#160;master_funcs.c'],['../master__header_8h.html#ab324d426f7c3fd563450bd71a15aefe7',1,'PWM_valve_charac():&#160;master_funcs.c']]]
 ];

@@ -10,7 +10,7 @@
 		\hyperpage{16}
   \item {check\discretionary {-}{}{}\_\discretionary {-}{}{}time}
     \subitem {master\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
-		\hyperpage{28}
+		\hyperpage{29}
   \item {close\discretionary {-}{}{}\_\discretionary {-}{}{}port}
     \subitem {imu\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
 		\hyperpage{16}
@@ -52,14 +52,14 @@
 		\hyperpage{17}
   \item {get\discretionary {-}{}{}\_\discretionary {-}{}{}readings\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}parallel}
     \subitem {pressure\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
-		\hyperpage{38}
+		\hyperpage{39}
   \item {get\discretionary {-}{}{}\_\discretionary {-}{}{}simplex\discretionary {-}{}{}\_\discretionary {-}{}{}solution}
     \subitem {simplex\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
-		\hyperpage{43}
+		\hyperpage{45}
   \item {gpio}
     \subitem {master.\discretionary {-}{}{}c}, \hyperpage{27}
     \subitem {rpi\discretionary {-}{}{}\_\discretionary {-}{}{}gpio\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h}, 
-		\hyperpage{42}
+		\hyperpage{44}
 
   \indexspace
 
@@ -122,6 +122,9 @@
     \subitem {transpose}, \hyperpage{24}
   \item {la\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h}, 
 		\hyperpage{24}
+  \item {linear\discretionary {-}{}{}\_\discretionary {-}{}{}search}
+    \subitem {master\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{30}
 
   \indexspace
 
@@ -129,13 +132,13 @@
 		\hyperpage{10}
   \item {M\discretionary {-}{}{}S\discretionary {-}{}{}P430\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}receive}
     \subitem {msp430\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
-		\hyperpage{35}
+		\hyperpage{37}
   \item {M\discretionary {-}{}{}S\discretionary {-}{}{}P430\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}write}
     \subitem {msp430\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
-		\hyperpage{35}
+		\hyperpage{37}
   \item {M\discretionary {-}{}{}S\discretionary {-}{}{}P430\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}write\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}W\discretionary {-}{}{}M}
     \subitem {msp430\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
-		\hyperpage{35}
+		\hyperpage{37}
   \item {madd}
     \subitem {la\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
 		\hyperpage{23}
@@ -143,24 +146,28 @@
     \subitem {master.\discretionary {-}{}{}c}, \hyperpage{27}
   \item {map\discretionary {-}{}{}\_\discretionary {-}{}{}peripheral}
     \subitem {rpi\discretionary {-}{}{}\_\discretionary {-}{}{}gpio\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
-		\hyperpage{40}
+		\hyperpage{42}
   \item {master.\discretionary {-}{}{}c}, \hyperpage{24}
     \subitem {gpio}, \hyperpage{27}
     \subitem {main}, \hyperpage{27}
   \item {master\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
 		\hyperpage{28}
     \subitem {check\discretionary {-}{}{}\_\discretionary {-}{}{}time}, 
-		\hyperpage{28}
-    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}error\discretionary {-}{}{}\_\discretionary {-}{}{}file}, 
 		\hyperpage{29}
-    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}file}, 
-		\hyperpage{29}
-    \subitem {passive\discretionary {-}{}{}\_\discretionary {-}{}{}wait}, 
-		\hyperpage{29}
-    \subitem {write\discretionary {-}{}{}\_\discretionary {-}{}{}to\discretionary {-}{}{}\_\discretionary {-}{}{}file\discretionary {-}{}{}\_\discretionary {-}{}{}custom}, 
-		\hyperpage{29}
-  \item {master\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h}, 
+    \subitem {linear\discretionary {-}{}{}\_\discretionary {-}{}{}search}, 
 		\hyperpage{30}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}error\discretionary {-}{}{}\_\discretionary {-}{}{}file}, 
+		\hyperpage{30}
+    \subitem {open\discretionary {-}{}{}\_\discretionary {-}{}{}file}, 
+		\hyperpage{30}
+    \subitem {passive\discretionary {-}{}{}\_\discretionary {-}{}{}wait}, 
+		\hyperpage{30}
+    \subitem {search\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}W\discretionary {-}{}{}M}, 
+		\hyperpage{30}
+    \subitem {write\discretionary {-}{}{}\_\discretionary {-}{}{}to\discretionary {-}{}{}\_\discretionary {-}{}{}file\discretionary {-}{}{}\_\discretionary {-}{}{}custom}, 
+		\hyperpage{31}
+  \item {master\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h}, 
+		\hyperpage{32}
   \item {min\discretionary {-}{}{}\_\discretionary {-}{}{}of\discretionary {-}{}{}\_\discretionary {-}{}{}set}
     \subitem {imu\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
 		\hyperpage{17}
@@ -174,15 +181,15 @@
     \subitem {control\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
 		\hyperpage{14}
   \item {msp430\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
-		\hyperpage{34}
-    \subitem {M\discretionary {-}{}{}S\discretionary {-}{}{}P430\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}receive}, 
-		\hyperpage{35}
-    \subitem {M\discretionary {-}{}{}S\discretionary {-}{}{}P430\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}write}, 
-		\hyperpage{35}
-    \subitem {M\discretionary {-}{}{}S\discretionary {-}{}{}P430\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}write\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}W\discretionary {-}{}{}M}, 
-		\hyperpage{35}
-  \item {msp430\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h}, 
 		\hyperpage{36}
+    \subitem {M\discretionary {-}{}{}S\discretionary {-}{}{}P430\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}receive}, 
+		\hyperpage{37}
+    \subitem {M\discretionary {-}{}{}S\discretionary {-}{}{}P430\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}write}, 
+		\hyperpage{37}
+    \subitem {M\discretionary {-}{}{}S\discretionary {-}{}{}P430\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}write\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}W\discretionary {-}{}{}M}, 
+		\hyperpage{37}
+  \item {msp430\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h}, 
+		\hyperpage{38}
   \item {msubtract}
     \subitem {la\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
 		\hyperpage{24}
@@ -191,10 +198,10 @@
 
   \item {open\discretionary {-}{}{}\_\discretionary {-}{}{}error\discretionary {-}{}{}\_\discretionary {-}{}{}file}
     \subitem {master\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
-		\hyperpage{29}
+		\hyperpage{30}
   \item {open\discretionary {-}{}{}\_\discretionary {-}{}{}file}
     \subitem {master\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
-		\hyperpage{29}
+		\hyperpage{30}
   \item {open\discretionary {-}{}{}\_\discretionary {-}{}{}serial\discretionary {-}{}{}\_\discretionary {-}{}{}port}
     \subitem {imu\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
 		\hyperpage{18}
@@ -203,15 +210,15 @@
 
   \item {passive\discretionary {-}{}{}\_\discretionary {-}{}{}wait}
     \subitem {master\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
-		\hyperpage{29}
+		\hyperpage{30}
   \item {pressure\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
-		\hyperpage{37}
-    \subitem {get\discretionary {-}{}{}\_\discretionary {-}{}{}readings\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}parallel}, 
 		\hyperpage{38}
+    \subitem {get\discretionary {-}{}{}\_\discretionary {-}{}{}readings\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}parallel}, 
+		\hyperpage{39}
     \subitem {pressure\discretionary {-}{}{}\_\discretionary {-}{}{}sensor\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}connect}, 
 		\hyperpage{39}
   \item {pressure\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h}, 
-		\hyperpage{39}
+		\hyperpage{41}
   \item {pressure\discretionary {-}{}{}\_\discretionary {-}{}{}sensor\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}connect}
     \subitem {pressure\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
 		\hyperpage{39}
@@ -225,19 +232,22 @@
     \subitem {imu\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
 		\hyperpage{18}
   \item {rpi\discretionary {-}{}{}\_\discretionary {-}{}{}gpio\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
-		\hyperpage{40}
+		\hyperpage{42}
     \subitem {map\discretionary {-}{}{}\_\discretionary {-}{}{}peripheral}, 
-		\hyperpage{40}
+		\hyperpage{42}
     \subitem {unmap\discretionary {-}{}{}\_\discretionary {-}{}{}peripheral}, 
-		\hyperpage{41}
+		\hyperpage{43}
   \item {rpi\discretionary {-}{}{}\_\discretionary {-}{}{}gpio\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h}, 
-		\hyperpage{41}
-    \subitem {gpio}, \hyperpage{42}
+		\hyperpage{43}
+    \subitem {gpio}, \hyperpage{44}
 
   \indexspace
 
   \item {S\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}data}, 
 		\hyperpage{10}
+  \item {search\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}W\discretionary {-}{}{}M}
+    \subitem {master\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{30}
   \item {set\discretionary {-}{}{}\_\discretionary {-}{}{}new\discretionary {-}{}{}\_\discretionary {-}{}{}attr}
     \subitem {imu\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
 		\hyperpage{18}
@@ -246,38 +256,38 @@
 		\hyperpage{19}
   \item {simp1}
     \subitem {simplex\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
-		\hyperpage{43}
+		\hyperpage{45}
   \item {simp2}
     \subitem {simplex\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
-		\hyperpage{43}
+		\hyperpage{45}
   \item {simp3}
     \subitem {simplex\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
-		\hyperpage{43}
+		\hyperpage{45}
   \item {simplex\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
-		\hyperpage{42}
-    \subitem {get\discretionary {-}{}{}\_\discretionary {-}{}{}simplex\discretionary {-}{}{}\_\discretionary {-}{}{}solution}, 
-		\hyperpage{43}
-    \subitem {simp1}, \hyperpage{43}
-    \subitem {simp2}, \hyperpage{43}
-    \subitem {simp3}, \hyperpage{43}
-    \subitem {simplx}, \hyperpage{43}
-  \item {simplex\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h}, 
 		\hyperpage{44}
+    \subitem {get\discretionary {-}{}{}\_\discretionary {-}{}{}simplex\discretionary {-}{}{}\_\discretionary {-}{}{}solution}, 
+		\hyperpage{45}
+    \subitem {simp1}, \hyperpage{45}
+    \subitem {simp2}, \hyperpage{45}
+    \subitem {simp3}, \hyperpage{45}
+    \subitem {simplx}, \hyperpage{45}
+  \item {simplex\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h}, 
+		\hyperpage{46}
   \item {simplx}
     \subitem {simplex\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
-		\hyperpage{43}
-  \item {spycam\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
 		\hyperpage{45}
-    \subitem {start\discretionary {-}{}{}Video}, \hyperpage{46}
-    \subitem {stop\discretionary {-}{}{}Video}, \hyperpage{46}
+  \item {spycam\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
+		\hyperpage{47}
+    \subitem {start\discretionary {-}{}{}Video}, \hyperpage{48}
+    \subitem {stop\discretionary {-}{}{}Video}, \hyperpage{48}
   \item {spycam\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h}, 
-		\hyperpage{46}
+		\hyperpage{48}
   \item {start\discretionary {-}{}{}Video}
     \subitem {spycam\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
-		\hyperpage{46}
+		\hyperpage{48}
   \item {stop\discretionary {-}{}{}Video}
     \subitem {spycam\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
-		\hyperpage{46}
+		\hyperpage{48}
 
   \indexspace
 
@@ -295,7 +305,7 @@
 
   \item {unmap\discretionary {-}{}{}\_\discretionary {-}{}{}peripheral}
     \subitem {rpi\discretionary {-}{}{}\_\discretionary {-}{}{}gpio\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
-		\hyperpage{41}
+		\hyperpage{43}
 
   \indexspace
 
@@ -303,13 +313,13 @@
     \subitem {control\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
 		\hyperpage{14}
     \subitem {master\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h}, 
-		\hyperpage{34}
+		\hyperpage{36}
 
   \indexspace
 
   \item {write\discretionary {-}{}{}\_\discretionary {-}{}{}to\discretionary {-}{}{}\_\discretionary {-}{}{}file\discretionary {-}{}{}\_\discretionary {-}{}{}custom}
     \subitem {master\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c}, 
-		\hyperpage{29}
+		\hyperpage{31}
 
   \indexspace
 

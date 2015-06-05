@@ -9,20 +9,21 @@
  */
 
 # include <math.h>
+# include <string.h>
 # include "master_header.h"
 # include "control_header.h"
 
-float VALVE__MAX_THRUST=0.5; ///< Maximum thrust of RCS solenoid valves (i.e. when fully opened) // TODO: confirm with Gautier!
+double VALVE__MAX_THRUST=0.36; ///< Maximum thrust of RCS solenoid valves (i.e. when fully opened) // TODO: confirm with Gautier!
 
 /**
  * @fn void Fpitch_loop_control_setup()
  * This function setups up all control parameters relating to the pitch control.
  */
 void Fpitch_loop_control_setup() {
-	Fpitch_loop.satur = VALVE__MAX_THRUST;
-	Fpitch_loop.control_range = 20*M_PI/180; // [rad]
-	Fpitch_loop.K = Fpitch_loop.satur/Fpitch_loop.control_range;
-	Fpitch_loop.Td = 0.7;
+	Fpitch_loop.satur = 0; // We do not use a derivative term in roll rate control
+	Fpitch_loop.control_range = 0; // We do not use a derivative term in roll rate control
+	Fpitch_loop.K = 5;
+	Fpitch_loop.Td = 3;
 }
 
 /**
@@ -30,10 +31,10 @@ void Fpitch_loop_control_setup() {
  * This function sets up all control parameters relating to the yaw control.
  */
 void Fyaw_loop_control_setup() {
-	Fyaw_loop.satur = VALVE__MAX_THRUST;
-	Fyaw_loop.control_range = 20*M_PI/180; // [rad]
-	Fyaw_loop.K = Fyaw_loop.satur/Fyaw_loop.control_range;
-	Fyaw_loop.Td = 0.7;
+	Fyaw_loop.satur = 0; // We do not use a derivative term in roll rate control
+	Fyaw_loop.control_range = 0; // We do not use a derivative term in roll rate control
+	Fyaw_loop.K = 5;
+	Fyaw_loop.Td = 3;
 }
 
 /**

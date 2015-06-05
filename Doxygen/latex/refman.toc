@@ -67,55 +67,57 @@
 \contentsline {subsubsection}{\numberline {6.7.3.1}gpio}{27}{subsubsection.6.7.3.1}
 \contentsline {section}{\numberline {6.8}master\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c File Reference}{28}{section.6.8}
 \contentsline {subsection}{\numberline {6.8.1}Detailed Description}{28}{subsection.6.8.1}
-\contentsline {subsection}{\numberline {6.8.2}Function Documentation}{28}{subsection.6.8.2}
-\contentsline {subsubsection}{\numberline {6.8.2.1}check\discretionary {-}{}{}\_\discretionary {-}{}{}time}{28}{subsubsection.6.8.2.1}
-\contentsline {subsubsection}{\numberline {6.8.2.2}open\discretionary {-}{}{}\_\discretionary {-}{}{}error\discretionary {-}{}{}\_\discretionary {-}{}{}file}{29}{subsubsection.6.8.2.2}
-\contentsline {subsubsection}{\numberline {6.8.2.3}open\discretionary {-}{}{}\_\discretionary {-}{}{}file}{29}{subsubsection.6.8.2.3}
-\contentsline {subsubsection}{\numberline {6.8.2.4}passive\discretionary {-}{}{}\_\discretionary {-}{}{}wait}{29}{subsubsection.6.8.2.4}
-\contentsline {subsubsection}{\numberline {6.8.2.5}write\discretionary {-}{}{}\_\discretionary {-}{}{}to\discretionary {-}{}{}\_\discretionary {-}{}{}file\discretionary {-}{}{}\_\discretionary {-}{}{}custom}{29}{subsubsection.6.8.2.5}
-\contentsline {section}{\numberline {6.9}master\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h File Reference}{30}{section.6.9}
-\contentsline {subsection}{\numberline {6.9.1}Detailed Description}{34}{subsection.6.9.1}
-\contentsline {subsection}{\numberline {6.9.2}Variable Documentation}{34}{subsection.6.9.2}
-\contentsline {subsubsection}{\numberline {6.9.2.1}V\discretionary {-}{}{}A\discretionary {-}{}{}L\discretionary {-}{}{}V\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}M\discretionary {-}{}{}A\discretionary {-}{}{}X\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}T\discretionary {-}{}{}H\discretionary {-}{}{}R\discretionary {-}{}{}U\discretionary {-}{}{}S\discretionary {-}{}{}T}{34}{subsubsection.6.9.2.1}
-\contentsline {section}{\numberline {6.10}msp430\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c File Reference}{34}{section.6.10}
-\contentsline {subsection}{\numberline {6.10.1}Detailed Description}{34}{subsection.6.10.1}
-\contentsline {subsection}{\numberline {6.10.2}Function Documentation}{35}{subsection.6.10.2}
-\contentsline {subsubsection}{\numberline {6.10.2.1}M\discretionary {-}{}{}S\discretionary {-}{}{}P430\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}receive}{35}{subsubsection.6.10.2.1}
-\contentsline {subsubsection}{\numberline {6.10.2.2}M\discretionary {-}{}{}S\discretionary {-}{}{}P430\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}write}{35}{subsubsection.6.10.2.2}
-\contentsline {subsubsection}{\numberline {6.10.2.3}M\discretionary {-}{}{}S\discretionary {-}{}{}P430\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}write\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}W\discretionary {-}{}{}M}{35}{subsubsection.6.10.2.3}
-\contentsline {section}{\numberline {6.11}msp430\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h File Reference}{36}{section.6.11}
-\contentsline {subsection}{\numberline {6.11.1}Detailed Description}{36}{subsection.6.11.1}
-\contentsline {section}{\numberline {6.12}pressure\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c File Reference}{37}{section.6.12}
-\contentsline {subsection}{\numberline {6.12.1}Detailed Description}{37}{subsection.6.12.1}
-\contentsline {subsection}{\numberline {6.12.2}Function Documentation}{38}{subsection.6.12.2}
-\contentsline {subsubsection}{\numberline {6.12.2.1}get\discretionary {-}{}{}\_\discretionary {-}{}{}readings\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}parallel}{38}{subsubsection.6.12.2.1}
-\contentsline {subsubsection}{\numberline {6.12.2.2}pressure\discretionary {-}{}{}\_\discretionary {-}{}{}sensor\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}connect}{39}{subsubsection.6.12.2.2}
-\contentsline {section}{\numberline {6.13}pressure\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h File Reference}{39}{section.6.13}
-\contentsline {subsection}{\numberline {6.13.1}Detailed Description}{40}{subsection.6.13.1}
-\contentsline {section}{\numberline {6.14}rpi\discretionary {-}{}{}\_\discretionary {-}{}{}gpio\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c File Reference}{40}{section.6.14}
-\contentsline {subsection}{\numberline {6.14.1}Detailed Description}{40}{subsection.6.14.1}
-\contentsline {subsection}{\numberline {6.14.2}Function Documentation}{40}{subsection.6.14.2}
-\contentsline {subsubsection}{\numberline {6.14.2.1}map\discretionary {-}{}{}\_\discretionary {-}{}{}peripheral}{40}{subsubsection.6.14.2.1}
-\contentsline {subsubsection}{\numberline {6.14.2.2}unmap\discretionary {-}{}{}\_\discretionary {-}{}{}peripheral}{41}{subsubsection.6.14.2.2}
-\contentsline {section}{\numberline {6.15}rpi\discretionary {-}{}{}\_\discretionary {-}{}{}gpio\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h File Reference}{41}{section.6.15}
-\contentsline {subsection}{\numberline {6.15.1}Detailed Description}{41}{subsection.6.15.1}
-\contentsline {subsection}{\numberline {6.15.2}Variable Documentation}{42}{subsection.6.15.2}
-\contentsline {subsubsection}{\numberline {6.15.2.1}gpio}{42}{subsubsection.6.15.2.1}
-\contentsline {section}{\numberline {6.16}simplex\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c File Reference}{42}{section.6.16}
-\contentsline {subsection}{\numberline {6.16.1}Detailed Description}{42}{subsection.6.16.1}
-\contentsline {subsection}{\numberline {6.16.2}Function Documentation}{43}{subsection.6.16.2}
-\contentsline {subsubsection}{\numberline {6.16.2.1}get\discretionary {-}{}{}\_\discretionary {-}{}{}simplex\discretionary {-}{}{}\_\discretionary {-}{}{}solution}{43}{subsubsection.6.16.2.1}
-\contentsline {subsubsection}{\numberline {6.16.2.2}simp1}{43}{subsubsection.6.16.2.2}
-\contentsline {subsubsection}{\numberline {6.16.2.3}simp2}{43}{subsubsection.6.16.2.3}
-\contentsline {subsubsection}{\numberline {6.16.2.4}simp3}{43}{subsubsection.6.16.2.4}
-\contentsline {subsubsection}{\numberline {6.16.2.5}simplx}{43}{subsubsection.6.16.2.5}
-\contentsline {section}{\numberline {6.17}simplex\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h File Reference}{44}{section.6.17}
-\contentsline {subsection}{\numberline {6.17.1}Detailed Description}{45}{subsection.6.17.1}
-\contentsline {section}{\numberline {6.18}spycam\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c File Reference}{45}{section.6.18}
-\contentsline {subsection}{\numberline {6.18.1}Detailed Description}{45}{subsection.6.18.1}
-\contentsline {subsection}{\numberline {6.18.2}Function Documentation}{46}{subsection.6.18.2}
-\contentsline {subsubsection}{\numberline {6.18.2.1}start\discretionary {-}{}{}Video}{46}{subsubsection.6.18.2.1}
-\contentsline {subsubsection}{\numberline {6.18.2.2}stop\discretionary {-}{}{}Video}{46}{subsubsection.6.18.2.2}
-\contentsline {section}{\numberline {6.19}spycam\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h File Reference}{46}{section.6.19}
-\contentsline {subsection}{\numberline {6.19.1}Detailed Description}{46}{subsection.6.19.1}
-\contentsline {chapter}{Index}{47}{section*.41}
+\contentsline {subsection}{\numberline {6.8.2}Function Documentation}{29}{subsection.6.8.2}
+\contentsline {subsubsection}{\numberline {6.8.2.1}check\discretionary {-}{}{}\_\discretionary {-}{}{}time}{29}{subsubsection.6.8.2.1}
+\contentsline {subsubsection}{\numberline {6.8.2.2}linear\discretionary {-}{}{}\_\discretionary {-}{}{}search}{30}{subsubsection.6.8.2.2}
+\contentsline {subsubsection}{\numberline {6.8.2.3}open\discretionary {-}{}{}\_\discretionary {-}{}{}error\discretionary {-}{}{}\_\discretionary {-}{}{}file}{30}{subsubsection.6.8.2.3}
+\contentsline {subsubsection}{\numberline {6.8.2.4}open\discretionary {-}{}{}\_\discretionary {-}{}{}file}{30}{subsubsection.6.8.2.4}
+\contentsline {subsubsection}{\numberline {6.8.2.5}passive\discretionary {-}{}{}\_\discretionary {-}{}{}wait}{30}{subsubsection.6.8.2.5}
+\contentsline {subsubsection}{\numberline {6.8.2.6}search\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}W\discretionary {-}{}{}M}{31}{subsubsection.6.8.2.6}
+\contentsline {subsubsection}{\numberline {6.8.2.7}write\discretionary {-}{}{}\_\discretionary {-}{}{}to\discretionary {-}{}{}\_\discretionary {-}{}{}file\discretionary {-}{}{}\_\discretionary {-}{}{}custom}{31}{subsubsection.6.8.2.7}
+\contentsline {section}{\numberline {6.9}master\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h File Reference}{32}{section.6.9}
+\contentsline {subsection}{\numberline {6.9.1}Detailed Description}{36}{subsection.6.9.1}
+\contentsline {subsection}{\numberline {6.9.2}Variable Documentation}{36}{subsection.6.9.2}
+\contentsline {subsubsection}{\numberline {6.9.2.1}V\discretionary {-}{}{}A\discretionary {-}{}{}L\discretionary {-}{}{}V\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}M\discretionary {-}{}{}A\discretionary {-}{}{}X\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}T\discretionary {-}{}{}H\discretionary {-}{}{}R\discretionary {-}{}{}U\discretionary {-}{}{}S\discretionary {-}{}{}T}{36}{subsubsection.6.9.2.1}
+\contentsline {section}{\numberline {6.10}msp430\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c File Reference}{36}{section.6.10}
+\contentsline {subsection}{\numberline {6.10.1}Detailed Description}{37}{subsection.6.10.1}
+\contentsline {subsection}{\numberline {6.10.2}Function Documentation}{37}{subsection.6.10.2}
+\contentsline {subsubsection}{\numberline {6.10.2.1}M\discretionary {-}{}{}S\discretionary {-}{}{}P430\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}receive}{37}{subsubsection.6.10.2.1}
+\contentsline {subsubsection}{\numberline {6.10.2.2}M\discretionary {-}{}{}S\discretionary {-}{}{}P430\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}write}{37}{subsubsection.6.10.2.2}
+\contentsline {subsubsection}{\numberline {6.10.2.3}M\discretionary {-}{}{}S\discretionary {-}{}{}P430\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}T\discretionary {-}{}{}\_\discretionary {-}{}{}write\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}W\discretionary {-}{}{}M}{37}{subsubsection.6.10.2.3}
+\contentsline {section}{\numberline {6.11}msp430\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h File Reference}{38}{section.6.11}
+\contentsline {subsection}{\numberline {6.11.1}Detailed Description}{38}{subsection.6.11.1}
+\contentsline {section}{\numberline {6.12}pressure\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c File Reference}{38}{section.6.12}
+\contentsline {subsection}{\numberline {6.12.1}Detailed Description}{39}{subsection.6.12.1}
+\contentsline {subsection}{\numberline {6.12.2}Function Documentation}{39}{subsection.6.12.2}
+\contentsline {subsubsection}{\numberline {6.12.2.1}get\discretionary {-}{}{}\_\discretionary {-}{}{}readings\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}parallel}{39}{subsubsection.6.12.2.1}
+\contentsline {subsubsection}{\numberline {6.12.2.2}pressure\discretionary {-}{}{}\_\discretionary {-}{}{}sensor\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}connect}{40}{subsubsection.6.12.2.2}
+\contentsline {section}{\numberline {6.13}pressure\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h File Reference}{41}{section.6.13}
+\contentsline {subsection}{\numberline {6.13.1}Detailed Description}{42}{subsection.6.13.1}
+\contentsline {section}{\numberline {6.14}rpi\discretionary {-}{}{}\_\discretionary {-}{}{}gpio\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c File Reference}{42}{section.6.14}
+\contentsline {subsection}{\numberline {6.14.1}Detailed Description}{42}{subsection.6.14.1}
+\contentsline {subsection}{\numberline {6.14.2}Function Documentation}{42}{subsection.6.14.2}
+\contentsline {subsubsection}{\numberline {6.14.2.1}map\discretionary {-}{}{}\_\discretionary {-}{}{}peripheral}{42}{subsubsection.6.14.2.1}
+\contentsline {subsubsection}{\numberline {6.14.2.2}unmap\discretionary {-}{}{}\_\discretionary {-}{}{}peripheral}{43}{subsubsection.6.14.2.2}
+\contentsline {section}{\numberline {6.15}rpi\discretionary {-}{}{}\_\discretionary {-}{}{}gpio\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h File Reference}{43}{section.6.15}
+\contentsline {subsection}{\numberline {6.15.1}Detailed Description}{43}{subsection.6.15.1}
+\contentsline {subsection}{\numberline {6.15.2}Variable Documentation}{44}{subsection.6.15.2}
+\contentsline {subsubsection}{\numberline {6.15.2.1}gpio}{44}{subsubsection.6.15.2.1}
+\contentsline {section}{\numberline {6.16}simplex\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c File Reference}{44}{section.6.16}
+\contentsline {subsection}{\numberline {6.16.1}Detailed Description}{44}{subsection.6.16.1}
+\contentsline {subsection}{\numberline {6.16.2}Function Documentation}{45}{subsection.6.16.2}
+\contentsline {subsubsection}{\numberline {6.16.2.1}get\discretionary {-}{}{}\_\discretionary {-}{}{}simplex\discretionary {-}{}{}\_\discretionary {-}{}{}solution}{45}{subsubsection.6.16.2.1}
+\contentsline {subsubsection}{\numberline {6.16.2.2}simp1}{45}{subsubsection.6.16.2.2}
+\contentsline {subsubsection}{\numberline {6.16.2.3}simp2}{45}{subsubsection.6.16.2.3}
+\contentsline {subsubsection}{\numberline {6.16.2.4}simp3}{45}{subsubsection.6.16.2.4}
+\contentsline {subsubsection}{\numberline {6.16.2.5}simplx}{45}{subsubsection.6.16.2.5}
+\contentsline {section}{\numberline {6.17}simplex\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h File Reference}{46}{section.6.17}
+\contentsline {subsection}{\numberline {6.17.1}Detailed Description}{47}{subsection.6.17.1}
+\contentsline {section}{\numberline {6.18}spycam\discretionary {-}{}{}\_\discretionary {-}{}{}funcs.\discretionary {-}{}{}c File Reference}{47}{section.6.18}
+\contentsline {subsection}{\numberline {6.18.1}Detailed Description}{47}{subsection.6.18.1}
+\contentsline {subsection}{\numberline {6.18.2}Function Documentation}{48}{subsection.6.18.2}
+\contentsline {subsubsection}{\numberline {6.18.2.1}start\discretionary {-}{}{}Video}{48}{subsubsection.6.18.2.1}
+\contentsline {subsubsection}{\numberline {6.18.2.2}stop\discretionary {-}{}{}Video}{48}{subsubsection.6.18.2.2}
+\contentsline {section}{\numberline {6.19}spycam\discretionary {-}{}{}\_\discretionary {-}{}{}header.\discretionary {-}{}{}h File Reference}{48}{section.6.19}
+\contentsline {subsection}{\numberline {6.19.1}Detailed Description}{48}{subsection.6.19.1}
+\contentsline {chapter}{Index}{49}{section*.41}

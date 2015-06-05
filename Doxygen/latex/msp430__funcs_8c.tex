@@ -23,7 +23,7 @@ void \hyperlink{msp430__funcs_8c_a37c1f83aba04ac0ce28faf5ba3b537a5}{M\-S\-P430\-
 \item 
 void \hyperlink{msp430__funcs_8c_a33738ffa4af6e11695b247aee563b6f5}{M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write} (char M\-S\-P430\-\_\-\-T\-X\mbox{[}3\mbox{]})
 \item 
-void \hyperlink{msp430__funcs_8c_ae203ca5e5e2220a92f8153f05208664f}{M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write\-\_\-\-P\-W\-M} (unsigned char P\-W\-M\-A, unsigned char P\-W\-M\-B, unsigned char P\-W\-M\-C)
+void \hyperlink{msp430__funcs_8c_a8efdf02df6574899acd7b8634f8f4007}{M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write\-\_\-\-P\-W\-M} (unsigned int \hyperlink{master__header_8h_adc2f9c564aa0a90a16cb87350cce5adf}{P\-W\-M1}, unsigned int \hyperlink{master__header_8h_aff21db3b340a021bee19e5a0e1657fef}{P\-W\-M2}, unsigned int \hyperlink{master__header_8h_a827c226fa79fb53ea8b96082d5d49106}{P\-W\-M3}, unsigned int \hyperlink{master__header_8h_a3f972178ea1f7d61ab54ff14b6cd0074}{P\-W\-M4})
 \end{DoxyCompactItemize}
 
 
@@ -69,38 +69,23 @@ This function sends the M\-S\-P430 a 3 character string which is\-:
 {\em M\-S\-P430\-\_\-\-T\-X} & Contains the 3-\/byte (3-\/character) string to send to the M\-S\-P430 \\
 \hline
 \end{DoxyParams}
-\hypertarget{msp430__funcs_8c_ae203ca5e5e2220a92f8153f05208664f}{\index{msp430\-\_\-funcs.\-c@{msp430\-\_\-funcs.\-c}!M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write\-\_\-\-P\-W\-M@{M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write\-\_\-\-P\-W\-M}}
+\hypertarget{msp430__funcs_8c_a8efdf02df6574899acd7b8634f8f4007}{\index{msp430\-\_\-funcs.\-c@{msp430\-\_\-funcs.\-c}!M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write\-\_\-\-P\-W\-M@{M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write\-\_\-\-P\-W\-M}}
 \index{M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write\-\_\-\-P\-W\-M@{M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write\-\_\-\-P\-W\-M}!msp430_funcs.c@{msp430\-\_\-funcs.\-c}}
 \subsubsection[{M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write\-\_\-\-P\-W\-M}]{\setlength{\rightskip}{0pt plus 5cm}void M\-S\-P430\-\_\-\-U\-A\-R\-T\-\_\-write\-\_\-\-P\-W\-M (
 \begin{DoxyParamCaption}
-\item[{unsigned char}]{P\-W\-M\-A, }
-\item[{unsigned char}]{P\-W\-M\-B, }
-\item[{unsigned char}]{P\-W\-M\-C}
+\item[{unsigned int}]{P\-W\-M1, }
+\item[{unsigned int}]{P\-W\-M2, }
+\item[{unsigned int}]{P\-W\-M3, }
+\item[{unsigned int}]{P\-W\-M4}
 \end{DoxyParamCaption}
-)}}\label{msp430__funcs_8c_ae203ca5e5e2220a92f8153f05208664f}
-This function sends P\-W\-M values to the M\-S\-P430. Bit field conversion below\-: // T\-O\-D\-O \-: in M\-S\-P430 program, add condition \char`\"{}not reading P\-W\-M\char`\"{} for \# and @ --$>$ avoids that new P\-W\-M sent if P\-W\-M of 35 is sent!
+)}}\label{msp430__funcs_8c_a8efdf02df6574899acd7b8634f8f4007}
+This function sends P\-W\-M values to the M\-S\-P430. Bit field conversion below\-:
 
 
 \begin{DoxyImage}
 \includegraphics[width=15cm]{MSP430_comm.png}
-\caption{4 byte packet send by Raspberry Pi to M\-S\-P430 to update P\-W\-M values}
+\caption{6 byte packet send by Raspberry Pi to M\-S\-P430 to update P\-W\-M values}
 \end{DoxyImage}
 
 
-4 bytes are hence sent to the M\-S\-P430 where\-:
-\begin{DoxyItemize}
-\item P\-W\-M\-\_\-\-T\-X\-\_\-packet\mbox{[}0\mbox{]} (byte 1) \-: send \char`\"{}\#\char`\"{} message which tells M\-S\-P430 that the following 3 bytes are P\-W\-M values
-\item P\-W\-M\-\_\-\-T\-X\-\_\-packet\mbox{[}1\mbox{]} (byte 2) \-: Y\-Y\-Y is a code which says\-:
-\begin{DoxyItemize}
-\item Y\-Y\-Y==001 \-: P\-W\-M1 is 0
-\item Y\-Y\-Y==010 \-: P\-W\-M2 is 0
-\item Y\-Y\-Y==011 \-: P\-W\-M3 is 0
-\item Y\-Y\-Y==100 \-: P\-W\-M4 is 0 This is because at every point in time only 3 valves are assigned thrusts -\/ this is the consequence of the R\-C\-S physics and optimal thrust assignment. It's useless to waste 7 bits sending a 0 value, so we use just 3 to identify which of the P\-W\-M values is 0
-\end{DoxyItemize}
-\end{DoxyItemize}
-
-In the above image you can see how the P\-W\-M\-A, P\-W\-M\-B and P\-W\-M\-C signals are distributed amongst the three bytes P\-W\-M\-\_\-\-T\-X\-\_\-packet\mbox{[}1\mbox{]} to P\-W\-M\-\_\-\-T\-X\-\_\-packet\mbox{[}3\mbox{]}. In the figure, the M\-S\-B is on the left and L\-S\-B on the right for each series of A, B and C. We call them P\-W\-M\-A, P\-W\-M\-B and P\-W\-M\-C because these are, in rising order from 1 to 4 the other 3 non-\/zero P\-W\-Ms. For example\-:
-
-Y\-Y\-Y==001, therefore P\-W\-M1 is 0 so P\-W\-M\-A=P\-W\-M2, P\-W\-M\-B=P\-W\-M2, P\-W\-M\-C=P\-W\-M4 Y\-Y\-Y==011, therefore P\-W\-M3 is 0 so P\-W\-M\-A=P\-W\-M1, P\-W\-M\-B=P\-W\-M2, P\-W\-M\-C=P\-W\-M4
-
-You see that we simply so from P\-W\-M1 to P\-W\-M4, skipping the P\-W\-M that is 0. 
+In the above image you can see how the 4 10-\/bit P\-W\-M values are distributed across the 6 bytes that are sent to the M\-S\-P430. The first byte tells the M\-S\-P430 that the following 5 bytes contain P\-W\-M values. Once received, the M\-S\-P430 decodes these according to the above figure (combining appropriate bits into 10-\/byte numbers) and assigns them to \char`\"{}unsigned int\char`\"{} type P\-W\-M variables that are then output on its 4 pins using timer interrupts (hardware P\-W\-M, much more precise than software P\-W\-M). 

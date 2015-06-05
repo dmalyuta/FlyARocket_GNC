@@ -97,7 +97,21 @@ the rocket:
 
 Other forces, such as aerodynamic, are modeled as disturbances that you can apply and change yourself in
 rocket_dynamics.m. Examples of distrubances in orientation (psidot, phidot and others) and in moment acting
-on the rocket can be seen in rocket_dynamics.m.
+on the rocket can be seen in rocket_dynamics.m. Note that the simulation also takes into account the fact that the
+RCS gas tank empties and the valve thrust level drops: this is done with a basic model where thrust is maximum from
+CONTROL__START_TIME to TIME__DROPOFF and then drops exponentially with time constant DROPOFF_CONSTANT until the time
+(CONTROL__START_TIME+TIME__FULL) at which point the valves shut off (simulation of the RCS tank being empty). This is a
+very basic model that helps understand the phenomena behind the RCS becoming less and less effective over time and to
+accordingly design a controller that performs under that constraint. However, the model does not take into account, for example,
+that the RCS tank may drain faster with 3 valves open rather than 2, or that it may drain faster when the valves are more
+open; this is a point for further improvement.
+
+The files ct_main.h and ct_rocket_dynamics.h are the same as main.h and rocket_dynamics.h however ct stands for "control
+tuning". These files model only in-plane (2-D) flight without taking roll into account. It is representative for example
+of pure pitch or pure yaw. It is used to evaluate the pitch and yaw controller along one axis only.
+
+The file control_tune.m was used to model the in-plane flight as a transfer function and to tune a continuous-time controller
+for that flight type. It was helpful in determining the appropriate PD controller coefficients for the yaw/pitch controller.
 
 The result_analyzer.m file reads the log files in ./logs/ directory and generates graphs in order to instantly
 visually interpret what has been logged during the rocket flight (or during a ground test or whener the

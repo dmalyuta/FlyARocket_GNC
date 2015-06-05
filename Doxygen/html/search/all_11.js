@@ -1,7 +1,8 @@
 var searchData=
 [
   ['s',['S',['../master__header_8h.html#adbd85b44323c597c3a7a4d0a6ed49192',1,'master_header.h']]],
-  ['satur',['satur',['../structControl__loop.html#a9c7ed67be2cf5af577cbaa5ea7cce28d',1,'Control_loop']]],
+  ['satur',['satur',['../structControl__loop.html#a90ed943640ce57e399c42de9d994a55c',1,'Control_loop']]],
+  ['search_5fpwm',['search_PWM',['../master__funcs_8c.html#aae7594d7909a61de28722b124378a837',1,'master_funcs.c']]],
   ['set_5fnew_5fattr',['set_new_attr',['../imu__funcs_8c.html#ab43fd2629dea282222c48fc720df4517',1,'imu_funcs.c']]],
   ['set_5fto_5fblocking',['set_to_blocking',['../imu__funcs_8c.html#acff6f9de3e5075f5b3e6c2806651e446',1,'imu_funcs.c']]],
   ['simp1',['simp1',['../simplex__funcs_8c.html#abdfdf17d70ce804cbe516d53e96d46c1',1,'simplex_funcs.c']]],

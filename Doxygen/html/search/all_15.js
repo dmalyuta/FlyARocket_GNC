@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['which_5fzero',['which_zero',['../msp430__header_8h.html#abee57369cf5644109c372348ca694783',1,'msp430_header.h']]],
   ['write_5fto_5ffile_5fcustom',['write_to_file_custom',['../master__funcs_8c.html#a0ebc9cbfa5616a43caa96e7394543752',1,'master_funcs.c']]],
   ['wx',['wx',['../imu__header_8h.html#a40083d5d71ff675499a8d392ff75f401',1,'imu_header.h']]],
   ['wx_5fcont',['wx_cont',['../master_8c.html#abaaeebf27cbf4160bd6c104223d91bc1',1,'master.c']]],

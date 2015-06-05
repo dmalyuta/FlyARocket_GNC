@@ -104,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:ae3593488fd933fd856b687d074f25f91"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae3593488fd933fd856b687d074f25f91"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__header_8h.html#ae3593488fd933fd856b687d074f25f91">VALVE_CHARAC_RESOLUTION</a>&#160;&#160;&#160;13</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__header_8h.html#ae3593488fd933fd856b687d074f25f91">VALVE_CHARAC_RESOLUTION</a>&#160;&#160;&#160;8</td></tr>
 <tr class="memdesc:ae3593488fd933fd856b687d074f25f91"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of points there are in the calibrated valve thrust curve (flow rate vs. PWM) <br/></td></tr>
 <tr class="separator:ae3593488fd933fd856b687d074f25f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -130,6 +130,10 @@ unsigned long long int&#160;</td><td class="memItemRight" valign="bottom"><a cla
 unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__header_8h.html#a3cbe1858f5d39f6470d8975f7d82c147">SPI_quit</a></td></tr>
 <tr class="memdesc:a3cbe1858f5d39f6470d8975f7d82c147"><td class="mdescLeft">&#160;</td><td class="mdescRight">==0 by default, ==1 signals the SPI reading thread (<a class="el" href="pressure__funcs_8c.html#a6c8634a0f37e059edc662324a919c39e">get_readings_SPI_parallel()</a>) to exit. <br/></td></tr>
 <tr class="separator:a3cbe1858f5d39f6470d8975f7d82c147"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a683306c600ef5cbf03bdc97f0f190007"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a683306c600ef5cbf03bdc97f0f190007"></a>
+unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__header_8h.html#a683306c600ef5cbf03bdc97f0f190007">Control_quit</a></td></tr>
+<tr class="memdesc:a683306c600ef5cbf03bdc97f0f190007"><td class="mdescLeft">&#160;</td><td class="mdescRight">==0 if program can continue nominally, ==1 when we want to emergency-quit the control loop (useful for RCS ground tests when things go wrong!) <br/></td></tr>
+<tr class="separator:a683306c600ef5cbf03bdc97f0f190007"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dad9d03b6168bcb6c69d461514a833f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2dad9d03b6168bcb6c69d461514a833f"></a>
 unsigned long long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__header_8h.html#a2dad9d03b6168bcb6c69d461514a833f">IMU__READ_TIMESTEP</a></td></tr>
 <tr class="memdesc:a2dad9d03b6168bcb6c69d461514a833f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time intervals [us] at which we read over UART the IMU data. <br/></td></tr>
@@ -138,22 +142,22 @@ unsigned long long int&#160;</td><td class="memItemRight" valign="bottom"><a cla
 unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__header_8h.html#a0c2fbbcefec3fbaa9bf5405eafb92688">IMU_quit</a></td></tr>
 <tr class="memdesc:a0c2fbbcefec3fbaa9bf5405eafb92688"><td class="mdescLeft">&#160;</td><td class="mdescRight">==0 by default, ==1 signals the IMU reading and filtering threads (<a class="el" href="imu__funcs_8c.html#adacd103cea6c5f68c6b1ea416394c9f4">read_IMU_parallel()</a> and <a class="el" href="imu__funcs_8c.html#a819d365851c5396da5453c27c37af71b">get_filtered_attitude_parallel()</a>) to exit. <br/></td></tr>
 <tr class="separator:a0c2fbbcefec3fbaa9bf5405eafb92688"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a490cfe9811abc6b34f25aac2f2dce376"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a490cfe9811abc6b34f25aac2f2dce376"></a>
-unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__header_8h.html#a490cfe9811abc6b34f25aac2f2dce376">PWM1</a></td></tr>
-<tr class="memdesc:a490cfe9811abc6b34f25aac2f2dce376"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM value for the R1 valve. <br/></td></tr>
-<tr class="separator:a490cfe9811abc6b34f25aac2f2dce376"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d8592107df1c79c0aa74977f1260ec4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5d8592107df1c79c0aa74977f1260ec4"></a>
-unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__header_8h.html#a5d8592107df1c79c0aa74977f1260ec4">PWM2</a></td></tr>
-<tr class="memdesc:a5d8592107df1c79c0aa74977f1260ec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM value for the R2 valve. <br/></td></tr>
-<tr class="separator:a5d8592107df1c79c0aa74977f1260ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a009f20b0c08a53c149c3af40a4c69674"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a009f20b0c08a53c149c3af40a4c69674"></a>
-unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__header_8h.html#a009f20b0c08a53c149c3af40a4c69674">PWM3</a></td></tr>
-<tr class="memdesc:a009f20b0c08a53c149c3af40a4c69674"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM value for the R3 valve. <br/></td></tr>
-<tr class="separator:a009f20b0c08a53c149c3af40a4c69674"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afef2fc7f7231604b5ab9a090848d9dc6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afef2fc7f7231604b5ab9a090848d9dc6"></a>
-unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__header_8h.html#afef2fc7f7231604b5ab9a090848d9dc6">PWM4</a></td></tr>
-<tr class="memdesc:afef2fc7f7231604b5ab9a090848d9dc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM value for the R4 valve. <br/></td></tr>
-<tr class="separator:afef2fc7f7231604b5ab9a090848d9dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc2f9c564aa0a90a16cb87350cce5adf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adc2f9c564aa0a90a16cb87350cce5adf"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__header_8h.html#adc2f9c564aa0a90a16cb87350cce5adf">PWM1</a></td></tr>
+<tr class="memdesc:adc2f9c564aa0a90a16cb87350cce5adf"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM value for the R1 valve. <br/></td></tr>
+<tr class="separator:adc2f9c564aa0a90a16cb87350cce5adf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff21db3b340a021bee19e5a0e1657fef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aff21db3b340a021bee19e5a0e1657fef"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__header_8h.html#aff21db3b340a021bee19e5a0e1657fef">PWM2</a></td></tr>
+<tr class="memdesc:aff21db3b340a021bee19e5a0e1657fef"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM value for the R2 valve. <br/></td></tr>
+<tr class="separator:aff21db3b340a021bee19e5a0e1657fef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a827c226fa79fb53ea8b96082d5d49106"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a827c226fa79fb53ea8b96082d5d49106"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__header_8h.html#a827c226fa79fb53ea8b96082d5d49106">PWM3</a></td></tr>
+<tr class="memdesc:a827c226fa79fb53ea8b96082d5d49106"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM value for the R3 valve. <br/></td></tr>
+<tr class="separator:a827c226fa79fb53ea8b96082d5d49106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f972178ea1f7d61ab54ff14b6cd0074"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3f972178ea1f7d61ab54ff14b6cd0074"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__header_8h.html#a3f972178ea1f7d61ab54ff14b6cd0074">PWM4</a></td></tr>
+<tr class="memdesc:a3f972178ea1f7d61ab54ff14b6cd0074"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM value for the R4 valve. <br/></td></tr>
+<tr class="separator:a3f972178ea1f7d61ab54ff14b6cd0074"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af404f6d9a332838b9707056c27a4f21a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af404f6d9a332838b9707056c27a4f21a"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__header_8h.html#af404f6d9a332838b9707056c27a4f21a">R1</a></td></tr>
 <tr class="memdesc:af404f6d9a332838b9707056c27a4f21a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valve R1 thrust. <br/></td></tr>
@@ -176,7 +180,7 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="separator:ab324d426f7c3fd563450bd71a15aefe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ee7453017d47063c9f1e9e6ad69c424"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9ee7453017d47063c9f1e9e6ad69c424"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__header_8h.html#a9ee7453017d47063c9f1e9e6ad69c424">R_valve_charac</a> [<a class="el" href="master__header_8h.html#ae3593488fd933fd856b687d074f25f91">VALVE_CHARAC_RESOLUTION</a>]</td></tr>
-<tr class="memdesc:a9ee7453017d47063c9f1e9e6ad69c424"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thrust (R) value of characteristic thrust value. <br/></td></tr>
+<tr class="memdesc:a9ee7453017d47063c9f1e9e6ad69c424"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thrust value [N],relative, of characteristic thrust value for RCS valves. <br/></td></tr>
 <tr class="separator:a9ee7453017d47063c9f1e9e6ad69c424"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a873684cefeb665f3d5e6b495de57fc0d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a873684cefeb665f3d5e6b495de57fc0d"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__header_8h.html#a873684cefeb665f3d5e6b495de57fc0d">d</a></td></tr>
@@ -214,9 +218,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="maste
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__header_8h.html#a5e78dbd5fd0fc01ba7b98dd15e27221e">M</a></td></tr>
 <tr class="memdesc:a5e78dbd5fd0fc01ba7b98dd15e27221e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of constraints (M=M1+M2+M3) <br/></td></tr>
 <tr class="separator:a5e78dbd5fd0fc01ba7b98dd15e27221e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab68ddad07171b0184b749ff21f40aea8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__header_8h.html#ab68ddad07171b0184b749ff21f40aea8">VALVE__MAX_THRUST</a></td></tr>
-<tr class="memdesc:ab68ddad07171b0184b749ff21f40aea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum thrust of RCS solenoid valves (i.e. when fully opened)  <a href="#ab68ddad07171b0184b749ff21f40aea8">More...</a><br/></td></tr>
-<tr class="separator:ab68ddad07171b0184b749ff21f40aea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8eaf2e84821e970845fd6233109f952"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__header_8h.html#aa8eaf2e84821e970845fd6233109f952">VALVE__MAX_THRUST</a></td></tr>
+<tr class="memdesc:aa8eaf2e84821e970845fd6233109f952"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum thrust of RCS solenoid valves (i.e. when fully opened)  <a href="#aa8eaf2e84821e970845fd6233109f952">More...</a><br/></td></tr>
+<tr class="separator:aa8eaf2e84821e970845fd6233109f952"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7c4a9735befe31f101e920cf2d922a8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab7c4a9735befe31f101e920cf2d922a8"></a>
 char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__header_8h.html#ab7c4a9735befe31f101e920cf2d922a8">MESSAGE</a> [700]</td></tr>
 <tr class="memdesc:ab7c4a9735befe31f101e920cf2d922a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message buffer string sometimes used for putting together a string, then writing it to a file. <br/></td></tr>
@@ -362,7 +366,7 @@ FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ma
 <tr class="separator:acfbcaf4efce8ebd037ba912955853c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae06637938d6d98b3460b9a9fc04ca510"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae06637938d6d98b3460b9a9fc04ca510"></a>
 FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__header_8h.html#ae06637938d6d98b3460b9a9fc04ca510">control_log</a></td></tr>
-<tr class="memdesc:ae06637938d6d98b3460b9a9fc04ca510"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control log (stores the control loop data such as computed <a class="el" href="master__header_8h.html#a24acaae245ca32a559b504e1a1e084d9" title="Pitch force (parallel to body -Z axis, so as to produce positive pitch rate when Fpitch&gt;0 (right hand...">Fpitch</a>, <a class="el" href="master__header_8h.html#a03c2e0033499a13a6e9113bec977055f" title="Yaw force (parallel to body +Y axis, so as to produce positive yaw rate when Fyaw&gt;0 (right hand rule)...">Fyaw</a>, <a class="el" href="master__header_8h.html#a3c7bd12558dd2888ffe85eadeac62fc3" title="Roll moment (positive about +X axis, so as to produce positive roll rate when Mroll&gt;0 (right hand rul...">Mroll</a>, the optimally distributed valves thrusts <a class="el" href="master__header_8h.html#af404f6d9a332838b9707056c27a4f21a" title="Valve R1 thrust. ">R1</a>,...,<a class="el" href="master__header_8h.html#af6474ec4ce3b123a435f2b0f453d0aba" title="Valve R4 thrust. ">R4</a> and the computed PWM signals <a class="el" href="master__header_8h.html#a490cfe9811abc6b34f25aac2f2dce376" title="PWM value for the R1 valve. ">PWM1</a>,...,<a class="el" href="master__header_8h.html#afef2fc7f7231604b5ab9a090848d9dc6" title="PWM value for the R4 valve. ">PWM4</a>) <br/></td></tr>
+<tr class="memdesc:ae06637938d6d98b3460b9a9fc04ca510"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control log (stores the control loop data such as computed <a class="el" href="master__header_8h.html#a24acaae245ca32a559b504e1a1e084d9" title="Pitch force (parallel to body -Z axis, so as to produce positive pitch rate when Fpitch&gt;0 (right hand...">Fpitch</a>, <a class="el" href="master__header_8h.html#a03c2e0033499a13a6e9113bec977055f" title="Yaw force (parallel to body +Y axis, so as to produce positive yaw rate when Fyaw&gt;0 (right hand rule)...">Fyaw</a>, <a class="el" href="master__header_8h.html#a3c7bd12558dd2888ffe85eadeac62fc3" title="Roll moment (positive about +X axis, so as to produce positive roll rate when Mroll&gt;0 (right hand rul...">Mroll</a>, the optimally distributed valves thrusts <a class="el" href="master__header_8h.html#af404f6d9a332838b9707056c27a4f21a" title="Valve R1 thrust. ">R1</a>,...,<a class="el" href="master__header_8h.html#af6474ec4ce3b123a435f2b0f453d0aba" title="Valve R4 thrust. ">R4</a> and the computed PWM signals <a class="el" href="master__header_8h.html#adc2f9c564aa0a90a16cb87350cce5adf" title="PWM value for the R1 valve. ">PWM1</a>,...,<a class="el" href="master__header_8h.html#a3f972178ea1f7d61ab54ff14b6cd0074" title="PWM value for the R4 valve. ">PWM4</a>) <br/></td></tr>
 <tr class="separator:ae06637938d6d98b3460b9a9fc04ca510"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Yaw Kalman filtering matrices</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>These matrices pertain to the real-time Kalman filtering of the yaw angle and angular rate </p>
@@ -476,12 +480,12 @@ struct <a class="el" href="structMATRIX.html">MATRIX</a>&#160;</td><td class="me
 <dl class="section version"><dt>Version</dt><dd>1.0</dd></dl>
 <p>This is the header to <a class="el" href="master__funcs_8c.html" title="Master functions file. ">master_funcs.c</a> containing necessary definitions and initializations. </p>
 </div><h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="ab68ddad07171b0184b749ff21f40aea8"></a>
+<a class="anchor" id="aa8eaf2e84821e970845fd6233109f952"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float VALVE__MAX_THRUST</td>
+          <td class="memname">double VALVE__MAX_THRUST</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -494,7 +498,7 @@ struct <a class="el" href="structMATRIX.html">MATRIX</a>&#160;</td><td class="me
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 31 2015 03:44:16 for Fly-A-Rocket (G)uidance (N)avigation and (C)ontrol Software by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 5 2015 16:44:41 for Fly-A-Rocket (G)uidance (N)avigation and (C)ontrol Software by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

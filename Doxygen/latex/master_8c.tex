@@ -62,16 +62,16 @@ int \hyperlink{master_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
 \hypertarget{master_8c_a0c2fbbcefec3fbaa9bf5405eafb92688}{unsigned char \hyperlink{master_8c_a0c2fbbcefec3fbaa9bf5405eafb92688}{I\-M\-U\-\_\-quit} =0}\label{master_8c_a0c2fbbcefec3fbaa9bf5405eafb92688}
 
 \begin{DoxyCompactList}\small\item\em ==0 by default, ==1 signals the I\-M\-U reading and filtering threads (\hyperlink{imu__funcs_8c_adacd103cea6c5f68c6b1ea416394c9f4}{read\-\_\-\-I\-M\-U\-\_\-parallel()} and \hyperlink{imu__funcs_8c_a819d365851c5396da5453c27c37af71b}{get\-\_\-filtered\-\_\-attitude\-\_\-parallel()}) to exit. \end{DoxyCompactList}\item 
-\hypertarget{master_8c_a490cfe9811abc6b34f25aac2f2dce376}{unsigned char \hyperlink{master_8c_a490cfe9811abc6b34f25aac2f2dce376}{P\-W\-M1} =0}\label{master_8c_a490cfe9811abc6b34f25aac2f2dce376}
+\hypertarget{master_8c_adc2f9c564aa0a90a16cb87350cce5adf}{unsigned int \hyperlink{master_8c_adc2f9c564aa0a90a16cb87350cce5adf}{P\-W\-M1} =0}\label{master_8c_adc2f9c564aa0a90a16cb87350cce5adf}
 
 \begin{DoxyCompactList}\small\item\em P\-W\-M value for the R1 valve. \end{DoxyCompactList}\item 
-\hypertarget{master_8c_a5d8592107df1c79c0aa74977f1260ec4}{unsigned char \hyperlink{master_8c_a5d8592107df1c79c0aa74977f1260ec4}{P\-W\-M2} =0}\label{master_8c_a5d8592107df1c79c0aa74977f1260ec4}
+\hypertarget{master_8c_aff21db3b340a021bee19e5a0e1657fef}{unsigned int \hyperlink{master_8c_aff21db3b340a021bee19e5a0e1657fef}{P\-W\-M2} =0}\label{master_8c_aff21db3b340a021bee19e5a0e1657fef}
 
 \begin{DoxyCompactList}\small\item\em P\-W\-M value for the R2 valve. \end{DoxyCompactList}\item 
-\hypertarget{master_8c_a009f20b0c08a53c149c3af40a4c69674}{unsigned char \hyperlink{master_8c_a009f20b0c08a53c149c3af40a4c69674}{P\-W\-M3} =0}\label{master_8c_a009f20b0c08a53c149c3af40a4c69674}
+\hypertarget{master_8c_a827c226fa79fb53ea8b96082d5d49106}{unsigned int \hyperlink{master_8c_a827c226fa79fb53ea8b96082d5d49106}{P\-W\-M3} =0}\label{master_8c_a827c226fa79fb53ea8b96082d5d49106}
 
 \begin{DoxyCompactList}\small\item\em P\-W\-M value for the R3 valve. \end{DoxyCompactList}\item 
-\hypertarget{master_8c_afef2fc7f7231604b5ab9a090848d9dc6}{unsigned char \hyperlink{master_8c_afef2fc7f7231604b5ab9a090848d9dc6}{P\-W\-M4} =0}\label{master_8c_afef2fc7f7231604b5ab9a090848d9dc6}
+\hypertarget{master_8c_a3f972178ea1f7d61ab54ff14b6cd0074}{unsigned int \hyperlink{master_8c_a3f972178ea1f7d61ab54ff14b6cd0074}{P\-W\-M4} =0}\label{master_8c_a3f972178ea1f7d61ab54ff14b6cd0074}
 
 \begin{DoxyCompactList}\small\item\em P\-W\-M value for the R4 valve. \end{DoxyCompactList}\item 
 \hypertarget{master_8c_af404f6d9a332838b9707056c27a4f21a}{double \hyperlink{master_8c_af404f6d9a332838b9707056c27a4f21a}{R1} =0}\label{master_8c_af404f6d9a332838b9707056c27a4f21a}
@@ -127,7 +127,7 @@ int \hyperlink{master_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
 \begin{DoxyCompactList}\small\item\em I\-M\-U log (stores raw and filtered Euler angles and angular rates, the body rates and the accelerometer data) \end{DoxyCompactList}\item 
 \hypertarget{master_8c_ae06637938d6d98b3460b9a9fc04ca510}{F\-I\-L\-E $\ast$ \hyperlink{master_8c_ae06637938d6d98b3460b9a9fc04ca510}{control\-\_\-log} =N\-U\-L\-L}\label{master_8c_ae06637938d6d98b3460b9a9fc04ca510}
 
-\begin{DoxyCompactList}\small\item\em Control log (stores the control loop data such as computed \hyperlink{master__header_8h_a24acaae245ca32a559b504e1a1e084d9}{Fpitch}, \hyperlink{master__header_8h_a03c2e0033499a13a6e9113bec977055f}{Fyaw}, \hyperlink{master__header_8h_a3c7bd12558dd2888ffe85eadeac62fc3}{Mroll}, the optimally distributed valves thrusts \hyperlink{master__header_8h_af404f6d9a332838b9707056c27a4f21a}{R1},...,\hyperlink{master__header_8h_af6474ec4ce3b123a435f2b0f453d0aba}{R4} and the computed P\-W\-M signals \hyperlink{master__header_8h_a490cfe9811abc6b34f25aac2f2dce376}{P\-W\-M1},...,\hyperlink{master__header_8h_afef2fc7f7231604b5ab9a090848d9dc6}{P\-W\-M4}) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Control log (stores the control loop data such as computed \hyperlink{master__header_8h_a24acaae245ca32a559b504e1a1e084d9}{Fpitch}, \hyperlink{master__header_8h_a03c2e0033499a13a6e9113bec977055f}{Fyaw}, \hyperlink{master__header_8h_a3c7bd12558dd2888ffe85eadeac62fc3}{Mroll}, the optimally distributed valves thrusts \hyperlink{master__header_8h_af404f6d9a332838b9707056c27a4f21a}{R1},...,\hyperlink{master__header_8h_af6474ec4ce3b123a435f2b0f453d0aba}{R4} and the computed P\-W\-M signals \hyperlink{master__header_8h_adc2f9c564aa0a90a16cb87350cce5adf}{P\-W\-M1},...,\hyperlink{master__header_8h_a3f972178ea1f7d61ab54ff14b6cd0074}{P\-W\-M4}) \end{DoxyCompactList}\item 
 struct \hyperlink{structbcm2835__peripheral}{bcm2835\-\_\-peripheral} \hyperlink{master_8c_a9181fa0a34f8c0ed9983a6088fa1de19}{gpio} = \{\hyperlink{rpi__gpio__header_8h_acce3b8a909ed8b957b4e411dfb7cbd91}{G\-P\-I\-O\-\_\-\-B\-A\-S\-E}\}
 \begin{DoxyCompactList}\small\item\em Our access register to the Raspberry Pi's G\-P\-I\-Os. \end{DoxyCompactList}\item 
 \hypertarget{master_8c_a9fd9d19baa498f5f274cc0ed9a5bf19f}{unsigned char \hyperlink{master_8c_a9fd9d19baa498f5f274cc0ed9a5bf19f}{launch\-\_\-detect\-\_\-gpio} =12}\label{master_8c_a9fd9d19baa498f5f274cc0ed9a5bf19f}

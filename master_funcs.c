@@ -20,8 +20,14 @@
 # include "master_header.h"
 # include "spycam_header.h"
 
-unsigned int PWM_valve_charac[VALVE_CHARAC_RESOLUTION] = {0,6,14,25,39,50,63,75,87,98,106,115,127}; ///< PWM value of characteristic thrust curve
-double R_valve_charac[VALVE_CHARAC_RESOLUTION] = {0.0000,0.0091,0.0478,0.0981,0.1656,0.2245,0.2816,0.3344,0.3737,0.4166,0.4406,0.4676,0.5000}; ///< Thrust (R) value of characteristic thrust value
+/**
+ * @name Thrust curve group
+ * These variables have been collected in experimental open-loop tests to determine what thrust value the valves output for a given PWM (in #PWM_valve_charac).
+ * @{
+ */
+unsigned int PWM_valve_charac[VALVE_CHARAC_RESOLUTION] = {310,420,520,620,720,820,920,1020}; ///< PWM value of characteristic thrust curve
+double R_valve_charac[VALVE_CHARAC_RESOLUTION] = {0.0,0.17,0.25,0.29,0.32,0.34,0.35,0.36}; ///< Thrust value [N],relative, of characteristic thrust value for RCS valves
+/** @} */
 
 /**
  * @fn void write_to_file_custom(FILE *file_ptr, char *string,FILE *error_log)
@@ -135,30 +141,70 @@ void passive_wait(struct timeval *now,struct timeval *before,struct timeval *ela
 }
 
 /**
- * @fn void search_PWM(double thrust,unsigned int *pwm)
+ * @fn void search_PWM(double R1_thrust,double R2_thrust,double R3_thrust,double R4_thrust,unsigned int *pwm1,unsigned int *pwm2,unsigned int *pwm3,unsigned int *pwm4)
  *
  * This function, given a wanted thrust, assigns the required PWM to produce that
  * thrust given the PWM_valve_charac[] and R_valve_charac[] arrays which assigns the correct
- * PWM for a given thrust level (valve flow rate vs. current characteristic is non-linear, see first
+ * PWM for a given thrust level. Typical thrust curves can be seen on the first
  * figure at page 2 of datasheet found <a href="http://www.parker.com/literature/Literature%20Files/Precision%20Fluidics%20Division/UpdatedFiles/VSO%20Data%20Sheet_1_19_11.pdf">here</a>.
+ * However, we manually measured the thrust level for a given PWM using a balance. The data was collected into a spreadsheet
+ * and the following graph was produced:
  *
- * The valves in our application are controlled in open-loop due to space constraints on implementing
- * sensor to close the loop on valve control. Therefore during software preparation, we do a series of
- * tests with the valves in order to plot for each individual valve a characteristic thrust vs. PWM curve
- * which then gets recorded in PWM_valve_charac (PWM) and R_valve_chara (thrust, normalized to 1 for maximum
- * thrust) and is used for the flights. This is suboptimal, of course, due to valves heating up, cooling down,
+ * @image latex "valve_curve.jpg" "Valve thrust curves" width=15cm
+ *
+ * The valves in our application are controlled in open-loop due to space and time constraints on implementing
+ * sensors to close the loop on valve control. This is suboptimal, of course, due to valves heating up, cooling down,
  * hysteresis, etc. that would slightly make the thrust curve change during flight.
  *
- * @param thrust The thrust we want the valve to output (from 0.0, no thrust, to 1.0, max thrust).
- * @param pwm The pointer to the PWM value, that is changed by the function to the PWM value we'd neeed to apply to the valve current driver circuit in order to achieve thrust.
+ * @param R1_thrust The thrust we want the valve R1 to output.
+ * @param R2_thrust The thrust we want the valve R2 to output.
+ * @param R3_thrust The thrust we want the valve R3 to output.
+ * @param R4_thrust The thrust we want the valve R4 to output.
+ * @param pwm1 The pointer to the PWM1 value (for valve R1).
+ * @param pwm2 The pointer to the PWM2 value (for valve R2).
+ * @param pwm3 The pointer to the PWM3 value (for valve R3).
+ * @param pwm4 The pointer to the PWM4 value (for valve R4).
  */
-void search_PWM(double thrust,unsigned char *pwm) {
-	int ii;
-	for (ii=1;ii<VALVE_CHARAC_RESOLUTION;ii++) {
-		if (R_valve_charac[ii-1]<=thrust && R_valve_charac[ii]>=thrust) {
-			// Therefore we are in the interpolation zone
-			// Interpolate the necessary PWM for the given thrust R
-			*pwm = PWM_valve_charac[ii-1]+(unsigned int)(((double)(PWM_valve_charac[ii]-PWM_valve_charac[ii-1]))/(R_valve_charac[ii]-R_valve_charac[ii-1])*(thrust-R_valve_charac[ii-1]));
+void search_PWM(double R1_thrust,double R2_thrust,double R3_thrust,double R4_thrust,unsigned int *pwm1,unsigned int *pwm2,unsigned int *pwm3,unsigned int *pwm4) {
+	if (R1_thrust!=0) {
+		linear_search(R1_thrust,pwm1);
+	} else {
+		*pwm1 = 0;
+	}
+
+	if (R2_thrust!=0) {
+		linear_search(R2_thrust,pwm2);
+	} else {
+		*pwm2=0;
+	}
+
+	if (R3_thrust!=0) {
+		linear_search(R3_thrust,pwm3);
+	} else {
+		*pwm3=0;
+	}
+
+	if (R4_thrust!=0) {
+		linear_search(R4_thrust,pwm4);
+	} else {
+		*pwm4=0;
+	}
+}
+
+/**
+ * @fn void linear_search(double thrust, unsigned int *pwm)
+ * Interpolates discrete thrust curve to give a PWM that produces a given valve thrust.
+ *
+ * @param thrust Desired valve thrust, in [N].
+ * @param pwm Pointer to the memory block holding the pwm value which we'd like to assign.
+ */
+void linear_search(double thrust, unsigned int *pwm) {
+	int zz;
+	for (zz=1;zz<VALVE_CHARAC_RESOLUTION;zz++) {
+		if (R_valve_charac[zz-1]<=thrust && R_valve_charac[zz]>=thrust) {
+			// Interpolate the necessary PWM4 for the given thrust R4
+			*pwm = PWM_valve_charac[zz-1]+(unsigned int)(((double)(PWM_valve_charac[zz]-PWM_valve_charac[zz-1]))/(R_valve_charac[zz]-R_valve_charac[zz-1])*(thrust-R_valve_charac[zz-1]));
+			break;
 		}
 	}
 }

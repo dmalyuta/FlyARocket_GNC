@@ -109,8 +109,8 @@ Functions</h2></td></tr>
 <tr class="separator:a37c1f83aba04ac0ce28faf5ba3b537a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33738ffa4af6e11695b247aee563b6f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="msp430__funcs_8c.html#a33738ffa4af6e11695b247aee563b6f5">MSP430_UART_write</a> (char MSP430_TX[3])</td></tr>
 <tr class="separator:a33738ffa4af6e11695b247aee563b6f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae203ca5e5e2220a92f8153f05208664f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="msp430__funcs_8c.html#ae203ca5e5e2220a92f8153f05208664f">MSP430_UART_write_PWM</a> (unsigned char PWMA, unsigned char PWMB, unsigned char PWMC)</td></tr>
-<tr class="separator:ae203ca5e5e2220a92f8153f05208664f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8efdf02df6574899acd7b8634f8f4007"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="msp430__funcs_8c.html#a8efdf02df6574899acd7b8634f8f4007">MSP430_UART_write_PWM</a> (unsigned int <a class="el" href="master__header_8h.html#adc2f9c564aa0a90a16cb87350cce5adf">PWM1</a>, unsigned int <a class="el" href="master__header_8h.html#aff21db3b340a021bee19e5a0e1657fef">PWM2</a>, unsigned int <a class="el" href="master__header_8h.html#a827c226fa79fb53ea8b96082d5d49106">PWM3</a>, unsigned int <a class="el" href="master__header_8h.html#a3f972178ea1f7d61ab54ff14b6cd0074">PWM4</a>)</td></tr>
+<tr class="separator:a8efdf02df6574899acd7b8634f8f4007"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>MSP430 functions file. </p>
@@ -167,27 +167,33 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae203ca5e5e2220a92f8153f05208664f"></a>
+<a class="anchor" id="a8efdf02df6574899acd7b8634f8f4007"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void MSP430_UART_write_PWM </td>
           <td>(</td>
-          <td class="paramtype">unsigned char&#160;</td>
-          <td class="paramname"><em>PWMA</em>, </td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>PWM1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned char&#160;</td>
-          <td class="paramname"><em>PWMB</em>, </td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>PWM2</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned char&#160;</td>
-          <td class="paramname"><em>PWMC</em>&#160;</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>PWM3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>PWM4</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -196,28 +202,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This function sends PWM values to the MSP430. Bit field conversion below: // TODO : in MSP430 program, add condition "not reading PWM" for # and @ &ndash;&gt; avoids that new PWM sent if PWM of 35 is sent!</p>
-<p>4 bytes are hence sent to the MSP430 where:</p>
-<ul>
-<li>PWM_TX_packet[0] (byte 1) : send "#" message which tells MSP430 that the following 3 bytes are PWM values</li>
-<li>PWM_TX_packet[1] (byte 2) : YYY is a code which says:<ul>
-<li>YYY==001 : PWM1 is 0</li>
-<li>YYY==010 : PWM2 is 0</li>
-<li>YYY==011 : PWM3 is 0</li>
-<li>YYY==100 : PWM4 is 0 This is because at every point in time only 3 valves are assigned thrusts - this is the consequence of the RCS physics and optimal thrust assignment. It's useless to waste 7 bits sending a 0 value, so we use just 3 to identify which of the PWM values is 0</li>
-</ul>
-</li>
-</ul>
-<p>In the above image you can see how the PWMA, PWMB and PWMC signals are distributed amongst the three bytes PWM_TX_packet[1] to PWM_TX_packet[3]. In the figure, the MSB is on the left and LSB on the right for each series of A, B and C. We call them PWMA, PWMB and PWMC because these are, in rising order from 1 to 4 the other 3 non-zero PWMs. For example:</p>
-<p>YYY==001, therefore PWM1 is 0 so PWMA=PWM2, PWMB=PWM2, PWMC=PWM4 YYY==011, therefore PWM3 is 0 so PWMA=PWM1, PWMB=PWM2, PWMC=PWM4</p>
-<p>You see that we simply so from PWM1 to PWM4, skipping the PWM that is 0. </p>
+<p>This function sends PWM values to the MSP430. Bit field conversion below:</p>
+<p>In the above image you can see how the 4 10-bit PWM values are distributed across the 6 bytes that are sent to the MSP430. The first byte tells the MSP430 that the following 5 bytes contain PWM values. Once received, the MSP430 decodes these according to the above figure (combining appropriate bits into 10-byte numbers) and assigns them to "unsigned int" type PWM variables that are then output on its 4 pins using timer interrupts (hardware PWM, much more precise than software PWM). </p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 31 2015 03:44:16 for Fly-A-Rocket (G)uidance (N)avigation and (C)ontrol Software by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 5 2015 16:44:41 for Fly-A-Rocket (G)uidance (N)avigation and (C)ontrol Software by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

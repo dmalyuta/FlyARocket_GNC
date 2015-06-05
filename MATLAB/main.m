@@ -2,26 +2,25 @@
 
 clear;
 
-%% --------------------------------- SETUP --------------------------------------
+% --------------------------------- SETUP --------------------------------------
 % Here we set up the simulation parameters
 
-global VALVE__MAX_THRUST; VALVE__MAX_THRUST=0.5; % [N]
+global VALVE__MAX_THRUST; VALVE__MAX_THRUST=0.2; % [N]
 global VALVE__SLEW_RATE; VALVE__SLEW_RATE=5; % [N], both going up and coming down
-global CONTROL__TIME_STEP; CONTROL__TIME_STEP=0.02; % [s] control loop time interval (=1/frequency)
+global CONTROL__TIME_STEP; CONTROL__TIME_STEP=1/50; % [s] control loop time interval (=1/frequency)
 global CONTROL__START_TIME; CONTROL__START_TIME=1; % [s] time during simulation at which active control is turned on
+global TIME__DROPOFF; TIME__DROPOFF=2; % [s] time during which valves can output 100% of VALVE__MAX_THRUST
+global TIME__FULL; TIME__FULL=7; % [s] time at which no more gas in container, so valve thrust drops to 0
+global DROPOFF_CONSTANT; DROPOFF_CONSTANT=1.5; % [s] time constant in dropoff characteristic, i.e. time in [s] after TIME__DROPOFF when valve max thrust reaches ~63.2% of VALVE__MAX_THRUST
+global TIME_RCS_WORKED; TIME_RCS_WORKED=0; % [s] holds the time for which the RCS has been active
 total_time=11; % [s] Simulation finish time
 
-psi_0   =d2r(5);   % Initial yaw angle
-wz_0    =d2r(15);    % Initial Z-body rate
-theta_0 =d2r(17);   % Initial pitch angle
-wy_0    =d2r(-30);    % Initial Y-body rate
+psi_0   =d2r(20);   % Initial yaw angle
+wz_0    =d2r(0);    % Initial Z-body rate
+theta_0 =d2r(-20);   % Initial pitch angle
+wy_0    =d2r(0);    % Initial Y-body rate
 phi_0   =d2r(0);    % Initial roll angle
-wx_0    =d2r(150);   % Intiial X-body rate
-
-% Initialize variables for the "previous iteration" angles of rocket
-global psi_imu_last; psi_imu_last=psi_0;
-global theta_imu_last; theta_imu_last=theta_0;
-global phi_imu_last; phi_imu_last=phi_0;
+wx_0    =d2r(0);   % Intiial X-body rate
 
 global t_last; t_last=0; % The previous time that control was applied
 max_timestep=CONTROL__TIME_STEP/10; % Upper bound for time step simulation
@@ -37,7 +36,9 @@ x_R3 = [l;d;r]; % Vector from c.o.m. to valve R3 nozzle
 x_R4 = [l;-r;-d]; % Vector from c.o.m. to valve R4 nozzle
 
 %*** Rocket parameters
-I=diag([0.000240854442;0.062914314;0.062914314]); % [kg.m^2] Rocket inertia matrix in principal body axes
+I=[0.00206234	0.00000000	0.00000000
+   0.00000000	0.36087211	0.00000000
+   0.00000000	0.00000000	0.36087211];%diag([0.000240854442;0.062914314;0.062914314]); % [kg.m^2] Rocket inertia matrix in principal body axes
 
 %------------------------------------ Noisy parameter estimation ------------------------------------
 % Open the noise file
@@ -47,20 +48,12 @@ Noise_log = fopen('./logs/noise_log.txt','r');
 Noise_data=textscan(Noise_log,'%f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f');
 fclose(Noise_log);
 
-psi_noise=zeros(length(Noise_data{1}),1);
-theta_noise=zeros(length(Noise_data{1}),1);
-phi_noise=zeros(length(Noise_data{1}),1);
-psidot_noise=zeros(length(Noise_data{1}),1);
-thetadot_noise=zeros(length(Noise_data{1}),1);
-phidot_noise=zeros(length(Noise_data{1}),1);
-for i=1:length(Noise_data{1})
-    psi_noise(i,1)=Noise_data{3}(i);
-    theta_noise(i,1)=Noise_data{4}(i);
-    phi_noise(i,1)=Noise_data{5}(i);
-    psidot_noise(i,1)=Noise_data{6}(i);
-    thetadot_noise(i,1)=Noise_data{7}(i);
-    phidot_noise(i,1)=Noise_data{8}(i);
-end
+psi_noise=Noise_data{3};
+theta_noise=Noise_data{4};
+phi_noise=Noise_data{5};
+psidot_noise=Noise_data{6};
+thetadot_noise=Noise_data{7};
+phidot_noise=Noise_data{8};
 
 %*** Now we wish to estimate the average (mean) and covariance matrix on the noise of signals (psi,psidot), (theta,thetadot) and (phi,phidot)
 % Averages of angles
@@ -144,21 +137,17 @@ wx_ref=0;
 
 %*** Setup control logic coefficients
 % Pitch control loop (PD control)
-Fpitch_loop.satur = VALVE__MAX_THRUST;
-Fpitch_loop.control_range = 20*pi/180; % [rad]
-Fpitch_loop.K = Fpitch_loop.satur/Fpitch_loop.control_range; % Proportional term coefficient
-Fpitch_loop.Td = 0.7; % Derivatice term coefficient
+Fpitch_loop.K = 5; % Proportional term coefficient
+Fpitch_loop.Td = 3; % Derivatice term coefficient
 
 % Yaw control loop (PD control)
-Fyaw_loop.satur = VALVE__MAX_THRUST;
-Fyaw_loop.control_range = 20*pi/180; % [rad]
-Fyaw_loop.K = Fyaw_loop.satur/Fyaw_loop.control_range;
-Fyaw_loop.Td = 0.7;
+Fyaw_loop.K = 5; % Proportional term coefficient
+Fyaw_loop.Td = 3; % Derivatice term coefficient
 
 % Roll control loop (P control)
 Mroll_loop.satur = 2*d*VALVE__MAX_THRUST;
 Mroll_loop.control_range = 100*pi/180; % [rad/s]
-Mroll_loop.K = Mroll_loop.satur/Mroll_loop.control_range;
+Mroll_loop.K = Mroll_loop.satur/Mroll_loop.control_range; % Proportional term coefficient
 
 %------------------------------- SIMULATION ------------------------------------
 global data_log; data_log=[];
@@ -272,7 +261,7 @@ plot(t,r2d(phi),'Color','blue'); % Roll angle
 plot(t,r2d(psidot),'Color','green'); % Yaw rate
 plot(t,r2d(thetadot),'Color','cyan'); % Pitch rate
 plot(t,r2d(phidot),'Color','magenta'); % Roll rate
-ylim([-20 20]); % Only interested in the +/- 20 [°] range as that's how bounded rocket angles are expected to be
+ylim([-20 20]); % Only interested in the +/- 20 [�] range as that's how bounded rocket angles are expected to be
 leg=legend('Yaw $\psi$','Pitch $\theta$','Roll $\phi$','Yaw rate $\dot\psi$','Pitch rate $\dot\theta$','Roll rate $\dot\phi$'); set(leg,'Interpreter', 'latex');
 
 subplot(2,2,3);

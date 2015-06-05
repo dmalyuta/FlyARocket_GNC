@@ -27,18 +27,21 @@ void \hyperlink{master__funcs_8c_a74b332f6927a5430b862f575cdb07e72}{open\-\_\-er
 \item 
 void \hyperlink{master__funcs_8c_aab039920099459bf8d53159b68485e24}{passive\-\_\-wait} (struct timeval $\ast$now, struct timeval $\ast$before, struct timeval $\ast$elapsed, unsigned long long int $\ast$time, unsigned long long int T\-I\-M\-E\-\_\-\-\_\-\-S\-T\-E\-P)
 \item 
-\hypertarget{master__funcs_8c_abcb618eb016786383b05af1c989404b8}{void {\bfseries search\-\_\-\-P\-W\-M} (double thrust, unsigned char $\ast$pwm)}\label{master__funcs_8c_abcb618eb016786383b05af1c989404b8}
-
+void \hyperlink{master__funcs_8c_aae7594d7909a61de28722b124378a837}{search\-\_\-\-P\-W\-M} (double R1\-\_\-thrust, double R2\-\_\-thrust, double R3\-\_\-thrust, double R4\-\_\-thrust, unsigned int $\ast$pwm1, unsigned int $\ast$pwm2, unsigned int $\ast$pwm3, unsigned int $\ast$pwm4)
+\item 
+void \hyperlink{master__funcs_8c_a61a66362f264f2a07f6691edbfb616ff}{linear\-\_\-search} (double thrust, unsigned int $\ast$pwm)
 \end{DoxyCompactItemize}
 \subsection*{Variables}
-\begin{DoxyCompactItemize}
+\begin{Indent}{\bf Thrust curve group}\par
+{\em These variables have been collected in experimental open-\/loop tests to determine what thrust value the valves output for a given P\-W\-M (in \hyperlink{master__header_8h_ab324d426f7c3fd563450bd71a15aefe7}{P\-W\-M\-\_\-valve\-\_\-charac}). }\begin{DoxyCompactItemize}
 \item 
-\hypertarget{master__funcs_8c_ab324d426f7c3fd563450bd71a15aefe7}{unsigned int \hyperlink{master__funcs_8c_ab324d426f7c3fd563450bd71a15aefe7}{P\-W\-M\-\_\-valve\-\_\-charac} \mbox{[}\hyperlink{master__header_8h_ae3593488fd933fd856b687d074f25f91}{V\-A\-L\-V\-E\-\_\-\-C\-H\-A\-R\-A\-C\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N}\mbox{]} = \{0,6,14,25,39,50,63,75,87,98,106,115,127\}}\label{master__funcs_8c_ab324d426f7c3fd563450bd71a15aefe7}
+\hypertarget{master__funcs_8c_ab324d426f7c3fd563450bd71a15aefe7}{unsigned int \hyperlink{master__funcs_8c_ab324d426f7c3fd563450bd71a15aefe7}{P\-W\-M\-\_\-valve\-\_\-charac} \mbox{[}\hyperlink{master__header_8h_ae3593488fd933fd856b687d074f25f91}{V\-A\-L\-V\-E\-\_\-\-C\-H\-A\-R\-A\-C\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N}\mbox{]} = \{310,420,520,620,720,820,920,1020\}}\label{master__funcs_8c_ab324d426f7c3fd563450bd71a15aefe7}
 
 \begin{DoxyCompactList}\small\item\em P\-W\-M value of characteristic thrust curve. \end{DoxyCompactList}\item 
-\hypertarget{master__funcs_8c_a9ee7453017d47063c9f1e9e6ad69c424}{double \hyperlink{master__funcs_8c_a9ee7453017d47063c9f1e9e6ad69c424}{R\-\_\-valve\-\_\-charac} \mbox{[}\hyperlink{master__header_8h_ae3593488fd933fd856b687d074f25f91}{V\-A\-L\-V\-E\-\_\-\-C\-H\-A\-R\-A\-C\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N}\mbox{]} = \{0.\-0000,0.\-0091,0.\-0478,0.\-0981,0.\-1656,0.\-2245,0.\-2816,0.\-3344,0.\-3737,0.\-4166,0.\-4406,0.\-4676,0.\-5000\}}\label{master__funcs_8c_a9ee7453017d47063c9f1e9e6ad69c424}
+\hypertarget{master__funcs_8c_a9ee7453017d47063c9f1e9e6ad69c424}{double \hyperlink{master__funcs_8c_a9ee7453017d47063c9f1e9e6ad69c424}{R\-\_\-valve\-\_\-charac} \mbox{[}\hyperlink{master__header_8h_ae3593488fd933fd856b687d074f25f91}{V\-A\-L\-V\-E\-\_\-\-C\-H\-A\-R\-A\-C\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N}\mbox{]} = \{0.\-0,0.\-17,0.\-25,0.\-29,0.\-32,0.\-34,0.\-35,0.\-36\}}\label{master__funcs_8c_a9ee7453017d47063c9f1e9e6ad69c424}
 
-\begin{DoxyCompactList}\small\item\em Thrust (R) value of characteristic thrust value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Thrust value \mbox{[}N\mbox{]},relative, of characteristic thrust value for R\-C\-S valves. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
 
 
 \subsection{Detailed Description}
@@ -72,6 +75,23 @@ This function the value pointed to by time with the time that has passed between
 {\em elapsed} & The time elapsed between now and before (struct timeval). \\
 \hline
 {\em time} & The time in \mbox{[}us\mbox{]} that elapsed between now and before. \\
+\hline
+\end{DoxyParams}
+\hypertarget{master__funcs_8c_a61a66362f264f2a07f6691edbfb616ff}{\index{master\-\_\-funcs.\-c@{master\-\_\-funcs.\-c}!linear\-\_\-search@{linear\-\_\-search}}
+\index{linear\-\_\-search@{linear\-\_\-search}!master_funcs.c@{master\-\_\-funcs.\-c}}
+\subsubsection[{linear\-\_\-search}]{\setlength{\rightskip}{0pt plus 5cm}void linear\-\_\-search (
+\begin{DoxyParamCaption}
+\item[{double}]{thrust, }
+\item[{unsigned int $\ast$}]{pwm}
+\end{DoxyParamCaption}
+)}}\label{master__funcs_8c_a61a66362f264f2a07f6691edbfb616ff}
+Interpolates discrete thrust curve to give a P\-W\-M that produces a given valve thrust.
+
+
+\begin{DoxyParams}{Parameters}
+{\em thrust} & Desired valve thrust, in \mbox{[}N\mbox{]}. \\
+\hline
+{\em pwm} & Pointer to the memory block holding the pwm value which we'd like to assign. \\
 \hline
 \end{DoxyParams}
 \hypertarget{master__funcs_8c_a74b332f6927a5430b862f575cdb07e72}{\index{master\-\_\-funcs.\-c@{master\-\_\-funcs.\-c}!open\-\_\-error\-\_\-file@{open\-\_\-error\-\_\-file}}
@@ -141,6 +161,50 @@ This function does a passive (instead of a busy) wait.
 {\em time} & The time in \mbox{[}us\mbox{]} between now and before. \\
 \hline
 {\em T\-I\-M\-E\-\_\-\-\_\-\-S\-T\-E\-P} & The time we want to iterate at within the loop from which \hyperlink{master__funcs_8c_aab039920099459bf8d53159b68485e24}{passive\-\_\-wait()} was called. \\
+\hline
+\end{DoxyParams}
+\hypertarget{master__funcs_8c_aae7594d7909a61de28722b124378a837}{\index{master\-\_\-funcs.\-c@{master\-\_\-funcs.\-c}!search\-\_\-\-P\-W\-M@{search\-\_\-\-P\-W\-M}}
+\index{search\-\_\-\-P\-W\-M@{search\-\_\-\-P\-W\-M}!master_funcs.c@{master\-\_\-funcs.\-c}}
+\subsubsection[{search\-\_\-\-P\-W\-M}]{\setlength{\rightskip}{0pt plus 5cm}void search\-\_\-\-P\-W\-M (
+\begin{DoxyParamCaption}
+\item[{double}]{R1\-\_\-thrust, }
+\item[{double}]{R2\-\_\-thrust, }
+\item[{double}]{R3\-\_\-thrust, }
+\item[{double}]{R4\-\_\-thrust, }
+\item[{unsigned int $\ast$}]{pwm1, }
+\item[{unsigned int $\ast$}]{pwm2, }
+\item[{unsigned int $\ast$}]{pwm3, }
+\item[{unsigned int $\ast$}]{pwm4}
+\end{DoxyParamCaption}
+)}}\label{master__funcs_8c_aae7594d7909a61de28722b124378a837}
+This function, given a wanted thrust, assigns the required P\-W\-M to produce that thrust given the P\-W\-M\-\_\-valve\-\_\-charac\mbox{[}\mbox{]} and R\-\_\-valve\-\_\-charac\mbox{[}\mbox{]} arrays which assigns the correct P\-W\-M for a given thrust level. Typical thrust curves can be seen on the first figure at page 2 of datasheet found \href{http://www.parker.com/literature/Literature%20Files/Precision%20Fluidics%20Division/UpdatedFiles/VSO%20Data%20Sheet_1_19_11.pdf}{\tt here}. However, we manually measured the thrust level for a given P\-W\-M using a balance. The data was collected into a spreadsheet and the following graph was produced\-:
+
+
+\begin{DoxyImage}
+\includegraphics[width=15cm]{valve_curve.jpg}
+\caption{Valve thrust curves}
+\end{DoxyImage}
+
+
+The valves in our application are controlled in open-\/loop due to space and time constraints on implementing sensors to close the loop on valve control. This is suboptimal, of course, due to valves heating up, cooling down, hysteresis, etc. that would slightly make the thrust curve change during flight.
+
+
+\begin{DoxyParams}{Parameters}
+{\em R1\-\_\-thrust} & The thrust we want the valve R1 to output. \\
+\hline
+{\em R2\-\_\-thrust} & The thrust we want the valve R2 to output. \\
+\hline
+{\em R3\-\_\-thrust} & The thrust we want the valve R3 to output. \\
+\hline
+{\em R4\-\_\-thrust} & The thrust we want the valve R4 to output. \\
+\hline
+{\em pwm1} & The pointer to the P\-W\-M1 value (for valve R1). \\
+\hline
+{\em pwm2} & The pointer to the P\-W\-M2 value (for valve R2). \\
+\hline
+{\em pwm3} & The pointer to the P\-W\-M3 value (for valve R3). \\
+\hline
+{\em pwm4} & The pointer to the P\-W\-M4 value (for valve R4). \\
 \hline
 \end{DoxyParams}
 \hypertarget{master__funcs_8c_a0ebc9cbfa5616a43caa96e7394543752}{\index{master\-\_\-funcs.\-c@{master\-\_\-funcs.\-c}!write\-\_\-to\-\_\-file\-\_\-custom@{write\-\_\-to\-\_\-file\-\_\-custom}}

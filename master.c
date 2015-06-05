@@ -49,10 +49,10 @@ unsigned long int CALIB__TIME = 5000000; // 5000000 [us]==5 [second] calibration
 unsigned char SPI_quit=0; // By default don't quit reading the pressure sensor!
 unsigned char IMU_quit=0; // By default don't quit reading the pressure sensor!
 
-unsigned char PWM1=0; // PWM value for the R1 valve
-unsigned char PWM2=0; // PWM value for the R2 valve
-unsigned char PWM3=0; // PWM value for the R3 valve
-unsigned char PWM4=0; // PWM value for the R4 valve
+unsigned int PWM1=0; // PWM value for the R1 valve
+unsigned int PWM2=0; // PWM value for the R2 valve
+unsigned int PWM3=0; // PWM value for the R3 valve
+unsigned int PWM4=0; // PWM value for the R4 valve
 double R1=0; // Valve R1 thrust
 double R2=0; // Valve R2 thrust
 double R3=0; // Valve R3 thrust
@@ -213,7 +213,7 @@ int main(void) {
 
 		passive_wait(&now_control,&before_control,&elapsed_control,&time_control,SPI__READ_TIMESTEP);
 
-		printf("radial_status: %c \t radial p: %.4f \t radial T: %.4f \t axial_status: %c \t axial p: %.4f \t axial T: %.4f\n",radial_status,radial_pressure,radial_temperature,axial_status,axial_pressure,axial_temperature);
+		printf("radial_status: %u\t radial p: %.4f \t radial T: %.4f \t axial_status: %u \t axial p: %.4f \t axial T: %.4f\n",radial_status,radial_pressure,radial_temperature,axial_status,axial_pressure,axial_temperature);
 	} while(time_loop<=CALIB__TIME); // Show pressure values until CALIB__TIME elapses (don't define separate time variable for conciseness)
 
 	printf("\nIs this OK? Type [Calibrate] to continue: ");
@@ -510,27 +510,11 @@ int main(void) {
 			/*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 			 *%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SEND TO MSP430 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 			 *%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
-			// First, convert thrust values to PWM (PWM values 0-127, i.e. 7-bit PWM)
-			// TODO : valve open loop control calibration! Don't forget to chance VALVE__MAX_THRUST in valve_curve.m!!!!!!!
-			search_PWM(R1,&PWM1);
-			search_PWM(R2,&PWM2);
-			search_PWM(R3,&PWM3);
-			search_PWM(R4,&PWM4);
+			// First, convert thrust values to PWM (PWM values 0-1023, i.e. 10-bit PWM)
+			search_PWM(R1,R2,R3,R4,&PWM1,&PWM2,&PWM3,&PWM4);
 
 			// Send PWM values to MSP430
-			if (PWM1==0) {
-				which_zero=0b00100000;
-				MSP430_UART_write_PWM(PWM2,PWM3,PWM4);
-			} else if (PWM2==0) {
-				which_zero=0b01000000;
-				MSP430_UART_write_PWM(PWM1,PWM3,PWM4);
-			} else if (PWM3==0) {
-				which_zero=0b01100000;
-				MSP430_UART_write_PWM(PWM1,PWM2,PWM4);
-			} else {
-				which_zero=0b10000000;
-				MSP430_UART_write_PWM(PWM1,PWM2,PWM3);
-			}
+			MSP430_UART_write_PWM(PWM1,PWM2,PWM3,PWM4);
 
 			/*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 			 *%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LOG DATA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -538,9 +522,9 @@ int main(void) {
 
 			sprintf(CONTROL_MESSAGE,"%llu\t%llu\t%.5f\t%.5f\t%.5f\t%.5f\t%.5f\t%.5f\t%.5f\t%u\t%u\t%u\t%u\n",time_control_glob,time_control,Fpitch,Fyaw,Mroll,R1,R2,R3,R4,PWM1,PWM2,PWM3,PWM4);
 			write_to_file_custom(control_log,CONTROL_MESSAGE,error_log);
-			printf("control_time: %llu \t PWM1 : %u \t PWM2 : %u \t PWM3 : %u \t PWM4 : %u \n",time_control,PWM1,PWM2,PWM3,PWM4);
+			printf("control_time: %llu R1: %.3f R2: %.3f R3: %.3f R4: %.3f PWM1: %u PWM2: %u PWM3: %u PWM4: %u\n",time_control,R1,R2,R3,R4,PWM1,PWM2,PWM3,PWM4);
 		} while(time_loop<=ACTIVE__CONTROL_TIME);
-		which_zero=0b00100000; MSP430_UART_write_PWM(0,0,0); // Send a final transmission to MSP430 microcontroller with 0 PWM values to close the valves
+		MSP430_UART_write_PWM(0,0,0,0); // Send a final transmission to MSP430 microcontroller with 0 PWM values to close the valves
 		//############################ CONTROL LOOP END ############################
 		printf("\nFINISHED CONTROL LOOP! Data that follows is for rocket descent with parachute (unpowered).\n\n");
 

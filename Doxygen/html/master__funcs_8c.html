@@ -84,8 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">master_funcs.c File Reference</div>  </div>
 </div><!--header-->
@@ -114,19 +113,23 @@ Functions</h2></td></tr>
 <tr class="separator:a74b332f6927a5430b862f575cdb07e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab039920099459bf8d53159b68485e24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__funcs_8c.html#aab039920099459bf8d53159b68485e24">passive_wait</a> (struct timeval *now, struct timeval *before, struct timeval *elapsed, unsigned long long int *time, unsigned long long int TIME__STEP)</td></tr>
 <tr class="separator:aab039920099459bf8d53159b68485e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcb618eb016786383b05af1c989404b8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abcb618eb016786383b05af1c989404b8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>search_PWM</b> (double thrust, unsigned char *pwm)</td></tr>
-<tr class="separator:abcb618eb016786383b05af1c989404b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae7594d7909a61de28722b124378a837"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__funcs_8c.html#aae7594d7909a61de28722b124378a837">search_PWM</a> (double R1_thrust, double R2_thrust, double R3_thrust, double R4_thrust, unsigned int *pwm1, unsigned int *pwm2, unsigned int *pwm3, unsigned int *pwm4)</td></tr>
+<tr class="separator:aae7594d7909a61de28722b124378a837"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61a66362f264f2a07f6691edbfb616ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__funcs_8c.html#a61a66362f264f2a07f6691edbfb616ff">linear_search</a> (double thrust, unsigned int *pwm)</td></tr>
+<tr class="separator:a61a66362f264f2a07f6691edbfb616ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Thrust curve group</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>These variables have been collected in experimental open-loop tests to determine what thrust value the valves output for a given PWM (in <a class="el" href="master__header_8h.html#ab324d426f7c3fd563450bd71a15aefe7" title="PWM value of characteristic thrust curve. ">PWM_valve_charac</a>). </p>
+</div></td></tr>
 <tr class="memitem:ab324d426f7c3fd563450bd71a15aefe7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab324d426f7c3fd563450bd71a15aefe7"></a>
-unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__funcs_8c.html#ab324d426f7c3fd563450bd71a15aefe7">PWM_valve_charac</a> [<a class="el" href="master__header_8h.html#ae3593488fd933fd856b687d074f25f91">VALVE_CHARAC_RESOLUTION</a>] = {0,6,14,25,39,50,63,75,87,98,106,115,127}</td></tr>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__funcs_8c.html#ab324d426f7c3fd563450bd71a15aefe7">PWM_valve_charac</a> [<a class="el" href="master__header_8h.html#ae3593488fd933fd856b687d074f25f91">VALVE_CHARAC_RESOLUTION</a>] = {310,420,520,620,720,820,920,1020}</td></tr>
 <tr class="memdesc:ab324d426f7c3fd563450bd71a15aefe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM value of characteristic thrust curve. <br/></td></tr>
 <tr class="separator:ab324d426f7c3fd563450bd71a15aefe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ee7453017d47063c9f1e9e6ad69c424"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9ee7453017d47063c9f1e9e6ad69c424"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__funcs_8c.html#a9ee7453017d47063c9f1e9e6ad69c424">R_valve_charac</a> [<a class="el" href="master__header_8h.html#ae3593488fd933fd856b687d074f25f91">VALVE_CHARAC_RESOLUTION</a>] = {0.0000,0.0091,0.0478,0.0981,0.1656,0.2245,0.2816,0.3344,0.3737,0.4166,0.4406,0.4676,0.5000}</td></tr>
-<tr class="memdesc:a9ee7453017d47063c9f1e9e6ad69c424"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thrust (R) value of characteristic thrust value. <br/></td></tr>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="master__funcs_8c.html#a9ee7453017d47063c9f1e9e6ad69c424">R_valve_charac</a> [<a class="el" href="master__header_8h.html#ae3593488fd933fd856b687d074f25f91">VALVE_CHARAC_RESOLUTION</a>] = {0.0,0.17,0.25,0.29,0.32,0.34,0.35,0.36}</td></tr>
+<tr class="memdesc:a9ee7453017d47063c9f1e9e6ad69c424"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thrust value [N],relative, of characteristic thrust value for RCS valves. <br/></td></tr>
 <tr class="separator:a9ee7453017d47063c9f1e9e6ad69c424"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -177,6 +180,40 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ma
     <tr><td class="paramname">before</td><td>The previous time (struct timeval). </td></tr>
     <tr><td class="paramname">elapsed</td><td>The time elapsed between now and before (struct timeval). </td></tr>
     <tr><td class="paramname">time</td><td>The time in [us] that elapsed between now and before. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a61a66362f264f2a07f6691edbfb616ff"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void linear_search </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>thrust</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>pwm</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Interpolates discrete thrust curve to give a PWM that produces a given valve thrust.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">thrust</td><td>Desired valve thrust, in [N]. </td></tr>
+    <tr><td class="paramname">pwm</td><td>Pointer to the memory block holding the pwm value which we'd like to assign. </td></tr>
   </table>
   </dd>
 </dl>
@@ -327,6 +364,83 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ma
 
 </div>
 </div>
+<a class="anchor" id="aae7594d7909a61de28722b124378a837"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void search_PWM </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>R1_thrust</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>R2_thrust</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>R3_thrust</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>R4_thrust</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>pwm1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>pwm2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>pwm3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>pwm4</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This function, given a wanted thrust, assigns the required PWM to produce that thrust given the PWM_valve_charac[] and R_valve_charac[] arrays which assigns the correct PWM for a given thrust level. Typical thrust curves can be seen on the first figure at page 2 of datasheet found <a href="http://www.parker.com/literature/Literature%20Files/Precision%20Fluidics%20Division/UpdatedFiles/VSO%20Data%20Sheet_1_19_11.pdf">here</a>. However, we manually measured the thrust level for a given PWM using a balance. The data was collected into a spreadsheet and the following graph was produced:</p>
+<p>The valves in our application are controlled in open-loop due to space and time constraints on implementing sensors to close the loop on valve control. This is suboptimal, of course, due to valves heating up, cooling down, hysteresis, etc. that would slightly make the thrust curve change during flight.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">R1_thrust</td><td>The thrust we want the valve R1 to output. </td></tr>
+    <tr><td class="paramname">R2_thrust</td><td>The thrust we want the valve R2 to output. </td></tr>
+    <tr><td class="paramname">R3_thrust</td><td>The thrust we want the valve R3 to output. </td></tr>
+    <tr><td class="paramname">R4_thrust</td><td>The thrust we want the valve R4 to output. </td></tr>
+    <tr><td class="paramname">pwm1</td><td>The pointer to the PWM1 value (for valve R1). </td></tr>
+    <tr><td class="paramname">pwm2</td><td>The pointer to the PWM2 value (for valve R2). </td></tr>
+    <tr><td class="paramname">pwm3</td><td>The pointer to the PWM3 value (for valve R3). </td></tr>
+    <tr><td class="paramname">pwm4</td><td>The pointer to the PWM4 value (for valve R4). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a0ebc9cbfa5616a43caa96e7394543752"></a>
 <div class="memitem">
 <div class="memproto">
@@ -371,7 +485,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ma
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 31 2015 03:44:16 for Fly-A-Rocket (G)uidance (N)avigation and (C)ontrol Software by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 5 2015 16:44:41 for Fly-A-Rocket (G)uidance (N)avigation and (C)ontrol Software by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

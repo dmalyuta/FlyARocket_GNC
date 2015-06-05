@@ -67,37 +67,25 @@ void MSP430_UART_write(char MSP430_TX[3]) {
 }
 
 /**
- * @fn void MSP430_UART_write_PWM(unsigned char PWMA,unsigned char PWMB,unsigned char PWMC)
+ * @fn void MSP430_UART_write_PWM(unsigned int PWM1, unsigned int PWM2,unsigned int PWM3,unsigned int PWM4)
  *
  * This function sends PWM values to the MSP430.
- * Bit field conversion below: // TODO : in MSP430 program, add condition "not reading PWM" for # and @ --> avoids that new PWM sent if PWM of 35 is sent!
+ * Bit field conversion below:
  *
- * @image latex "MSP430_comm.png" "4 byte packet send by Raspberry Pi to MSP430 to update PWM values" width=15cm
+ * @image latex "MSP430_comm.png" "6 byte packet send by Raspberry Pi to MSP430 to update PWM values" width=15cm
  *
- * 4 bytes are hence sent to the MSP430 where:
- * 	- PWM_TX_packet[0] (byte 1) : send "#" message which tells MSP430 that the following 3 bytes are PWM values
- * 	- PWM_TX_packet[1] (byte 2) : YYY is a code which says:
- * 		* YYY==001 : PWM1 is 0
- * 		* YYY==010 : PWM2 is 0
- * 		* YYY==011 : PWM3 is 0
- * 		* YYY==100 : PWM4 is 0
- * This is because at every point in time only 3 valves are assigned thrusts - this is the consequence of the RCS physics and optimal thrust
- * assignment. It's useless to waste 7 bits sending a 0 value, so we use just 3 to identify which of the PWM values is 0
- *
- * In the above image you can see how the PWMA, PWMB and PWMC signals are distributed amongst the three bytes PWM_TX_packet[1] to PWM_TX_packet[3].
- * In the figure, the MSB is on the left and LSB on the right for each series of A, B and C. We call them PWMA, PWMB and PWMC because these are, in
- * rising order from 1 to 4 the other 3 non-zero PWMs. For example:
- *
- * YYY==001, therefore PWM1 is 0 so PWMA=PWM2, PWMB=PWM2, PWMC=PWM4
- * YYY==011, therefore PWM3 is 0 so PWMA=PWM1, PWMB=PWM2, PWMC=PWM4
- *
- * You see that we simply so from PWM1 to PWM4, skipping the PWM that is 0.
+ * In the above image you can see how the 4 10-bit PWM values are distributed across the 6 bytes that are sent to the MSP430.
+ * The first byte tells the MSP430 that the following 5 bytes contain PWM values. Once received, the MSP430 decodes these according
+ * to the above figure (combining appropriate bits into 10-byte numbers) and assigns them to "unsigned int" type PWM variables that
+ * are then output on its 4 pins using timer interrupts (hardware PWM, much more precise than software PWM).
  */
-void MSP430_UART_write_PWM(unsigned char PWMA,unsigned char PWMB,unsigned char PWMC) {
-	PWM_TX_packet[0] = '#';
-	PWM_TX_packet[1] = which_zero | ((PWMA & 0b1111100)>>2);
-	PWM_TX_packet[2] = ((PWMA & 0b0000011)<<6) | ((PWMB & 0b1111110)>>1);
-	PWM_TX_packet[3] = ((PWMA & 0b0000001)<<7) | PWMC;
+void MSP430_UART_write_PWM(unsigned int PWM1, unsigned int PWM2,unsigned int PWM3,unsigned int PWM4) {
+	PWM_TX_packet[0] = '#'; // Tells MSP430 that "the following 5 bytes contain PWM values"
+	PWM_TX_packet[1] = ((PWM1&0b1111111100)>>2);
+	PWM_TX_packet[2] = ((PWM1&0b0000000011)<<6)|((PWM2&0b1111110000)>>4);
+	PWM_TX_packet[3] = ((PWM2&0b00001111)<<4)|((PWM3&0b1111000000)>>6);
+	PWM_TX_packet[4] = ((PWM3&0b0000111111)<<2)|((PWM4&0b1100000000)>>8);
+	PWM_TX_packet[5] = (PWM4&0b0011111111);
 
 	int counter=0;
 	do {
@@ -106,5 +94,5 @@ void MSP430_UART_write_PWM(unsigned char PWMA,unsigned char PWMB,unsigned char P
 		}
 		MSP430_UART_receive(); // Wait for MSP430 to send back "I received the byte that you sent me"
 		counter++;
-	} while(counter<4);
+	} while(counter<6);
 }

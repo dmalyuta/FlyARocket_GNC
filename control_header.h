@@ -23,10 +23,10 @@
  * The combination of these three control loops stabilizes the rocket to point vertically up at all time
  */
 struct Control_loop {
-	float K; ///< Proportional term coefficient
-	float Td; ///< Derivative term coefficient
-	float satur; ///< Absolute ceiling of possible control loop output value
-	float control_range; ///< At what angle from the vertical orientation to we begin applying maximum control input?
+	double K; ///< Proportional term coefficient
+	double Td; ///< Derivative term coefficient
+	double satur; ///< Absolute ceiling of possible control loop output value
+	double control_range; ///< At what angle from the vertical orientation to we begin applying maximum control input?
 };
 
 /**

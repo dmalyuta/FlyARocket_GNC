@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['passive_5fwait',['passive_wait',['../master__funcs_8c.html#aab039920099459bf8d53159b68485e24',1,'master_funcs.c']]],
-  ['pressure_5fsensor_5fspi_5fconnect',['pressure_sensor_SPI_connect',['../pressure__funcs_8c.html#a13d931d4705e660b720ed2b8c0e28695',1,'pressure_funcs.c']]]
+  ['open_5ferror_5ffile',['open_error_file',['../master__funcs_8c.html#a74b332f6927a5430b862f575cdb07e72',1,'master_funcs.c']]],
+  ['open_5ffile',['open_file',['../master__funcs_8c.html#acaeb180ec54844f644d844aef7ecb8d3',1,'master_funcs.c']]],
+  ['open_5fserial_5fport',['open_serial_port',['../imu__funcs_8c.html#a628a7b5bc4a309137ce51e9e929bfabf',1,'imu_funcs.c']]]
 ];

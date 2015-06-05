@@ -18,7 +18,7 @@
 # include <pthread.h>
 # include "la_header.h"
 
-# define VALVE_CHARAC_RESOLUTION 13 ///< The number of points there are in the calibrated valve thrust curve (flow rate vs. PWM)
+# define VALVE_CHARAC_RESOLUTION 8 ///< The number of points there are in the calibrated valve thrust curve (flow rate vs. PWM)
 
 char ERROR_MESSAGE[200]; ///< Allocate buffer for an error message to be printed into #error_log if errors occur
 
@@ -106,10 +106,10 @@ extern unsigned char SPI_quit; ///< ==0 by default, ==1 signals the SPI reading 
 extern unsigned long long int IMU__READ_TIMESTEP; ///< Time intervals [us] at which we read over UART the IMU data.
 extern unsigned char IMU_quit; ///< ==0 by default, ==1 signals the IMU reading and filtering threads (read_IMU_parallel() and get_filtered_attitude_parallel()) to exit.
 
-extern unsigned char PWM1; ///< PWM value for the R1 valve
-extern unsigned char PWM2; ///< PWM value for the R2 valve
-extern unsigned char PWM3; ///< PWM value for the R3 valve
-extern unsigned char PWM4; ///< PWM value for the R4 valve
+extern unsigned int PWM1; ///< PWM value for the R1 valve
+extern unsigned int PWM2; ///< PWM value for the R2 valve
+extern unsigned int PWM3; ///< PWM value for the R3 valve
+extern unsigned int PWM4; ///< PWM value for the R4 valve
 extern double R1; ///< Valve R1 thrust
 extern double R2; ///< Valve R2 thrust
 extern double R3; ///< Valve R3 thrust
@@ -127,7 +127,7 @@ extern int M1; ///< No (<=) type constraints
 extern int M2; ///< No (>=) type constraints
 extern int M3; ///< 3 (=) type constraints (for Fpitch, Fyaw, Mroll)
 extern int M; ///< Total number of constraints (M=M1+M2+M3)
-extern float VALVE__MAX_THRUST; ///< Maximum thrust of RCS solenoid valves (i.e. when fully opened)
+extern double VALVE__MAX_THRUST; ///< Maximum thrust of RCS solenoid valves (i.e. when fully opened)
 
 /**
  * @name Log files group
@@ -207,6 +207,7 @@ void write_to_file_custom(FILE *file_ptr, char *string,FILE *error_log);
 void open_file(FILE **log, char *path, char *setting,FILE *error_log);
 void open_error_file(FILE **error_log,char *path, char *setting);
 void passive_wait(struct timeval *now,struct timeval *before,struct timeval *elapsed,unsigned long long int *time,unsigned long long int TIME__STEP);
-void search_PWM(double thrust,unsigned char *pwm);
+void search_PWM(double R1_thrust,double R2_thrust,double R3_thrust,double R4_thrust,unsigned int *pwm1,unsigned int *pwm2,unsigned int *pwm3,unsigned int *pwm4);
+void linear_search(double thrust, unsigned int *pwm);
 /** @endcond */
 #endif /* MASTER_HEADER_H_ */
