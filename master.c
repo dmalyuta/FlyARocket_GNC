@@ -39,8 +39,8 @@
 // *********************************************************************
 
 unsigned long long int ENGINE__BURN_TIME=1100000; ///< Upper bountd on time [us] between engine start and engine burnout // TODO : change this with Xavier!
-unsigned long long int ACTIVE__CONTROL_TIME=20000000; ///< Time [us] during which control loop will be active // TODO : change this with Xavier!
-unsigned long long int DESCENT__TIME=15000000; ///< Time [us] for rocket descent with parachute (i.e. between parachutes opening and a soft touchdown) // TODO : change this with Xavier!
+unsigned long long int ACTIVE__CONTROL_TIME=7000000; ///< Time [us] during which control loop will be active // TODO : change this with Xavier!
+unsigned long long int DESCENT__TIME=300000000; ///< Time [us] for rocket descent with parachute (i.e. between parachutes opening and a soft touchdown) // TODO : change this with Xavier!
 unsigned long long int CONTROL__TIME_STEP=20000; ///< =1/(control loop frequency [MHz]), the time interval between applying control, in [us]
 unsigned long long int SPI__READ_TIMESTEP=20000; // Timestep [us] at which pressure/temperature is read from SPI sensor
 unsigned long long int IMU__READ_TIMESTEP=20000; // Timestep [us] at which filtered rocket attitude is obtained
@@ -58,7 +58,7 @@ double R2=0; // Valve R2 thrust
 double R3=0; // Valve R3 thrust
 double R4=0; // Valve R4 thrust
 
-double d=0.005; // [m] offset distance of RCS valves from centerline (for roll control) // TODO: CHECK THIS WITH GAUTIER
+double d=0.005; // [m] offset distance of RCS valves from centerline (for roll control)
 double Fpitch=0; // Pitch force (parallel to body -Z axis, so as to produce positive pitch rate when Fpitch>0 (right hand rule))
 double Fyaw=0; // Yaw force (parallel to body +Y axis, so as to produce positive yaw rate when Fyaw>0 (right hand rule))
 double Mroll=0; // Roll moment (positive about +X axis, so as to produce positive roll rate when Mroll>0 (right hand rule))
@@ -138,7 +138,7 @@ int main(void) {
 	//############################ CAMERA RECORDING SETUP START ##############################
 	stopVideo();
 	printf("Starting spy camera recording... ");
-	startVideo("flight_recording.h264", ""); // TODO : set appropriate camera options with Raimondo
+	startVideo("flight_recording.h264", "");
 	usleep(1000000); // Sleep for 1 second while camera is started
 	printf("started. \n");
 	//############################ CAMERA RECORDING SETUP END ################################

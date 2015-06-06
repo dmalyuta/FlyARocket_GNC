@@ -13,7 +13,7 @@
 # include "master_header.h"
 # include "control_header.h"
 
-double VALVE__MAX_THRUST=0.36; ///< Maximum thrust of RCS solenoid valves (i.e. when fully opened) // TODO: confirm with Gautier!
+double VALVE__MAX_THRUST=0.36; ///< Maximum thrust of RCS solenoid valves (i.e. when fully opened)
 
 /**
  * @fn void Fpitch_loop_control_setup()

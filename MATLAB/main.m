@@ -5,13 +5,13 @@ clear;
 % --------------------------------- SETUP --------------------------------------
 % Here we set up the simulation parameters
 
-global VALVE__MAX_THRUST; VALVE__MAX_THRUST=0.2; % [N]
+global VALVE__MAX_THRUST; VALVE__MAX_THRUST=0.3; % [N]
 global VALVE__SLEW_RATE; VALVE__SLEW_RATE=5; % [N], both going up and coming down
 global CONTROL__TIME_STEP; CONTROL__TIME_STEP=1/50; % [s] control loop time interval (=1/frequency)
 global CONTROL__START_TIME; CONTROL__START_TIME=1; % [s] time during simulation at which active control is turned on
-global TIME__DROPOFF; TIME__DROPOFF=2; % [s] time during which valves can output 100% of VALVE__MAX_THRUST
+global TIME__DROPOFF; TIME__DROPOFF=1; % [s] time during which valves can output 100% of VALVE__MAX_THRUST
 global TIME__FULL; TIME__FULL=7; % [s] time at which no more gas in container, so valve thrust drops to 0
-global DROPOFF_CONSTANT; DROPOFF_CONSTANT=1.5; % [s] time constant in dropoff characteristic, i.e. time in [s] after TIME__DROPOFF when valve max thrust reaches ~63.2% of VALVE__MAX_THRUST
+global DROPOFF_CONSTANT; DROPOFF_CONSTANT=1; % [s] time constant in dropoff characteristic, i.e. time in [s] after TIME__DROPOFF when valve max thrust reaches ~63.2% of VALVE__MAX_THRUST
 global TIME_RCS_WORKED; TIME_RCS_WORKED=0; % [s] holds the time for which the RCS has been active
 total_time=11; % [s] Simulation finish time
 
@@ -38,7 +38,7 @@ x_R4 = [l;-r;-d]; % Vector from c.o.m. to valve R4 nozzle
 %*** Rocket parameters
 I=[0.00206234	0.00000000	0.00000000
    0.00000000	0.36087211	0.00000000
-   0.00000000	0.00000000	0.36087211];%diag([0.000240854442;0.062914314;0.062914314]); % [kg.m^2] Rocket inertia matrix in principal body axes
+   0.00000000	0.00000000	0.36087211]; % [kg.m^2] Rocket inertia matrix in principal body axes
 
 %------------------------------------ Noisy parameter estimation ------------------------------------
 % Open the noise file
