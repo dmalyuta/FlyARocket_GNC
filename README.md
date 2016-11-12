@@ -2,7 +2,7 @@
 
 ## The team
 
-* Danylo Malyuta (GNC and avionics engineer)
+* Danylo Malyuta (GNC and avionics)
 * Gautier Rouaze (RCS mechanical design)
 * John Maslov (GPS tracking)
 * Mikael Gaspar (Launch systems and ground support)
