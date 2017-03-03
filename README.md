@@ -4,7 +4,6 @@
 
 * Danylo Malyuta (GNC and avionics)
 * Gautier Rouaze (RCS mechanical design)
-* John Maslov (GPS tracking)
 * Mikael Gaspar (Launch systems and ground support)
 * Nikolay Mullin (Rocket design and systems architecture supervisor)
 * Raimondo Pictet (CFD analysis)
